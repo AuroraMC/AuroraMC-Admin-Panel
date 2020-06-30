@@ -1,0 +1,10 @@
+[08-May-2020 19:20:31 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/chat.php on line 69
+[08-May-2020 19:20:33 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/game.php on line 69
+[08-May-2020 19:20:35 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/chat.php on line 69
+[08-May-2020 19:20:36 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/game.php on line 69
+[08-May-2020 19:20:37 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/misc.php on line 69
+[08-May-2020 19:20:42 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/chat.php on line 69
+[08-May-2020 19:20:51 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/chat.php on line 69
+[08-May-2020 19:21:28 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/chat.php on line 69
+[08-May-2020 19:25:37 America/New_York] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/chat.php on line 69
+[08-May-2020 19:28:42 America/New_York] PHP Fatal error:  Allowed memory size of 1073741824 bytes exhausted (tried to allocate 4294967296 bytes) in /home/blocicat/rules.auroramc.block2block.me/chat.php on line 73
