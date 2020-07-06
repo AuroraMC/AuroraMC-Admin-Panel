@@ -26,6 +26,7 @@
         <li class="nav-item"><a class="nav-link" href="chat">Chat Rules</a></li>
         <li class="nav-item"><a class="nav-link" href="game">Game Rules</a></li>
         <li class="nav-item"><a class="nav-link" href="misc">Misc Rules</a></li>
+        <li class="nav-item"><a class="nav-link" href="archive">Archived Rules</a></li>
     </ul>
 </nav>
 

@@ -29,6 +29,7 @@
         <li class="nav-item"><a class="nav-link" href="chat">Chat Rules</a></li>
         <li class="nav-item active"><a class="nav-link" href="#">Game Rules</a></li>
         <li class="nav-item"><a class="nav-link" href="misc">Misc Rules</a></li>
+        <li class="nav-item"><a class="nav-link" href="archive">Archived Rules</a></li>
     </ul>
 </nav>
 
@@ -58,7 +59,7 @@
                 $weights = array("<p style='color:#00AA00'><Strong>Light</Strong></p>", "<p style='color:#55FF55'><Strong>Medium</Strong></p>","<p style='color:#FFFF55'><Strong>Heavy</Strong></p>","<p style='color:#FFAA00'><Strong>Severe</Strong></p>","<p style='color:#AA0000'><Strong>Extreme</Strong></p>");
                 $requires_warnings = array("<Strong>No</Strong>","<Strong>Yes</Strong>");
 
-                if ($sql = $mysqli->prepare("SELECT * FROM rules WHERE type = 2 ORDER BY weight ASC, rule_id ASC")) {
+                if ($sql = $mysqli->prepare("SELECT * FROM rules WHERE type = 2 AND active = 1 ORDER BY weight ASC, rule_id ASC")) {
                     $sql->execute();    // Execute the prepared query.
 
                     $id = null;
