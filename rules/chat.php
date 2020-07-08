@@ -29,7 +29,7 @@
                 <a class="nav-link active" href="#">Chat Rules</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="game">Game Rules</a>
+                <a class="nav-link" href="game">Game Rules</a>
             </li>
         </ul>
     </div>
