@@ -22,6 +22,10 @@
           href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+
+    <link rel="icon"
+          type="image/png"
+          href="img/logo.png">
 </head>
 
 <body style="height: 100%;text-align: center">

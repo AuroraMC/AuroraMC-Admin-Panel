@@ -17,6 +17,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="icon"
+          type="image/png"
+          href="../img/logo.png">
 </head>
 
 <body style="background-color: #23272A;color:white">
@@ -33,7 +37,7 @@
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
         <a class="mx-auto" href="/rules/">
-            <img src="img/logo.png" height="100px" width="100px"
+            <img src="../img/logo.png" height="100px" width="100px"
                  style="margin-top:60px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
