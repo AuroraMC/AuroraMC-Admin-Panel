@@ -1,0 +1,88 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+div {
+    height: 100%;
+    background-position: center;
+    text-align: center;
+}
+
+.overlay-rules {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(127deg, rgba(170,0,170,.8), rgba(170,0,170,0) 90%);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.overlay-punishments {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(127deg, rgba(0,0,255,.8), rgba(0,0,255,0) 90%);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.overlay-blacklist {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(127deg, rgba(0,150,0,.8), rgba(0,150,0,0) 90%);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.overlay-filter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(127deg, rgba(255,0,0,.8), rgba(255,0,0,0) 90%);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.rules:hover .overlay-rules {
+    height: 100%;
+}
+.punishments:hover .overlay-punishments {
+    height: 100%;
+}
+.blacklist:hover .overlay-blacklist {
+    height: 100%;
+}
+.filter:hover .overlay-filter {
+    height: 100%;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-bottom: auto;
+    margin-top: auto;
+    vertical-align: center;
+    -webkit-transform: translate(-50%, -0%);
+    -ms-transform: translate(-50%, -0%);
+    transform: translate(-50%, -0%);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}

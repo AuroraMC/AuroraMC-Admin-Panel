@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html style="height: 100%">
 <head>
     <meta charset="utf-8">
-    <title>Home | AuroraMC Network Rules Committee | Admin Panel</title>
+    <title>AuroraMC Leadership Panel | The AuroraMC Network</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -15,34 +15,62 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/mainpage.css">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-color: #23272A;color:white">
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="http://rules.auroramc.block2block.me/">AuroraMC Rules Committee - Admin Panel</a>
-
-    <ul class="nav navbar-nav">
-        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="chat">Chat Rules</a></li>
-        <li class="nav-item"><a class="nav-link" href="game">Game Rules</a></li>
-        <li class="nav-item"><a class="nav-link" href="misc">Misc Rules</a></li>
-        <li class="nav-item"><a class="nav-link" href="archive">Archived Rules</a></li>
-    </ul>
-</nav>
-
-<div class="container-fluid">
+<body style="height: 100%;text-align: center">
+<div class="container-fluid" style="width: 100%">
     <div class="row">
-        <div class="col-sm-2"></div> <!-- Gap at left side of form -->
-        <div class="col-sm-8 col-xs-12">
-            <br>
-            <h1><Strong>AuroraMC Network Rules Committee Admin Panel</Strong></h1>
-            <br>
-            <legend style="font-family: 'Helvetica';">Welcome!</legend>
-            <hr>
-            <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Rules Committee Admin Panel! Here, you can see all active rules that appear in the Punishment GUI. You can modify, rename, archive and create rules using this Web GUI.</p>
+        <div class="col" style="background-image: url('img/rules.png')">
+            <a href="/rules/">
+                <div class="rules">
+                    <div class="overlay-rules">
+                        <div class="text">Rules</div>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="col-sm-2"></div> <!-- Gap at right side of form -->
+        <div class="col" style="background-image: url('img/punishments.png')">
+            <a href="/rules">
+                <div class="punishments">
+                    <div class="image">
+                        <div class="overlay-punishments">
+                            <div class="text">Punishments</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col" style="background-image: url('img/blacklist.png')">
+            <a href="/rules">
+                <div class="blacklist">
+                    <div class="image">
+                        <div class="overlay-blacklist">
+                            <div class="text">Username Blacklist</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col" style="background-image: url('img/filter.png')">
+            <a href="/rules">
+                <div class="filter">
+                    <div class="image">
+                        <div class="overlay-filter">
+                            <div class="text">Chat Filter</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
 </body>
+
 </html>

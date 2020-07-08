@@ -1,6 +1,6 @@
 <?php
 
-include_once '../database/db-connect.php';
+include_once '../../database/db-connect.php';
 
 if(isset($_POST['editnameid'])) {
     $id = filter_input(INPUT_POST, 'editnameid', FILTER_SANITIZE_NUMBER_INT);

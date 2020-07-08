@@ -18,22 +18,43 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="js/rules.js"></script>
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 
 <body style="background-color: #23272A;color:white">
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="http://rules.auroramc.block2block.me/">AuroraMC Rules Committee - Admin Panel</a>
-
-    <ul class="nav navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="chat">Chat Rules</a></li>
-        <li class="nav-item"><a class="nav-link" href="game">Game Rules</a></li>
-        <li class="nav-item"><a class="nav-link" href="misc">Misc Rules</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#">Archived Rules</a></li>
-    </ul>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
+        <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link" href="chat">Chat Rules</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="game">Game Rules</a>
+            </li>
+        </ul>
+    </div>
+    <div class="mx-auto my-2 order-0 order-md-1 position-relative">
+        <a class="mx-auto" href="/rules/">
+            <img src="img/logo.png" height="100px" width="100px"
+                 style="margin-top:60px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
+        <ul class="navbar-nav mr-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link" href="misc">Misc Rules</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Archived Rules</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding-top: 40px">
     <div class="row">
         <div class="col-sm-2"></div> <!-- Gap at left side of form -->
         <div class="col-sm-8 col-xs-12">
@@ -55,7 +76,7 @@
                 </thead>
                 <tbody id="table-values">
                 <?php
-                include_once "database/db-connect.php";
+                include_once "../database/db-connect.php";
                 $weights = array("<p style='color:#00AA00'><Strong>Light</Strong></p>", "<p style='color:#55FF55'><Strong>Medium</Strong></p>","<p style='color:#FFFF55'><Strong>Heavy</Strong></p>","<p style='color:#FFAA00'><Strong>Severe</Strong></p>","<p style='color:#AA0000'><Strong>Extreme</Strong></p>");
                 $types = array("<p style='color:#00AA00'><Strong>Chat</Strong></p>", "<p style='color:#55FF55'><Strong>Game</Strong></p>","<p style='color:#FFFF55'><Strong>Misc</Strong></p>");
                 $requires_warnings = array("<Strong>No</Strong>","<Strong>Yes</Strong>");
