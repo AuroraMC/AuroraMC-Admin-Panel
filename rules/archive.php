@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="js/rules.js"></script>
     <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="icon"
+          type="image/png"
+          href="../img/logo.png">
 </head>
 
 <body style="background-color: #23272A;color:white">
@@ -35,7 +39,7 @@
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
         <a class="mx-auto" href="/rules/">
-            <img src="img/logo.png" height="100px" width="100px"
+            <img src="../img/logo.png" height="100px" width="100px"
                  style="margin-top:60px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
