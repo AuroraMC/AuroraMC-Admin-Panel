@@ -2,10 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Misc Rules | AuroraMC Network Rules Committee | Admin Panel</title>
+    <title>Misc Rules | Rules Committee Panel | The AuroraMC Network</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -15,6 +18,10 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="js/rules.js"></script>
@@ -48,8 +55,8 @@
     </div>
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
         <ul class="navbar-nav mr-auto text-center">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Misc Rules</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Misc Rules</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="archive">Archived Rules</a>
@@ -81,8 +88,8 @@
                 <tbody id="table-values">
                 <?php
                 include_once "../database/db-connect.php";
-                $weights = array("<p style='color:#00AA00'><Strong>Light</Strong></p>", "<p style='color:#55FF55'><Strong>Medium</Strong></p>","<p style='color:#FFFF55'><Strong>Heavy</Strong></p>","<p style='color:#FFAA00'><Strong>Severe</Strong></p>","<p style='color:#AA0000'><Strong>Extreme</Strong></p>");
-                $requires_warnings = array("<Strong>No</Strong>","<Strong>Yes</Strong>");
+                $weights = array("<Strong style='color:#00AA00;font-weight: bold'>Light</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Medium</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Heavy</Strong>", "<Strong style='font-weight: bold;color:#FFAA00'>Severe</Strong>", "<Strong style='font-weight: bold;color:#AA0000'>Extreme</Strong>");
+                $requires_warnings = array("<Strong style='font-weight: bold'>No</Strong>","<Strong style='font-weight: bold'>Yes</Strong>");
 
                 if ($sql = $mysqli->prepare("SELECT * FROM rules WHERE type = 3 AND active = 1 ORDER BY weight ASC, rule_id ASC")) {
                     $sql->execute();    // Execute the prepared query.

@@ -41,7 +41,7 @@
             </a>
         </div>
         <div class="col" style="background-image: url('img/punishments.png')">
-            <a href="/rules">
+            <a href="/punishments/">
                 <div class="punishments">
                     <div class="image">
                         <div class="overlay-punishments">
@@ -52,7 +52,7 @@
             </a>
         </div>
         <div class="col" style="background-image: url('img/blacklist.png')">
-            <a href="/rules">
+            <a href="/blacklist/">
                 <div class="blacklist">
                     <div class="image">
                         <div class="overlay-blacklist">
@@ -63,7 +63,7 @@
             </a>
         </div>
         <div class="col" style="background-image: url('img/filter.png')">
-            <a href="/rules">
+            <a href="/filter/">
                 <div class="filter">
                     <div class="image">
                         <div class="overlay-filter">

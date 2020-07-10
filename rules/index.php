@@ -2,10 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Home | AuroraMC Network Rules Committee | Admin Panel</title>
+    <title>Home | Rules Committee Panel | The AuroraMC Network</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -15,6 +18,10 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
     <link rel="stylesheet" href="css/navbar.css">
 
@@ -36,7 +43,7 @@
         </ul>
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-        <a class="mx-auto" href="/rules/">
+        <a class="mx-auto" href="/">
             <img src="../img/logo.png" height="100px" width="100px"
                  style="margin-top:60px">
         </a>
