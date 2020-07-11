@@ -69,7 +69,7 @@ function cancelDesc(id) {
 
 function archive(id) {
     $.ajax({
-        url:"/rules/util/functions.php", //the page containing php script
+        url:"/rules/utils/functions.php", //the page containing php script
         type: "post", //request type,
         data: "archiveid=" + id,
         success:function(result){
@@ -86,7 +86,7 @@ function editName(id) {
     }
 
     $.ajax({
-        url:"/rules/util/functions.php", //the page containing php script
+        url:"/rules/utils/functions.php", //the page containing php script
         type: "post", //request type,
         data: "editnameid=" + id + "&name=" + newname,
         success:function(result){
@@ -112,7 +112,7 @@ function editDesc(id) {
     }
 
     $.ajax({
-        url:"/rules/util/functions.php", //the page containing php script
+        url:"/rules/utils/functions.php", //the page containing php script
         type: "post", //request type,
         data: "editdescid=" + id + "&desc=" + encodeURIComponent(newname),
         success:function(result){
@@ -153,7 +153,7 @@ function saveNew(type) {
     let requires_warning = document.getElementById("new-warning").value
 
     $.ajax({
-        url:"/rules/util/functions.php", //the page containing php script
+        url:"/rules/utils/functions.php", //the page containing php script
         type: "post", //request type,
         data: "newname=" + newname + "&desc=" + encodeURIComponent(newdesc) + "&weight=" + weight + "&type=" + type + "&warning=" + requires_warning,
         success:function(result){
@@ -188,7 +188,7 @@ function saveNew(type) {
 
 function toggleWarning(id) {
     $.ajax({
-        url:"/rules/util/functions.php", //the page containing php script
+        url:"/rules/utils/functions.php", //the page containing php script
         type: "post", //request type,
         data: "togglewarning=" + id,
         success:function(result){
