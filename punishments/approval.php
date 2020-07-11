@@ -103,7 +103,7 @@
         </ul>
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-        <a class="mx-auto" href="/">
+        <a class="mx-auto" href="/punishments/">
             <img src="../img/logo.png" height="100px" width="100px"
                  style="margin-top:60px">
         </a>
