@@ -5,7 +5,7 @@ include_once '../../database/db-connect.php';
 if(isset($_POST['editnameid'])) {
     $id = filter_input(INPUT_POST, 'editnameid', FILTER_SANITIZE_NUMBER_INT);
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-    $name = urldecode($name);
+    $name = utf8_decode($name);
 
     if ($sql = $mysqli->prepare("UPDATE rules SET name = ? WHERE rule_id = ?")) {
         $sql->bind_param('si', $name, $id);
@@ -18,7 +18,7 @@ if(isset($_POST['editnameid'])) {
 if(isset($_POST['editdescid'])) {
     $id = filter_input(INPUT_POST, 'editdescid', FILTER_SANITIZE_NUMBER_INT);
     $name = filter_input(INPUT_POST, 'desc', FILTER_SANITIZE_STRING);
-    $name = urldecode($name);
+    $name = utf8_decode($name);
 
     if ($sql = $mysqli->prepare("UPDATE rules SET description = ? WHERE rule_id = ?")) {
         $sql->bind_param('si', $name, $id);
@@ -41,10 +41,10 @@ if(isset($_POST['archiveid'])) {
 
 if(isset($_POST['newname'])) {
     $name = filter_input(INPUT_POST, 'newname', FILTER_SANITIZE_STRING);
-    $name = urldecode($name);
+    $name = utf8_decode($name);
     $name = str_replace("&#39;", "'", $name);
     $desc = filter_input(INPUT_POST, 'desc', FILTER_SANITIZE_STRING, array('flags' => FILTER_FLAG_ENCODE_AMP));
-    $desc = urldecode($desc);
+    $desc = utf8_decode($desc);
     $desc= str_replace("&#39;", "'", $desc);
 
     $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT);

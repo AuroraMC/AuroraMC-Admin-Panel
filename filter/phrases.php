@@ -163,7 +163,7 @@
                                         echo '
                                                    <tr id="', $result, '">
                                                     <td>', $result, '</td>
-                                                    <td><button type="button" class="btn btn-danger" onclick="removeWord(\'', $result, '\', \'phrase\')"><i class="fas fa-trash-alt"></i> Remove</button></td></tr>';
+                                                    <td><button type="button" class="btn btn-danger" onclick=\'removeWord("', utf8_encode($result), '", "phrase")\'><i class="fas fa-trash-alt"></i> Remove</button></td></tr>';
                             }
                             echo '</tbody>
                                         </table>   

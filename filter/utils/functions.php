@@ -54,13 +54,13 @@ if (isset($_POST['addphrase'])) {
 
 if (isset($_POST['removereplacement'])) {
     $name = filter_input(INPUT_POST, 'removereplacement', FILTER_SANITIZE_STRING);
-    if ($redis->sIsMember("filter.replacements", strtolower($name))) {
-        $redis->sRem("filter.replacements", strtolower($name));
+    if ($redis->sIsMember("filter.replacements", utf8_decode($name))) {
+        $redis->sRem("filter.replacements", utf8_decode($name));
     }
 }
 if (isset($_POST['addreplacement'])) {
     $name = filter_input(INPUT_POST, 'addreplacement', FILTER_SANITIZE_STRING);
-    if (!$redis->sIsMember("filter.replacements", strtolower($name))) {
-        $redis->sAdd("filter.replacements", strtolower($name));
+    if (!$redis->sIsMember("filter.replacements", utf8_decode($name))) {
+        $redis->sAdd("filter.replacements", utf8_decode($name));
     }
 }
