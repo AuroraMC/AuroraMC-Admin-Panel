@@ -13,7 +13,7 @@ function addWord(form, word, type, textbox) {
     $.ajax({
         url:'/filter/utils/functions.php',
         type: 'post',
-        data: "add" + type + "=" + word,
+        data: "add" + type + "=" + encodeURIComponent(word),
         success: function(result) {
             textbox.value = "";
         }
