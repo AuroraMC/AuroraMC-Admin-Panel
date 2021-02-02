@@ -10,6 +10,9 @@ function addWord(form, word, type, textbox) {
             return false;
         }
     }
+    if (word === "") {
+        return;
+    }
     $.ajax({
         url:'/filter/utils/functions.php',
         type: 'post',
