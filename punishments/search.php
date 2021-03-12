@@ -314,7 +314,7 @@ function format_uuid($uuid) {
                                                     <tr><td><strong style="font-weight: bold">Issued at:</strong> ', date('l jS F Y G:i:s T', intval($issued) / 1000), '</td></tr>
                                                     <tr><td><strong style="font-weight: bold">Length:</strong> ', (($expire == -1) ? 'Permanent' : (((intval($expire) - intval($issued)) / 3600000 >= 24) ? ((intval($expire) - intval($issued)) / 86400000) . ' days' : ((intval($expire) - intval($issued)) / 3600000) . ' hours')), '</td></tr>
                                                     <tr><td><strong style="font-weight: bold;">Issued by:</strong> ', $punisher_name, '<img style="height:50px" src="https://crafatar.com/renders/head/', $punisher_uuid, '?helm=true"></td></tr>
-                                                    <tr><td><strong style="font-weight: bold;">Evidence:</strong> ', (($evidence != null)?"<a href='" . $evidence . "' style='color: white'>CLICK HERE</a>":"N/A"), '</td></tr>';
+                                                    <tr><td><strong style="font-weight: bold;">Evidence:</strong> ', (($evidence != null)?"<a href='" . ((strpos($evidence, "http://") === 0 || strpos($evidence, "https://") === 0)?"":"http://") . $evidence . "' style='color: white'>CLICK HERE</a>":"N/A"), '</td></tr>';
                                 if ($removal_reason != null) {
                                     echo '<tr><td><strong style="font-weight: bold">Removal Reason:</strong> ', $removal_reason, '</td></tr>
                                                       <tr><td><strong style="font-weight: bold">Removed at:</strong> ', date('l jS F Y G:i:s T', intval($removal_timestamp) / 1000), '</td></tr>
