@@ -1,98 +1,73 @@
-<!doctype html>
-<html style="height: 100%">
+<!-- Proudly coded by Billy (https://bybilly.uk) -->
+<!-- Version: 1.9.2 -->
+
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
+    <!-- Info meta tags, important for social media + SEO -->
     <title>AuroraMC Leadership Panel | The AuroraMC Network</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="css/mainpage.css">
-
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="icon"
           type="image/png"
           href="img/logo.png">
 </head>
+<body>
+<div class="container">
+    <div class="logo">
+        <!-- In the img folder, upload your logo -->
+        <!-- Make sure you name it 'logo.png' or update the code below -->
+        <img src="img/logo.png" alt="AuroraMC logo">
+    </div>
 
-<body style="height: 100%;text-align: center">
-<div class="container-fluid" style="width: 100%">
-    <div class="row">
-        <div class="col" style="background-image: url('img/rules.png')">
-            <a href="/rules/">
-                <div class="rules">
-                    <div class="overlay-rules">
-                        <div class="text"><i class="fas fa-book-open"></i><br>Rules</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col" style="background-image: url('img/punishments.png')">
-            <a href="/punishments/">
-                <div class="punishments">
-                    <div class="image">
-                        <div class="overlay-punishments">
-                            <div class="text"><i class="fas fa-gavel"></i><br>Punishments</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col" style="background-image: url('img/blacklist.png')">
-            <a href="/blacklist/">
-                <div class="blacklist">
-                    <div class="image">
-                        <div class="overlay-blacklist">
-                            <div class="text"><i class="fas fa-ban"></i><br>Username Blacklist</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col" style="background-image: url('img/filter.png')">
-            <a href="/filter/">
-                <div class="filter">
-                    <div class="image">
-                        <div class="overlay-filter">
-                            <div class="text"><i class="fas fa-align-left"></i><br>Chat Filter</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col" style="background-image: url('img/mission-control.png')">
-            <a href="/mission-control/">
-                <div class="mission-control">
-                    <div class="overlay-mission-control">
-                        <div class="text"><i class="fas fa-rocket"></i><br>Mission Control</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="overlay-text">
-            <img src="img/admin-panel.png">
-        </div>
-        <div class="overlay-logo">
-            <img src="img/logo.png">
-        </div>
+    <div class="items">
+        <a href="/rules/" class="item rules">
+            <div>
+                <img src="img/rules.png" alt="Rules icon" class="img">
+                <p class="subtitle">Manage the</p>
+                <p class="title">Rules</p>
+            </div>
+        </a>
+
+        <a href="/punishments/" class="item punishments">
+            <div>
+                <img src="img/punishments.png" alt="Punishments icon" class="img">
+                <p class="subtitle">View player</p>
+                <p class="title">Punishments</p>
+            </div>
+        </a>
+
+        <a href="/blacklist/" class="item blacklist">
+            <div>
+                <img src="img/blacklist.png" alt="Blacklist icon" class="img">
+                <p class="subtitle">View our</p>
+                <p class="title">Name Blacklist</p>
+            </div>
+        </a>
+
+        <a href="/filter/" class="item filter">
+            <div>
+                <img src="img/filter.png" alt="Filter icon" class="img">
+                <p class="subtitle">View our</p>
+                <p class="title">Chat Filter</p>
+            </div>
+        </a>
+
+        <a href="/mission-control/" class="item mission-control">
+            <div>
+                <img src="img/mission-control.png" alt="Mission Control icon" class="img">
+                <p class="subtitle">Access</p>
+                <p class="title">Mission Control</p>
+            </div>
+        </a>
+
     </div>
 </div>
-</body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/firefly.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+</body>
 </html>
