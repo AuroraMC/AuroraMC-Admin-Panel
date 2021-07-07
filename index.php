@@ -23,6 +23,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
     <link rel="icon"
           type="image/png"
           href="img/logo.png">
@@ -35,7 +38,7 @@
             <a href="/rules/">
                 <div class="rules">
                     <div class="overlay-rules">
-                        <div class="text">Rules</div>
+                        <div class="text"><i class="fas fa-book-open"></i><br>Rules</div>
                     </div>
                 </div>
             </a>
@@ -45,7 +48,7 @@
                 <div class="punishments">
                     <div class="image">
                         <div class="overlay-punishments">
-                            <div class="text">Punishments</div>
+                            <div class="text"><i class="fas fa-gavel"></i><br>Punishments</div>
                         </div>
                     </div>
                 </div>
@@ -56,7 +59,7 @@
                 <div class="blacklist">
                     <div class="image">
                         <div class="overlay-blacklist">
-                            <div class="text">Username Blacklist</div>
+                            <div class="text"><i class="fas fa-ban"></i><br>Username Blacklist</div>
                         </div>
                     </div>
                 </div>
@@ -67,11 +70,26 @@
                 <div class="filter">
                     <div class="image">
                         <div class="overlay-filter">
-                            <div class="text">Chat Filter</div>
+                            <div class="text"><i class="fas fa-align-left"></i><br>Chat Filter</div>
                         </div>
                     </div>
                 </div>
             </a>
+        </div>
+        <div class="col" style="background-image: url('img/mission-control.png')">
+            <a href="/mission-control/">
+                <div class="mission-control">
+                    <div class="overlay-mission-control">
+                        <div class="text"><i class="fas fa-rocket"></i><br>Mission Control</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="overlay-text">
+            <img src="img/admin-panel.png">
+        </div>
+        <div class="overlay-logo">
+            <img src="img/logo.png">
         </div>
     </div>
 </div>
