@@ -1,0 +1,28 @@
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+<Files ".htpasswd">
+    Order allow,deny
+    Deny from all
+</Files>
+
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# Disable directory browsing 
+Options -Indexes
+# Hide the contents of directories
+IndexIgnore *
+
+AuthType Basic
+AuthName "Password Required"
+Require valid-user
+AuthUserFile "/var/www/rules/.htpasswd"
