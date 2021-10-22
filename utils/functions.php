@@ -25,9 +25,9 @@ function sec_session_start() {
     session_regenerate_id();    // regenerated the session, delete the old one.
 }
 
-function login($username, $password, $mysqli) {
+function login($username, $password, $code, $mysqli, $redis) {
     // Using prepared statements means that SQL injection is not possible.
-    if ($sql = $mysqli->prepare("SELECT id, username, password
+    if ($sql = $mysqli->prepare("SELECT id, username, password, uuid
         FROM `accounts`
        WHERE username = ?
         LIMIT 1")) {
@@ -38,9 +38,10 @@ function login($username, $password, $mysqli) {
         $user_id = null;
         $username = null;
         $db_password = null;
+        $uuid = null;
 
         // get variables from result.
-        $sql->bind_result($user_id, $username, $db_password);
+        $sql->bind_result($user_id, $username, $db_password, $uuid);
         $sql->fetch();
 
         if ($sql->num_rows == 1) {
@@ -55,6 +56,17 @@ function login($username, $password, $mysqli) {
                 // the password the user submitted.
                 if (password_verify($password, $db_password)) {
                     // Password is correct!
+                    //Check the verification code.
+                    $dbCode = $redis->get("panel.code." . $uuid);
+                    if ($dbCode) {
+                        if ($code != $dbCode) {
+                            return false;
+                        }
+                    } else {
+                        return false;
+                    }
+
+
                     // Get the user-agent string of the user.
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
 
@@ -127,7 +139,7 @@ function login_check($mysqli) {
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
 
-        if ($sql = $mysqli->prepare("SELECT password 
+        if ($sql = $mysqli->prepare("SELECT password, account_type 
                                       FROM `accounts` 
                                       WHERE id = ? LIMIT 1")) {
             // Bind "$user_id" to parameter.
@@ -136,17 +148,18 @@ function login_check($mysqli) {
             $sql->store_result();
 
             $password = null;
+            $account_type = null;
 
             if ($sql->num_rows == 1) {
                 // If the user exists get variables from result.
-                $sql->bind_result($password);
+                $sql->bind_result($password, $account_type);
                 $sql->fetch();
                 $login_check = hash('sha512', $password . $user_browser);
 
 
                 if (hash_equals($login_check, $login_string) ){
                     // Logged In!!!!
-                    return true;
+                    return $account_type;
                 } else {
                     // Not logged in
                     return false;

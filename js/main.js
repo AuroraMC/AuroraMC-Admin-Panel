@@ -29,10 +29,9 @@ if (doParticles) {
     });
 }
 
-function formhash(form, username, password) {
+function formhash(form, username, password, code) {
     // Create a new element input, this will be our hashed password field.
-    if (username.value === '' || password === '') {
-        document.getElementById("alerts").innerHTML = "<div class='alert alert-warning alert-dismissible fade in'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>WARNING!</strong> Please make sure you fill out all of the fields!</div>";
+    if (username.value === '' || password === '' || code.value === '') {
         return false;
     }
     var p = document.createElement("input");
