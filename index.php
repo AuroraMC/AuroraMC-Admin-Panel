@@ -1,6 +1,16 @@
 <!-- Proudly coded by Billy (https://bybilly.uk) -->
 <!-- Version: 1.9.2 -->
 
+<?php
+include_once "database/db-connect.php";
+include_once "utils/functions.php";
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../login");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

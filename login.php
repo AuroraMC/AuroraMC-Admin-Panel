@@ -1,6 +1,12 @@
 <!-- Proudly coded by Billy (https://bybilly.uk) -->
 <!-- Version: 1.9.2 -->
-
+<?php
+include_once "database/db-connect.php";
+include_once "utils/functions.php";
+if (login_check($mysqli)) {
+    header("Location: ../");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,9 +57,10 @@
                         <fieldset>
                             <input type='text' name='username' id='username' placeholder="Username" class="form-control" /><br>
                             <input type="password" name="password" id="password" placeholder="Password" class="form-control"/><br>
+                            <input type="text" name="code" id="code" placeholder="Verification Code" class="form-control"/><br>
                         </fieldset>
                     </div>
-                    <button type="button" class="btn btn-default" form="login_form" onclick="formhash(this.form, this.form.username, this.form.password);">Login</button></div></div>
+                    <button type="button" class="btn btn-default" form="login_form" onclick="formhash(this.form, this.form.username, this.form.password, this.form.code);">Login</button></div></div>
                 </form>
             </div>
         </div>
@@ -63,5 +70,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/firefly.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
+<script src="js/sha512.js" type="text/javascript"></script>
 </body>
 </html>
