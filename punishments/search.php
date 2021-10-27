@@ -97,6 +97,17 @@ function format_uuid($uuid) {
     }
     return false;
 }
+
+include_once '../database/db-connect.php';
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC" && $account_type != "APPEALS" && $account_type != "STAFF" && $account_type != "QA") {
+    header("Location: ../../login");
+}
 ?>
 
 <!doctype html>

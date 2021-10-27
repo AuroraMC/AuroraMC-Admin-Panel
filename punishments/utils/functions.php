@@ -1,6 +1,15 @@
 <?php
 include_once '../../database/db-connect.php';
 
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC" && $account_type != "APPEALS" && $account_type != "STAFF" && $account_type != "QA") {
+    header("Location: ../../login");
+}
+
 if (isset($_POST['remove']) and isset($_POST['reason']) and isset($_POST['type']) and isset($_POST['uuid']) and isset($_POST['status'])) {
     $id = filter_input(INPUT_POST, 'remove', FILTER_SANITIZE_STRING);
     $reason = filter_input(INPUT_POST, 'reason', FILTER_SANITIZE_STRING);

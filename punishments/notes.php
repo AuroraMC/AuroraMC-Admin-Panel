@@ -97,6 +97,18 @@ function format_uuid($uuid) {
     }
     return false;
 }
+
+include_once '../database/db-connect.php';
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC" && $account_type != "APPEALS" && $account_type != "STAFF" && $account_type != "QA") {
+    header("Location: ../../login");
+}
+
 ?>
 
 <!doctype html>
@@ -235,31 +247,32 @@ function format_uuid($uuid) {
                        aria-label="Search" name="user" style="color: white;" id="user">
             </form>
             <?php
-            $weights = array("<Strong style='color:#00AA00;font-weight: bold'>Light</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Medium</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Heavy</Strong>", "<Strong style='font-weight: bold;color:#FFAA00'>Severe</Strong>", "<Strong style='font-weight: bold;color:#AA0000'>Extreme</Strong>");
-            $types = array("<Strong style='color:#00AA00;font-weight: bold'>Chat</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Game</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Misc</Strong>");
-            if (isset($_GET['user'])):
-                include_once "../database/db-connect.php";
-                $raw_name = filter_input(INPUT_GET, 'user', FILTER_SANITIZE_STRING);
-                $uuid = username_to_uuid($raw_name);
-                if (!$uuid) {
-                    echo "<p style=\"text-align: center;padding-top: 20px;font:inherit\">That user does not exist.</p>";
-                } else {
-                    $part1 = substr($uuid, 0, 8);
-                    $part2 = substr($uuid, 8, 4);
-                    $part3 = substr($uuid, 12, 4);
-                    $part4 = substr($uuid, 16, 4);
-                    $part5 = substr($uuid, 20, 12);
-                    $user = $part1 . "-" . $part2 . "-" . $part3 . "-" . $part4 . "-" . $part5;
-                    if ($sql = $mysqli->prepare("SELECT admin_notes.note_id,admin_notes.user_id,auroramc_players.name,auroramc_players.uuid,admin_notes.added_by,admin_notes.timestamp,admin_notes.note FROM admin_notes INNER JOIN auroramc_players ON auroramc_players.id=admin_notes.user_id WHERE (user_id = (SELECT id FROM auroramc_players WHERE uuid = ?)) ORDER BY timestamp DESC")) {
-                        $sql->bind_param('s', $user);
-                        $sql->execute();    // Execute the prepared query.
-                        $result2 = $sql->get_result();
-                        $numRows = $result2->num_rows;
-                        $results = $result2->fetch_all(MYSQLI_ASSOC);
-                        $result2->free_result();
-                        $sql->free_result();
-                        if ($numRows > 0) {
-                            echo '<div class="container">
+            if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "RC") {
+                $weights = array("<Strong style='color:#00AA00;font-weight: bold'>Light</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Medium</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Heavy</Strong>", "<Strong style='font-weight: bold;color:#FFAA00'>Severe</Strong>", "<Strong style='font-weight: bold;color:#AA0000'>Extreme</Strong>");
+                $types = array("<Strong style='color:#00AA00;font-weight: bold'>Chat</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Game</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Misc</Strong>");
+                if (isset($_GET['user'])):
+                    include_once "../database/db-connect.php";
+                    $raw_name = filter_input(INPUT_GET, 'user', FILTER_SANITIZE_STRING);
+                    $uuid = username_to_uuid($raw_name);
+                    if (!$uuid) {
+                        echo "<p style=\"text-align: center;padding-top: 20px;font:inherit\">That user does not exist.</p>";
+                    } else {
+                        $part1 = substr($uuid, 0, 8);
+                        $part2 = substr($uuid, 8, 4);
+                        $part3 = substr($uuid, 12, 4);
+                        $part4 = substr($uuid, 16, 4);
+                        $part5 = substr($uuid, 20, 12);
+                        $user = $part1 . "-" . $part2 . "-" . $part3 . "-" . $part4 . "-" . $part5;
+                        if ($sql = $mysqli->prepare("SELECT admin_notes.note_id,admin_notes.user_id,auroramc_players.name,auroramc_players.uuid,admin_notes.added_by,admin_notes.timestamp,admin_notes.note FROM admin_notes INNER JOIN auroramc_players ON auroramc_players.id=admin_notes.user_id WHERE (user_id = (SELECT id FROM auroramc_players WHERE uuid = ?)) ORDER BY timestamp DESC")) {
+                            $sql->bind_param('s', $user);
+                            $sql->execute();    // Execute the prepared query.
+                            $result2 = $sql->get_result();
+                            $numRows = $result2->num_rows;
+                            $results = $result2->fetch_all(MYSQLI_ASSOC);
+                            $result2->free_result();
+                            $sql->free_result();
+                            if ($numRows > 0) {
+                                echo '<div class="container">
                                 <div class="row">
                                     <h1 style="text-align: center;margin-right: auto;margin-left: auto">', $raw_name,'\'s Admin Notes </h1 >
                                 </div>
@@ -276,7 +289,7 @@ function format_uuid($uuid) {
                                                 </tr>
                                             </thead>
                                             <tbody id="table-values" style="color: white">';
-                            foreach ($results as $result) {
+                                foreach ($results as $result) {
                                     if ($sql3 = $mysqli->prepare("SELECT name,uuid FROM auroramc_players WHERE id = ?")) {
                                         $sql3->bind_param('i', $result['added_by']);
                                         $sql3->execute();    // Execute the prepared query.
@@ -298,21 +311,25 @@ function format_uuid($uuid) {
                                     } else {
                                         echo '<p style="text-align: center;padding-top: 20px;font:inherit">That user was not found.</p>';
                                     }
-                            }
-                            echo '</tbody>
+                                }
+                                echo '</tbody>
                                         </table>   
                                         </div>
                                     </div>
                             </div>';
-                        } else {
-                            echo "<p style=\"text-align: center;padding-top: 20px;font:inherit\">That user either doesn't have any notes or has never joined the network.</p>";
-                        }
+                            } else {
+                                echo "<p style=\"text-align: center;padding-top: 20px;font:inherit\">That user either doesn't have any notes or has never joined the network.</p>";
+                            }
 
-                    } else {
-                        echo "There has been an error connecting to the database. Please try again. 1";
+                        } else {
+                            echo "There has been an error connecting to the database. Please try again. 1";
+                        }
                     }
-                }
-            endif; ?>
+                endif;
+            } else {
+                echo "<p style=\"text-align: center;padding-top: 20px;font:inherit\">You do not have permission to access this page.</p>";
+            }
+             ?>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>

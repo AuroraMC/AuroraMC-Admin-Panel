@@ -1,5 +1,18 @@
 <?php
 include_once '../../database/db-connect.php';
+
+include_once "../../utils/functions.php";
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV" && $account_type != "RC" && $account_type != "QA") {
+    header("Location: ../../../login");
+}
+
+
 if (isset($_POST['removecore'])) {
     $name = filter_input(INPUT_POST, 'removecore', FILTER_SANITIZE_STRING);
     if ($redis->sIsMember("filter.core", strtolower($name))) {
