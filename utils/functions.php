@@ -17,7 +17,7 @@ function sec_session_start() {
 
     // Gets current cookies parameters.
     $cookieParams = session_get_cookie_params();
-    session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
+    session_set_cookie_params(time() + (60*60*24*7), $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
 
     // Sets the session name to the one set above.
     session_name($session_name);
