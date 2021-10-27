@@ -3,6 +3,8 @@
 <?php
 include_once "database/db-connect.php";
 include_once "utils/functions.php";
+
+sec_session_start();
 if (login_check($mysqli)) {
     header("Location: ../");
 }
