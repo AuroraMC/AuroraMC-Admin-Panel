@@ -1,3 +1,16 @@
+<?php
+include_once '../database/db-connect.php';
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC" && $account_type != "APPEALS" && $account_type != "STAFF" && $account_type != "QA") {
+    header("Location: ../../login");
+}
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -82,8 +95,6 @@
                         <legend style="font-family: 'Helvetica';">All-Time Punishment Statistics</legend>
                         <hr>
                         <?php
-                        include_once '../database/db-connect.php';
-
                         if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments")) {
                             $sql->execute();
                             $results2 = $sql->get_result();

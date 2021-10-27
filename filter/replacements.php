@@ -1,3 +1,17 @@
+<?php
+include_once "../database/db-connect.php";
+include_once "../utils/functions.php";
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV" && $account_type != "RC" && $account_type != "QA") {
+    header("Location: ../../login");
+}
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -140,7 +154,6 @@
                        aria-label="Search" name="replacement" style="color: white;" id="replacement">
             </form>
             <?php
-            include_once "../database/db-connect.php";
 
                             $results = $redis->sMembers("filter.replacements");
 

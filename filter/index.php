@@ -1,3 +1,17 @@
+<?php
+include_once "../database/db-connect.php";
+include_once "../utils/functions.php";
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV" && $account_type != "RC" && $account_type != "QA") {
+    header("Location: ../../login");
+}
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -83,23 +97,18 @@
             <legend style="font-family: 'Helvetica';">Filter Statistics</legend>
             <hr>
             <p><strong style="font-weight: bold">Number of core words:</strong> <?php
-                include_once '../database/db-connect.php';
                 echo count($redis->sMembers("filter.core"));
                 ?></p>
             <p><strong style="font-weight: bold">Number of blacklisted words:</strong> <?php
-                include_once '../database/db-connect.php';
                 echo count($redis->sMembers("filter.blacklist"));
                 ?></p>
             <p><strong style="font-weight: bold">Number of whitelisted words:</strong> <?php
-                include_once '../database/db-connect.php';
                 echo count($redis->sMembers("filter.whitelist"));
                 ?></p>
             <p><strong style="font-weight: bold">Number of banned phrases:</strong> <?php
-                include_once '../database/db-connect.php';
                 echo count($redis->sMembers("filter.phrases"));
                 ?></p>
             <p><strong style="font-weight: bold">Number of toxic replacements:</strong> <?php
-                include_once '../database/db-connect.php';
                 echo count($redis->sMembers("filter.replacements"));
                 ?></p>
         </div>

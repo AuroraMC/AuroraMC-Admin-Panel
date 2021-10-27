@@ -1,3 +1,15 @@
+<?php
+include_once '../database/db-connect.php';
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC") {
+    header("Location: ../../login");
+}
+?>
 <!doctype html>
 <html>
 <head>

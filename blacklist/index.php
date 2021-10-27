@@ -1,3 +1,17 @@
+<?php
+include_once "../database/db-connect.php";
+include_once "../utils/functions.php";
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC" && $account_type != "APPEALS" && $account_type != "QA") {
+    header("Location: ../../login");
+}
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -71,7 +85,6 @@
             <legend style="font-family: 'Helvetica';">Blacklist Statistics</legend>
             <hr>
             <p><strong style="font-weight: bold">Number of blacklisted names:</strong> <?php
-                include_once '../database/db-connect.php';
                 $names = $redis->sMembers("usernamebans");
                 echo count($names);
                 ?></p>

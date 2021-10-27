@@ -33,6 +33,7 @@ if (!$account_type) {
     </div>
 
     <div class="items">
+        <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "RC" || $account_type == "SR_DEV") :?>
         <a href="/rules/" class="item rules">
             <div>
                 <img src="img/rules.png" alt="Rules icon" class="img">
@@ -40,7 +41,8 @@ if (!$account_type) {
                 <p class="title">Rules</p>
             </div>
         </a>
-
+        <?php endif; ?>
+        <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "RC" || $account_type == "APPEALS" || $account_type == "STAFF" || $account_type == "QA") :?>
         <a href="/punishments/" class="item punishments">
             <div>
                 <img src="img/punishments.png" alt="Punishments icon" class="img">
@@ -48,7 +50,8 @@ if (!$account_type) {
                 <p class="title">Punishments</p>
             </div>
         </a>
-
+        <?php endif; ?>
+        <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "RC" || $account_type == "APPEALS" || $account_type == "QA") :?>
         <a href="/blacklist/" class="item blacklist">
             <div>
                 <img src="img/blacklist.png" alt="Blacklist icon" class="img">
@@ -56,7 +59,8 @@ if (!$account_type) {
                 <p class="title">Name Blacklist</p>
             </div>
         </a>
-
+        <?php endif; ?>
+        <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "DEV" || $account_type == "RC" || $account_type == "QA") :?>
         <a href="/filter/" class="item filter">
             <div>
                 <img src="img/filter.png" alt="Filter icon" class="img">
@@ -64,7 +68,8 @@ if (!$account_type) {
                 <p class="title">Chat Filter</p>
             </div>
         </a>
-
+        <?php endif; ?>
+        <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "DEV") :?>
         <a href="/mission-control/" class="item mission-control">
             <div>
                 <img src="img/mission-control.png" alt="Mission Control icon" class="img">
@@ -72,7 +77,8 @@ if (!$account_type) {
                 <p class="title">Mission Control</p>
             </div>
         </a>
-
+        <?php endif; ?>
+        <?php if ($account_type == "OWNER") :?>
         <a href="http://auroramc.block2block.me/" class="item mission-control">
             <div>
                 <img src="img/mysql.png" alt="MySQL icon" class="img">
@@ -80,7 +86,7 @@ if (!$account_type) {
                 <p class="title">phpMyAdmin</p>
             </div>
         </a>
-
+        <?php endif; ?>
     </div>
 </div>
 
