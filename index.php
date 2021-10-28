@@ -136,8 +136,8 @@ if (!$account_type) {
                 <a href="https://store.auroramc.net/control-panel/login" class="item mission-control">
                     <div>
                         <img src="img/donationstore.png" alt="DonationStore icon" class="img">
-                        <p class="subtitle">Access</p>
-                        <p class="title">DonationStore Backend</p>
+                        <p class="subtitle">Manage</p>
+                        <p class="title">DonationStore</p>
                     </div>
                 </a>
             <?php endif; ?>
@@ -146,8 +146,8 @@ if (!$account_type) {
                 <a href="https://manage.statuspage.io/pages/29hv5gfdnvyw/incidents" class="item mission-control">
                     <div>
                         <img src="img/statuspage.png" alt="StatusPage icon" class="img">
-                        <p class="subtitle">Access</p>
-                        <p class="title">StatusPage Backend</p>
+                        <p class="subtitle">Manage</p>
+                        <p class="title">StatusPage</p>
                     </div>
                 </a>
             <?php endif; ?>
