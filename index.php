@@ -90,47 +90,49 @@ if (!$account_type) {
             </a>
         <?php endif; ?>
     </div>
-    <div class="items">
-        <?php if ($account_type == "OWNER") :?>
-            <a href="https://panel.auroramc.block2block.me/" class="item">
-                <div>
-                    <img src="img/pterodactyl.png" alt="Pterodactyl icon" class="img">
-                    <p class="subtitle">Access</p>
-                    <p class="title">Pterodactyl</p>
-                </div>
-            </a>
-        <?php endif; ?>
+    <?php if ($account_type == "OWNER" || $account_type == "SR_DEV" || $account_type == "DEV"): ?>
+        <div class="items">
+            <?php if ($account_type == "OWNER") :?>
+                <a href="https://panel.auroramc.block2block.me/" class="item">
+                    <div>
+                        <img src="img/pterodactyl.png" alt="Pterodactyl icon" class="img">
+                        <p class="subtitle">Access</p>
+                        <p class="title">Pterodactyl</p>
+                    </div>
+                </a>
+            <?php endif; ?>
 
-        <?php if ($account_type == "OWNER" || $account_type == "SR_DEV" || $account_type == "DEV") :?>
-            <a href="https://ci.auroramc.block2block.me/" class="item">
-                <div>
-                    <img src="img/jenkins.png" alt="Jenkins icon" class="img">
-                    <p class="subtitle">Access</p>
-                    <p class="title">Jenkins</p>
-                </div>
-            </a>
-        <?php endif; ?>
+            <?php if ($account_type == "OWNER" || $account_type == "SR_DEV" || $account_type == "DEV") :?>
+                <a href="https://ci.auroramc.block2block.me/" class="item">
+                    <div>
+                        <img src="img/jenkins.png" alt="Jenkins icon" class="img">
+                        <p class="subtitle">Access</p>
+                        <p class="title">Jenkins</p>
+                    </div>
+                </a>
+            <?php endif; ?>
 
-        <?php if ($account_type == "OWNER" || $account_type == "SR_DEV" || $account_type == "DEV") :?>
-            <a href="https://bitbucket.block2block.me/" class="item">
-                <div>
-                    <img src="img/bitbucket.png" alt="BitBucket icon" class="img">
-                    <p class="subtitle">Access</p>
-                    <p class="title">BitBucket</p>
-                </div>
-            </a>
-        <?php endif; ?>
+            <?php if ($account_type == "OWNER" || $account_type == "SR_DEV" || $account_type == "DEV") :?>
+                <a href="https://bitbucket.block2block.me/" class="item">
+                    <div>
+                        <img src="img/bitbucket.png" alt="BitBucket icon" class="img">
+                        <p class="subtitle">Access</p>
+                        <p class="title">BitBucket</p>
+                    </div>
+                </a>
+            <?php endif; ?>
 
-        <?php if ($account_type == "OWNER") :?>
-            <a href="https://auroramc.block2block.me/" class="item mission-control">
-                <div>
-                    <img src="img/mysql.png" alt="MySQL icon" class="img">
-                    <p class="subtitle">Access</p>
-                    <p class="title">phpMyAdmin</p>
-                </div>
-            </a>
-        <?php endif; ?>
-    </div>
+            <?php if ($account_type == "OWNER") :?>
+                <a href="https://auroramc.block2block.me/" class="item mission-control">
+                    <div>
+                        <img src="img/mysql.png" alt="MySQL icon" class="img">
+                        <p class="subtitle">Access</p>
+                        <p class="title">phpMyAdmin</p>
+                    </div>
+                </a>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
