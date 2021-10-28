@@ -80,14 +80,14 @@ if (!$account_type) {
             </div>
         </a>
         <?php endif; ?>
-        <?php if ($account_type == "OWNER") :?>
-        <a href="https://auroramc.block2block.me/" class="item mission-control">
-            <div>
-                <img src="img/mysql.png" alt="MySQL icon" class="img">
-                <p class="subtitle">Access</p>
-                <p class="title">phpMyAdmin</p>
-            </div>
-        </a>
+        <?php if ($account_type == "OWNER" ||  $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "DEV" ||  $account_type == "QA") :?>
+            <a href="https://jira.block2block.me/" class="item">
+                <div>
+                    <img src="img/jira.png" alt="Jira icon" class="img">
+                    <p class="subtitle">Access</p>
+                    <p class="title">Jira</p>
+                </div>
+            </a>
         <?php endif; ?>
     </div>
     <div class="items">
@@ -121,12 +121,12 @@ if (!$account_type) {
             </a>
         <?php endif; ?>
 
-        <?php if ($account_type == "OWNER" ||  $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "DEV" ||  $account_type == "QA") :?>
-            <a href="https://jira.block2block.me/" class="item">
+        <?php if ($account_type == "OWNER") :?>
+            <a href="https://auroramc.block2block.me/" class="item mission-control">
                 <div>
-                    <img src="img/jira.png" alt="Jira icon" class="img">
+                    <img src="img/mysql.png" alt="MySQL icon" class="img">
                     <p class="subtitle">Access</p>
-                    <p class="title">Jenkins</p>
+                    <p class="title">phpMyAdmin</p>
                 </div>
             </a>
         <?php endif; ?>
