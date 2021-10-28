@@ -90,7 +90,7 @@ if (!$account_type) {
         </a>
         <?php endif; ?>
 
-        <br>
+        <br><br><br><br>
 
         <?php if ($account_type == "OWNER") :?>
             <a href="https://panel.auroramc.block2block.me/" class="item">
