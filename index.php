@@ -131,6 +131,26 @@ if (!$account_type) {
                     </div>
                 </a>
             <?php endif; ?>
+
+            <?php if ($account_type == "OWNER") :?>
+                <a href="https://store.auroramc.net/control-panel/login" class="item mission-control">
+                    <div>
+                        <img src="img/donationstore.png" alt="DonationStore icon" class="img">
+                        <p class="subtitle">Access</p>
+                        <p class="title">DonationStore Backend</p>
+                    </div>
+                </a>
+            <?php endif; ?>
+
+            <?php if ($account_type == "OWNER" || $account_type == "SR_DEV") :?>
+                <a href="https://manage.statuspage.io/pages/29hv5gfdnvyw/incidents" class="item mission-control">
+                    <div>
+                        <img src="img/statuspage.png" alt="StatusPage icon" class="img">
+                        <p class="subtitle">Access</p>
+                        <p class="title">StatusPage Backend</p>
+                    </div>
+                </a>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 </div>
