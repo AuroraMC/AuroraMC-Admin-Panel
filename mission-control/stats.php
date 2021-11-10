@@ -121,7 +121,7 @@
             <h1><Strong><u>Weekly Metrics</u></Strong></h1>
             <br>
             <br>
-            <div class="container">
+            <div class="container-flex">
                 <div class="row">
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
@@ -169,7 +169,7 @@
             <h1><Strong><u>All-Time Statistics</u></Strong></h1>
             <br>
             <br>
-            <div class="container">
+            <div class="container-flex">
                 <div class="row">
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
