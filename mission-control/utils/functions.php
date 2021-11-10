@@ -32,16 +32,17 @@ if (isset($_POST['stat'], $_POST['time'])) {
 
     $dividor = -1;
 
+    $time = strtoupper($time);
     switch ($time) {
-        case "daily": {
+        case "DAILY": {
             $dividor = 86400;
             break;
         }
-        case "weekly": {
+        case "WEEKLY": {
             $dividor = 86400 * 7;
             break;
         }
-        case "alltime": {
+        case "ALLTIME": {
             break;
         }
         default: {
