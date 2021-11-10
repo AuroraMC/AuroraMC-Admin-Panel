@@ -78,42 +78,42 @@
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
                         <hr>
-                        <div id="network-player-totals-daily"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-player-totals/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
                         <hr>
-                        <div id="games-played-daily"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-game-player-totals/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Games Started</legend>
                         <hr>
-                        <div id="network-game-player-totals-daily"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/games-started/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
                         <hr>
-                        <div id="unique-player-joins-daily"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/unique-player-joins/daily.php"></iframe>
                     </div>
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
                         <hr>
-                        <div id="network-server-totals-daily"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-server-totals/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
-                        <div id="network-proxy-totals-daily"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-proxy-totals/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
                         <hr>
-                        <div id="players-per-game-daily"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/players-per-game/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
                         <hr>
-                        <div id="unique-player-totals-daily"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/unique-player-totals/daily.php"></iframe>
                     </div>
                 </div>
             </div>
@@ -126,42 +126,42 @@
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
                         <hr>
-                        <div id="network-player-totals-weekly"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-player-totals/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
                         <hr>
-                        <div id="network-game-player-totals-weekly"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-game-player-totals/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Games Started</legend>
                         <hr>
-                        <div id="network-game-player-totals-weekly"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/games-started/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
                         <hr>
-                        <div id="unique-player-joins-weekly"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/unique-player-joins/weekly.php"></iframe>
                     </div>
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
                         <hr>
-                        <div id="network-server-totals-weekly"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-server-totals/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
-                        <div id="network-proxy-totals-weekly"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-proxy-totals/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
                         <hr>
-                        <div id="players-per-game-weekly"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/players-per-game/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
                         <hr>
-                        <div id="unique-player-totals-weekly"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/unique-player-totals/weekly.php"></iframe>
                     </div>
                 </div>
             </div>
@@ -174,42 +174,42 @@
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
                         <hr>
-                        <div id="network-player-totals-alltime"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-player-totals/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
                         <hr>
-                        <div id="network-game-player-totals-alltime"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-game-player-totals/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Games Started</legend>
                         <hr>
-                        <div id="network-game-player-totals-alltime"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/games-started/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
                         <hr>
-                        <div id="unique-player-joins-alltime"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/unique-player-joins/alltime.php"></iframe>
                     </div>
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
                         <hr>
-                        <div id="network-server-totals-alltime"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-server-totals/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
-                        <div id="network-proxy-totals-alltime"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/network-proxy-totals/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
                         <hr>
-                        <div id="players-per-game-alltime"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/players-per-game/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
                         <hr>
-                        <div id="unique-player-totals-alltime"></div>
+                        <iframe width="200px" height="400px" src="utils/graphs/unique-player-totals/alltime.php"></iframe>
                     </div>
                 </div>
             </div>
