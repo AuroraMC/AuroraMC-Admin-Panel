@@ -83,6 +83,11 @@
                         <br>
                         <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
                         <hr>
+                        <div id="games-played-daily"></div>
+                        <br>
+                        <br>
+                        <legend style="font-family: 'Helvetica';">Games Started</legend>
+                        <hr>
                         <div id="network-game-player-totals-daily"></div>
                         <br>
                         <br>
@@ -99,6 +104,11 @@
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
                         <div id="network-proxy-totals-daily"></div>
+                        <br>
+                        <br>
+                        <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
+                        <hr>
+                        <div id="players-per-game-daily"></div>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
@@ -124,6 +134,11 @@
                         <div id="network-game-player-totals-weekly"></div>
                         <br>
                         <br>
+                        <legend style="font-family: 'Helvetica';">Games Started</legend>
+                        <hr>
+                        <div id="network-game-player-totals-weekly"></div>
+                        <br>
+                        <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
                         <hr>
                         <div id="unique-player-joins-weekly"></div>
@@ -137,6 +152,11 @@
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
                         <div id="network-proxy-totals-weekly"></div>
+                        <br>
+                        <br>
+                        <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
+                        <hr>
+                        <div id="players-per-game-weekly"></div>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
@@ -162,6 +182,11 @@
                         <div id="network-game-player-totals-alltime"></div>
                         <br>
                         <br>
+                        <legend style="font-family: 'Helvetica';">Games Started</legend>
+                        <hr>
+                        <div id="network-game-player-totals-alltime"></div>
+                        <br>
+                        <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
                         <hr>
                         <div id="unique-player-joins-alltime"></div>
@@ -175,6 +200,11 @@
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
                         <div id="network-proxy-totals-alltime"></div>
+                        <br>
+                        <br>
+                        <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
+                        <hr>
+                        <div id="players-per-game-alltime"></div>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
