@@ -42,7 +42,7 @@
                         },
                         yaxis: {
                             title: {
-                                text:'Online Players'
+                                text:'Proxies'
                             }
                         },
                         tooltip: {

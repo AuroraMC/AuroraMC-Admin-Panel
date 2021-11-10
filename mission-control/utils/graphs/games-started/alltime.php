@@ -41,7 +41,7 @@
                         },
                         yaxis: {
                             title: {
-                                text:'Online Players'
+                                text:'Games Started'
                             }
                         },
                         tooltip: {
