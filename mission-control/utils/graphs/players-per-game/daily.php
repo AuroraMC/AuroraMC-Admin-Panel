@@ -14,6 +14,10 @@
                 data: "stat=PLAYERS_PER_GAME&time=daily",
                 success: function (result) {
                     let json = JSON.parse(result);
+                    let orderedJSON = [];
+                    for (let x of json) {
+                        orderedJSON.push({name: x.name, data: x.data.sort((a,b) => ((a.x > b.x)?1:((a.x < b.x)?-1:0)))});
+                    }
                     let options = {
                         chart: {
                             type: 'line',
@@ -24,7 +28,7 @@
                             width: '400px',
                             background: '#32373A'
                         },
-                        series: json,
+                        series: orderedJSON,
                         theme: {
                             mode: 'dark',
                             palette: 'palette1'
