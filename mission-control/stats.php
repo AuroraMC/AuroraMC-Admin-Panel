@@ -70,10 +70,10 @@
         <div class="col-sm-1"></div> <!-- Gap at left side of form -->
         <div class="col-sm-10 col-xs-12">
             <br>
-            <h1><Strong>Daily Metrics</Strong></h1>
+            <h1><Strong><u>Daily Metrics</u></Strong></h1>
             <br>
             <br>
-            <div class="container">
+            <div class="container-flex">
                 <div class="row">
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
@@ -118,7 +118,7 @@
                 </div>
             </div>
             <br>
-            <h1><Strong>Weekly Metrics</Strong></h1>
+            <h1><Strong><u>Weekly Metrics</u></Strong></h1>
             <br>
             <br>
             <div class="container">
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <br>
-            <h1><Strong>All-Time Statistics</Strong></h1>
+            <h1><Strong><u>All-Time Statistics</u></Strong></h1>
             <br>
             <br>
             <div class="container">
