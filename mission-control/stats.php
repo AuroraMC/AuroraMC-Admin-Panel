@@ -67,8 +67,8 @@
 </nav>
 <div class="container-fluid" style="padding-top: 40px">
     <div class="row">
-        <div class="col-sm-2"></div> <!-- Gap at left side of form -->
-        <div class="col-sm-8 col-xs-12">
+        <div class="col-sm-1"></div> <!-- Gap at left side of form -->
+        <div class="col-sm-10 col-xs-12">
             <br>
             <h1><Strong>Daily Metrics</Strong></h1>
             <br>
@@ -78,42 +78,42 @@
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/daily.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/daily.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Games Started</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/games-started/daily.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/games-started/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/daily.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/daily.php"></iframe>
                     </div>
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/daily.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/daily.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/daily.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/daily.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/daily.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/daily.php"></iframe>
                     </div>
                 </div>
             </div>
@@ -126,42 +126,42 @@
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/weekly.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/weekly.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Games Started</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/games-started/weekly.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/games-started/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/weekly.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/weekly.php"></iframe>
                     </div>
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/weekly.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/weekly.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/weekly.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/weekly.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/weekly.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/weekly.php"></iframe>
                     </div>
                 </div>
             </div>
@@ -174,47 +174,47 @@
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/alltime.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/alltime.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Games Started</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/games-started/alltime.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/games-started/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/alltime.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/alltime.php"></iframe>
                     </div>
                     <div class="col-6">
                         <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/alltime.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/alltime.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/alltime.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/alltime.php"></iframe>
                         <br>
                         <br>
                         <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
                         <hr>
-                        <iframe width="400px" height="200px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/alltime.php"></iframe>
+                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/alltime.php"></iframe>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-2"></div> <!-- Gap at right side of form -->
+        <div class="col-sm-1"></div> <!-- Gap at right side of form -->
     </div>
 </div>
 

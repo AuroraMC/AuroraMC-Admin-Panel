@@ -25,8 +25,8 @@
                             zoom: {
                                 enabled: true
                             },
-                            height: '200px',
-                            width: '400px',
+                            height: '300px',
+                            width: '600px',
                             background: '#32373A'
                         },
                         series: orderedJSON,
@@ -61,7 +61,7 @@
     </script>
 </head>
 <body style="margin:0">
-<div id="chart" style="max-height: 215px">
+<div id="chart" style="max-height: 300px">
 </div>
 </body>
 </html>
