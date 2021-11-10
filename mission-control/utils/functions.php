@@ -65,7 +65,7 @@ if (isset($_POST['stat'], $_POST['time'])) {
         if ($splitIntoGames) {
             $statParsed[$split[2]][] = "{\"x\":" . $split[0] . ",\"y\":" . $split[1] . "}";
         } else {
-            $statParsed[] = "{'x':" . $split[0] . ",'y':" . $split[1] . "}";
+            $statParsed[] = "{\"x\":" . $split[0] . ",\"y\":" . $split[1] . "}";
         }
     }
 
