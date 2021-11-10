@@ -11,7 +11,7 @@
             $.ajax({
                 url: "../../functions.php",
                 type: "post",
-                data: "stat=GAME_PLAYER_TOTAL&time=daily",
+                data: "stat=GAMES_STARTED&time=daily",
                 success: function (result) {
                     let json = JSON.parse(result);
                     let options = {
