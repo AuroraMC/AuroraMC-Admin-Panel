@@ -17,6 +17,7 @@
                     for (let x of json) {
                         orderedJSON.push({name: x.name, data: x.data.sort((a,b) => ((a.x > b.x)?1:((a.x < b.x)?-1:0)))});
                     }
+                    orderedJSON.sort((a,b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
                     let options = {
                         chart: {
                             type: 'line',
