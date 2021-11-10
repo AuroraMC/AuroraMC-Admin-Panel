@@ -55,7 +55,7 @@
         }
     </script>
 </head>
-<body>
+<body style="margin:0">
 <div id="chart" style="max-height: 215px">
 </div>
 </body>
