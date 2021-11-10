@@ -11,7 +11,7 @@
             $.ajax({
                 url: "../../functions.php",
                 type: "post",
-                data: "stat=UNIQUE_PLAYERS_JOINS&time=weekly",
+                data: "stat=UNIQUE_PLAYER_JOINS&time=weekly",
                 success: function (result) {
                     let json = JSON.parse(result);
                     let options = {
