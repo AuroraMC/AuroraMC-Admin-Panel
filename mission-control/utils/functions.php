@@ -63,7 +63,7 @@ if (isset($_POST['stat'], $_POST['time'])) {
             }
         }
         if ($splitIntoGames) {
-            $statParsed[$split[2]][] = "{'x':" . $split[0] . ",'y':" . $split[1] . "}";
+            $statParsed[$split[2]][] = "{\"x\":" . $split[0] . ",\"y\":" . $split[1] . "}";
         } else {
             $statParsed[] = "{'x':" . $split[0] . ",'y':" . $split[1] . "}";
         }
@@ -72,10 +72,10 @@ if (isset($_POST['stat'], $_POST['time'])) {
     if ($splitIntoGames) {
         $statsParsed = array();
         foreach ($statParsed as $game=>$stat2) {
-            $statsParsed[] = "{'name': '" . $games[$game] . "','data': [" . join(",", $stat2) . "]}";
+            $statsParsed[] = "{\"name\": \"" . $games[$game] . "\",\"data\": [" . join(",", $stat2) . "]}";
         }
         echo "[" . join(",",$statsParsed) . "]";
     } else {
-        echo "[{'name': '" . $xTitle[$stat] . "','data': [" . join(",", $statParsed) . "]}]";
+        echo "[{\"name\": \"" . $xTitle[$stat] . "\",\"data\": [" . join(",", $statParsed) . "]}]";
     }
 }
