@@ -73,7 +73,8 @@
             <h1><Strong><u>Server Manager</u></Strong></h1>
             <br>
             <br>
-
+            <legend style="font-family: 'Helvetica';">Create a server</legend>
+            <hr>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>

@@ -56,9 +56,9 @@ if (isset($_POST['stat'], $_POST['time'])) {
     foreach ($stats as $stat2) {
         $split = explode(";", $stat2, 3);
         if ($dividor != -1) {
-            $timestamp = intval($split[0]);
-            if ($timestamp/1000 >= time() + $dividor) {
-                $redis->sRem("stat." . $stat2 . "." . $time, $stat2);
+            $timestamp = floatval($split[0]);
+            if (time() - ($timestamp/1000) >= $dividor) {
+                $redis->sRem("stat." . $stat . "." . $time, $stat2);
                 continue;
             }
         }
