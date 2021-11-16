@@ -70,7 +70,7 @@
         <div class="col-sm-2"></div> <!-- Gap at left side of form -->
         <div class="col-sm-8 col-xs-12">
             <br>
-            <h1><Strong><u>Server Manager</u></Strong></h1>
+            <h1><Strong><u>Network Maintenance</u></Strong></h1>
             <br>
             <br>
 
