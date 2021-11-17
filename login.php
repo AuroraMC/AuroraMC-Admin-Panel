@@ -62,7 +62,7 @@ if (login_check($mysqli)) {
                             <input type="text" name="code" id="code" placeholder="Verification Code" class="form-control"/><br>
                         </fieldset>
                     </div>
-                    <button type="button" class="btn btn-default" form="login_form" onclick="formhash(this.form, this.form.username, this.form.password, this.form.code);">Login</button></div></div>
+                    <button type="button" class="btn btn-default" form="login_form" onclick="formhash(this.form, this.form.username, this.form.password, this.form.code);" id="submit">Login</button></div></div>
                 </form>
             </div>
         </div>
