@@ -22,6 +22,8 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
+    <script type="text/javascript" src="js/main.js"></script>
+
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
 
@@ -75,30 +77,40 @@
             <br>
             <legend style="font-family: 'Helvetica';">Create a server</legend>
             <hr>
-            <form action="utils/process-login.php" method="post" name="create_server" id="create_server">
 
-                <div class="md-form input-group input-group-lg">
-                    <fieldset>
-                        <label for='name'>Name: </label><input type='text' name='name' id='name' placeholder="Server Name" class="form-control" /><br>
-                        <label for="game">Game: </label><select name="game" id="game" class="form-control">
-                            <optgroup label="Lobby Servers">
-                                <option value="LOBBY">Lobby</option>
-                            </optgroup>
-                            <optgroup label="Game Servers">
-                                <option value="CRYSTAL_QUEST">Crystal Quest</option>
-                                <option value="MIXED_ARCADE">Mixed Arcade</option>
-                            </optgroup>
-                            <optgroup label="Misc Servers">
-                                <option value="BUILD">Build</option>
-                                <option value="EVENT">Event</option>
-                                <option value="STAFF">Staff</option>
-                            </optgroup>
-                        </select><br>
+            <div class="card mx-xl-5">
+                <!-- Card body -->
+                <div class="card-body">
+                    <form action="utils/create-server.php" method="post" name="create_server" id="create_server">
+                        <div class="md-form input-group input-group-lg">
+                            <fieldset>
+                                <label for='name'>Name: </label><input type='text' name='name' id='name' placeholder="Server Name" class="form-control" /><br>
+                                <label for="game">Game: </label>,<select name="game" id="game" class="form-control">
+                                    <optgroup label="Lobby Servers">
+                                        <option value="LOBBY">Lobby</option>
+                                    </optgroup>
+                                    <optgroup label="Game Servers">
+                                        <option value="CRYSTAL_QUEST">Crystal Quest</option>
+                                        <option value="MIXED_ARCADE">Mixed Arcade</option>
+                                    </optgroup>
+                                    <optgroup label="Misc Servers">
+                                        <option value="BUILD">Build</option>
+                                        <option value="EVENT">Event</option>
+                                        <option value="STAFF">Staff</option>
+                                    </optgroup>
+                                </select><br>
+                                <label for="network">Network: </label>,<select name="network" id="network" class="form-control" onchange="networkChange(this.form.network.value)">
+                                    <option value="MAIN">Main</option>
+                                    <option value="ALPHA">Alpha</option>
+                                    <option value="TEST">Test</option>
+                                </select><br>
 
-                    </fieldset>
+                            </fieldset>
+                        </div>
+                        <button type="button" class="btn btn-default" form="login_form" onclick="formhash(this.form, this.form.username, this.form.password, this.form.code);">Login</button></div></div>
+                    </form>
                 </div>
-                <button type="button" class="btn btn-default" form="login_form" onclick="formhash(this.form, this.form.username, this.form.password, this.form.code);">Login</button></div></div>
-    </form>
+            </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>
