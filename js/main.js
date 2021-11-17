@@ -12,7 +12,7 @@ input.addEventListener("keyup", function(event) {
         // Cancel the default action, if needed
         event.preventDefault();
         // Trigger the button element with a click
-        document.getElementById("submit").click();
+        formhash(document.getElementById("login_form"), document.getElementById("username").value, document.getElementById("password").value, document.getElementById("code").value);
     }
 });
 
@@ -43,7 +43,7 @@ if (doParticles) {
 
 function formhash(form, username, password, code) {
     // Create a new element input, this will be our hashed password field.
-    if (username.value === '' || password === '' || code.value === '') {
+    if (username === '' || password === '' || code === '') {
         return false;
     }
 
