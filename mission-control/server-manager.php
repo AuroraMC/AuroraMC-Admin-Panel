@@ -107,10 +107,11 @@
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select><br>
-
+                                            <div id="extra">
+                                            </div>
                                         </fieldset>
                                     </div>
-                                    <button type="button" class="btn btn-default" form="login_form" onclick="formhash(this.form, this.form.username, this.form.password, this.form.code);">Login</button></div></div>
+                                    <button type="button" class="btn btn-default" form="login_form" onclick="serverCreate(this.form, this.form.server.value, this.form.network.value, this.form.game.value);">Create</button></div></div>
                         </form>
                     </div>
                 </div>
