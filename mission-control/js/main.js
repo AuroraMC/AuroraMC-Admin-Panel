@@ -5,3 +5,7 @@ function networkChange(network) {
 
     }
 }
+
+function serverCreate(form, server, network, game) {
+
+}
