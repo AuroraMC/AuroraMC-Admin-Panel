@@ -17,7 +17,7 @@ if (isset($_POST['server'], $_POST['network'], $_POST['game'], $_POST['extradeta
         } else {
             socket_write($socket, $data, strlen($data));
 
-            while (($out = socket_read($socket, 2048, PHP_NORMAL_READ)) != "") {
+            while (($out = socket_read($socket, 2048)) != "") {
                 echo $out;
             }
         }
