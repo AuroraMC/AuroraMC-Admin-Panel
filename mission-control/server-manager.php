@@ -87,7 +87,7 @@
                                 <form action="utils/create-server.php" method="post" name="create_server" id="create_server">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <input type='text' name='name' id='name' placeholder="Server Name" class="form-control" /><br>
+                                            <input type='text' name='server' id='server' placeholder="Server Name" class="form-control" /><br>
                                             <select name="game" id="game" class="form-control">
                                                 <optgroup label="Lobby Servers">
                                                     <option value="LOBBY">Lobby</option>
@@ -112,7 +112,7 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <button type="button" class="btn btn-default" form="login_form" onclick="serverCreate(this.form.name.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">Create</button></div></div>
+                                    <button type="button" class="btn btn-default" form="login_form" onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">Create</button></div></div>
                         </form>
                     </div>
                 </div>
