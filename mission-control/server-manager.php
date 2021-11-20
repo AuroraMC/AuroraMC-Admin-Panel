@@ -102,16 +102,17 @@
                                                     <option value="STAFF">Staff</option>
                                                 </optgroup>
                                             </select><br>
-                                            <select name="network" id="network" class="form-control" onchange="networkChange(this.form.network.value)">
+                                            <select name="network" id="network" class="form-control" onchange="networkChangeServerCreate(this.form.network.value)">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select><br>
-                                            <div id="extra">
+                                            <div id="extra_create_server" style="visibility: hidden;">
+                                                <input type="text" name="extra_details" id="extra_details" placeholder="Extra Details" />
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <button type="button" class="btn btn-default" form="login_form" onclick="serverCreate(this.form, this.form.server.value, this.form.network.value, this.form.game.value);">Create</button></div></div>
+                                    <button type="button" class="btn btn-default" form="login_form" onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">Create</button></div></div>
                         </form>
                     </div>
                 </div>
