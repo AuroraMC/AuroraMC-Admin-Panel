@@ -16,10 +16,9 @@ if (isset($_POST['server'], $_POST['network'], $_POST['game'], $_POST['extradeta
             echo "Failed to create connection.";
         } else {
             socket_write($socket, $data, strlen($data));
-            socket_set_block($socket);
-            $out = socket_read($socket, 102400, PHP_NORMAL_READ);
-            echo $out;
-
+            while (($out = socket_read($socket, 2048)) != "") {
+                echo $out;
+            }
         }
         socket_close($socket);
     }
