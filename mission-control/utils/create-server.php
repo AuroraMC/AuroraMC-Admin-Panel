@@ -7,7 +7,7 @@ if (isset($_POST['server'], $_POST['network'], $_POST['game'], $_POST['extradeta
 
     $host = "auroramc.block2block.me";
     $port = 35567;
-    $data = "createserver;". $network . ";" . $game . ";" . $server . ";" . $extra_details;
+    $data = "createserver;". $network . ";" . $game . ";" . $server . ";" . $extra_details ."\r\n";
 
     if (($socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) === FALSE) {
         echo "Failed to initialise socket.";
