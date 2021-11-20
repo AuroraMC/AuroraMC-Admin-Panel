@@ -19,6 +19,7 @@ if (isset($_POST['server'], $_POST['network'], $_POST['game'], $_POST['extradeta
             while (($out = socket_read($socket, 2048)) != "") {
                 echo $out;
             }
+            echo "done";
         }
         socket_close($socket);
     }
