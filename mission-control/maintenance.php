@@ -139,8 +139,8 @@
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card border-danger text-center mx-xl-5">
-                            <div class="card-header bg-danger">
+                        <div class="card border-info text-center mx-xl-5">
+                            <div class="card-header bg-info">
                                 <p class="sm-card-title">Update main network</p>
                             </div>
                             <!-- Card body -->
