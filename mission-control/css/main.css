@@ -9,3 +9,11 @@
     font-size: 19px;
     text-transform: uppercase;
 }
+
+.card {
+    min-height:100%;
+}
+
+form {
+    margin:auto;
+}
