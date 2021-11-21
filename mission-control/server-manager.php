@@ -108,8 +108,9 @@
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
-                                            </select><br>
+                                            </select>
                                             <div id="extra_create_server" style="visibility: hidden;display:none;">
+                                                <br>
                                                 <input type="text" name="extra_details" id="extra_details"
                                                        placeholder="Extra Details" class="form-control"/>
                                             </div>
@@ -145,7 +146,7 @@
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
-                                            </select><br>
+                                            </select>
                                         </fieldset>
                                     </div>
                                 </form>
@@ -178,7 +179,7 @@
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
-                                            </select><br>
+                                            </select>
                                         </fieldset>
                                     </div>
                                 </form>
@@ -214,8 +215,9 @@
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
-                                            </select><br>
+                                            </select>
                                             <div id="extra_create_proxy" style="visibility: hidden;display:none;">
+                                                <br>
                                                 <input type="text" name="extra_details" id="extra_details"
                                                        placeholder="Extra Details" class="form-control"/>
                                             </div>
@@ -251,7 +253,7 @@
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
-                                            </select><br>
+                                            </select>
                                         </fieldset>
                                     </div>
                                 </form>
@@ -284,7 +286,7 @@
                                                 <option value="MAIN" style>Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
-                                            </select><br>
+                                            </select>
                                         </fieldset>
                                     </div>
                                 </form>
