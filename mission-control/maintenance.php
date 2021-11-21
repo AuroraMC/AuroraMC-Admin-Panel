@@ -82,6 +82,7 @@
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
+                                <p style="font-weight:900;color:black;margin-bottom: 0;">PLEASE NOTE:</p><p style="color:black;margin-bottom: 0"> This action will start the creation of servers.</p>
                                 <form name="enable"
                                       id="enable">
                                     <div class="md-form input-group input-group-lg">
@@ -90,7 +91,7 @@
                                                     onchange="networkChangeServerCreate(this.form.network.value)">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
-                                            </select><br>
+                                            </select>
                                         </fieldset>
                                     </div>
                                 </form>
@@ -123,7 +124,7 @@
                                             <select name="network" id="network" class="form-control">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
-                                            </select><br>
+                                            </select>
                                         </fieldset>
                                     </div>
                                 </form>
