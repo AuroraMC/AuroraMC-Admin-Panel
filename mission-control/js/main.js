@@ -8,6 +8,16 @@ function networkChangeServerCreate(network) {
     }
 }
 
+function networkChangeProxyCreate(network) {
+    if (network === 'MAIN') {
+        document.getElementById("extra_create_proxy").style.visibility = "hidden";
+        document.getElementById("extra_create_proxy").style.display = "none";
+    } else {
+        document.getElementById("extra_create_proxy").style.visibility = "visible";
+        document.getElementById("extra_create_proxy").style.display = "block";
+    }
+}
+
 function serverCreate(server, network, game, extradetails) {
     document.getElementById("create-server-button").disabled = true;
     $.ajax({
@@ -65,7 +75,7 @@ function proxyClose(server, network) {
     $.ajax({
         url:'/mission-control/utils/proxy/close.php',
         type: 'post',
-        data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
+        data: "proxy=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
         success: function(result) {
             alert(result);
             document.getElementById("close-proxy-button").disabled = false;
@@ -78,7 +88,7 @@ function proxyRestart(server, network) {
     $.ajax({
         url:'/mission-control/utils/proxy/restart.php',
         type: 'post',
-        data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
+        data: "proxy=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
         success: function(result) {
             alert(result);
             document.getElementById("restart-proxy-button").disabled = false;
