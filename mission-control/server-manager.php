@@ -20,7 +20,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
 
@@ -77,19 +78,20 @@
             <h1><Strong><u>Server Manager</u></Strong></h1>
             <br>
             <br>
-            <legend style="font-family: 'Helvetica';">Create a server</legend>
-            <hr>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4"></div>
                     <div class="col-sm-4">
+                        <legend style="font-family: 'Helvetica';">Create a server</legend>
+                        <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
-                                <form action="utils/create-server.php" method="post" name="create_server" id="create_server">
+                                <form name="create_server"
+                                      id="create_server">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <input type='text' name='server' id='server' placeholder="Server Name" class="form-control" /><br>
+                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                                   class="form-control"/><br>
                                             <select name="game" id="game" class="form-control">
                                                 <optgroup label="Lobby Servers">
                                                     <option value="LOBBY">Lobby</option>
@@ -104,30 +106,93 @@
                                                     <option value="STAFF">Staff</option>
                                                 </optgroup>
                                             </select><br>
-                                            <select name="network" id="network" class="form-control" onchange="networkChangeServerCreate(this.form.network.value)">
+                                            <select name="network" id="network" class="form-control"
+                                                    onchange="networkChangeServerCreate(this.form.network.value)">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select><br>
                                             <div id="extra_create_server" style="visibility: hidden;display:none;">
-                                                <input type="text" name="extra_details" id="extra_details" placeholder="Extra Details"  class="form-control" />
+                                                <input type="text" name="extra_details" id="extra_details"
+                                                       placeholder="Extra Details" class="form-control"/>
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" id="create-server-button" class="btn btn-default" form="create_server" onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);"><i class="fas fa-plus-square"></i> Create</button></div></div>
+                                        <button type="button" id="create-server-button" class="btn btn-default"
+                                                form="create_server"
+                                                onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">
+                                            <i class="fas fa-plus-circle"></i> Create
+                                        </button>
                                     </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4">
+                        <legend style="font-family: 'Helvetica';">Close a server</legend>
+                        <hr>
+                        <div class="card mx-xl-5">
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="close_server"
+                                      id="close_server">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                                   class="form-control"/><br>
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                                <option value="TEST">Test</option>
+                                            </select><br>
+                                        </fieldset>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" id="close-server-button" class="btn btn-default"
+                                                form="close_server"
+                                                onclick="serverClose(this.form.server.value, this.form.network.value);">
+                                            <i class="fas fa-times-square"></i> Close
+                                        </button>
+                                    </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4">
+                        <legend style="font-family: 'Helvetica';">Restart a server</legend>
+                        <hr>
+                        <div class="card mx-xl-5">
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="restart_server"
+                                      id="restart_server">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                                   class="form-control"/><br>
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                                <option value="TEST">Test</option>
+                                            </select><br>
+                                        </fieldset>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" id="restart-server-button" class="btn btn-default"
+                                                form="restart_server"
+                                                onclick="serverRestart(this.form.server.value, this.form.network.value);">
+                                            <i class="fas fa-sync-alt"></i> Restart
+                                        </button>
+                                    </div>
+                            </div>
+                        </div>
                         </form>
                     </div>
                 </div>
-                    </div>
-                    <div class="col-sm-4"></div>
-                </div>
             </div>
         </div>
-        <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>
 </div>
-
 </body>
 </html>
