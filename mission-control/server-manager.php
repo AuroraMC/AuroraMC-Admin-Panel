@@ -25,14 +25,10 @@
 
     <script type="text/javascript" src="js/main.js"></script>
 
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
-
     <script src="https://kit.fontawesome.com/ef00ee83f1.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <link rel="icon"
           type="image/png"
@@ -83,7 +79,7 @@
                     <div class="col-sm-4">
                         <div class="card text-center mx-xl-5">
                             <div class="card-header">
-                                <p style="color:black;margin-bottom: 0">Create a server</p>
+                                <p class="sm-card-title">Create a server</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">

@@ -1,0 +1,11 @@
+.md-form {
+    margin-top: 0;
+}
+
+.sm-card-title {
+    color:black;
+    margin-bottom: 0;
+    font-weight: bolder;
+    font-size: larger;
+    text-transform: uppercase;
+}
