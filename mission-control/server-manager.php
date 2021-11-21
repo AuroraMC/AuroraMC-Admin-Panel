@@ -81,8 +81,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica'; text-align: center">Create a server</legend>
-                        <div class="card mx-xl-5">
+                        <div class="card text-center mx-xl-5">
+                            <div class="card-header">
+                                <h2>Create a server</h2>
+                            </div>
                             <!-- Card body -->
                             <div class="card-body">
                                 <form name="create_server"
