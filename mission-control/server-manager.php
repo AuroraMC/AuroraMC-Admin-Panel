@@ -82,7 +82,6 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <legend style="font-family: 'Helvetica';">Create a server</legend>
-                        <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
@@ -131,7 +130,6 @@
                     </div>
                     <div class="col-sm-4">
                         <legend style="font-family: 'Helvetica';">Restart a server</legend>
-                        <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
@@ -161,7 +159,6 @@
                     </div>
                     <div class="col-sm-4">
                         <legend style="font-family: 'Helvetica';">Close a server</legend>
-                        <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
@@ -190,10 +187,11 @@
                         </form>
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-sm-4">
                         <legend style="font-family: 'Helvetica';">Create a proxy</legend>
-                        <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
@@ -226,7 +224,6 @@
                     </div>
                     <div class="col-sm-4">
                         <legend style="font-family: 'Helvetica';">Restart a proxy</legend>
-                        <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
@@ -256,7 +253,6 @@
                     </div>
                     <div class="col-sm-4">
                         <legend style="font-family: 'Helvetica';">Close a proxy</legend>
-                        <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
