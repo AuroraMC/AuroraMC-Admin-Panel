@@ -1,4 +1,7 @@
 <?php
+
+include_once '../socket-util.php';
+
 if (isset($_POST['server'], $_POST['network'], $_POST['game'], $_POST['extradetails'])) {
     $server = filter_input(INPUT_POST, 'server', FILTER_SANITIZE_STRING);
     $network = filter_input(INPUT_POST, 'network', FILTER_SANITIZE_STRING);
