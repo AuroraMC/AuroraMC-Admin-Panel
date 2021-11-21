@@ -108,7 +108,7 @@
                                                 <option value="TEST">Test</option>
                                             </select><br>
                                             <div id="extra_create_server" style="visibility: hidden;">
-                                                <input type="text" name="extra_details" id="extra_details" placeholder="Extra Details" />
+                                                <input type="text" name="extra_details" id="extra_details" placeholder="Extra Details"  class="form-control" />
                                             </div>
                                         </fieldset>
                                     </div>
