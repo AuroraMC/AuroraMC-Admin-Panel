@@ -150,9 +150,9 @@
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
                                     <button type="button" id="update-button" class="btn btn-info"
-                                            data-mdb-toggle="modal"
-                                            data-mdb-target="#updateModal"
-                                        <i class="fas fa-upload"></i><br>Open Modal
+                                            data-toggle="modal"
+                                            data-target="#updateModal"
+                                        <i class="fas fa-file-upload"></i><br>Open Modal
                                     </button>
                                 </div>
                             </div>
@@ -205,8 +205,8 @@
                                             Cancel
                                         </button>
                                         <button type="button" class="btn btn-primary"
-                                                form="disable"
-                                                onclick="updateNetwork(this.form.network.value);"><i class="fas fa-upload"></i> Update</button>
+                                                form="update"
+                                                onclick="updateNetwork(this.form.network.value);"><i class="fas fa-file-upload"></i> Update</button>
                                     </div>
                                 </div>
                             </div>
