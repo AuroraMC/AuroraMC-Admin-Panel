@@ -82,7 +82,7 @@
                                 <p class="sm-card-title">Create a server</p>
                             </div>
                             <!-- Card body -->
-                            <div class="card-body">
+                            <div class="card-body d-flex">
                                 <form name="create_server"
                                       id="create_server">
                                     <div class="md-form input-group input-group-lg">
@@ -132,7 +132,7 @@
                                 <p class="sm-card-title">Restart a server</p>
                             </div>
                             <!-- Card body -->
-                            <div class="card-body">
+                            <div class="card-body d-flex">
                                 <form name="restart_server"
                                       id="restart_server">
                                     <div class="md-form input-group input-group-lg">
@@ -163,7 +163,7 @@
                                 <p class="sm-card-title">Close a server</p>
                             </div>
                             <!-- Card body -->
-                            <div class="card-body">
+                            <div class="card-body d-flex">
                                 <form name="close_server"
                                       id="close_server">
                                     <div class="md-form input-group input-group-lg">
@@ -198,7 +198,7 @@
                                 <p class="sm-card-title">Create a proxy</p>
                             </div>
                             <!-- Card body -->
-                            <div class="card-body">
+                            <div class="card-body d-flex">
                                 <form name="create_proxy"
                                       id="create_proxy">
                                     <div class="md-form input-group input-group-lg">
@@ -232,7 +232,7 @@
                                 <p class="sm-card-title">Restart a proxy</p>
                             </div>
                             <!-- Card body -->
-                            <div class="card-body">
+                            <div class="card-body d-flex">
                                 <form name="restart_proxy"
                                       id="restart_proxy">
                                     <div class="md-form input-group input-group-lg">
@@ -263,7 +263,7 @@
                                 <p class="sm-card-title">Close a proxy</p>
                             </div>
                             <!-- Card body -->
-                            <div class="card-body">
+                            <div class="card-body d-flex">
                                 <form name="close_proxy"
                                       id="close_proxy">
                                     <div class="md-form input-group input-group-lg">
