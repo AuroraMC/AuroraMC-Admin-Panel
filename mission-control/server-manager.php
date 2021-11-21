@@ -112,7 +112,9 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <button type="button" class="btn btn-default" form="create_server" onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">Create</button></div></div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="btn btn-default" form="create_server" onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">Create</button></div></div>
+                                    </div>
                         </form>
                     </div>
                 </div>
