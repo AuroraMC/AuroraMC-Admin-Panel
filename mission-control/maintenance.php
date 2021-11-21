@@ -145,38 +145,14 @@
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="update"
-                                      id="update">
-                                    <div class="md-form input-group input-group-lg">
-                                        <fieldset>
-                                            <div class="input-group">
-                                                <input type='text' name='core' id='core' placeholder="Core"
-                                                       class="form-control"/>
-                                                <input type='text' name='lobby' id='lobby' placeholder="Lobby"
-                                                       class="form-control"/>
-                                                <input type='text' name='game' id='game' placeholder="Game"
-                                                       class="form-control"/>
-                                            </div><br>
-                                            <div class="input-group">
-                                                <input type='text' name='engine' id='engine' placeholder="Engine"
-                                                       class="form-control"/>
-                                                <input type='text' name='build' id='build' placeholder="Build"
-                                                       class="form-control"/>
-                                                <input type='text' name='event' id='event' placeholder="Event"
-                                                       class="form-control"/>
-                                            </div><br>
-                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy"
-                                                   class="form-control"/>
-                                        </fieldset>
-                                    </div>
-                                </form>
+                                <p style="color:black;margin-bottom: 0">In order to update the main network, please open the update modal.</p>
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
                                     <button type="button" id="update-button" class="btn btn-info"
-                                            form="update"
-                                            onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.game.value, this.form.engine.value, this.form.proxy.value, this.form.build.value, this.form.event.value);">
-                                        <i class="fas fa-upload"></i><br>Update
+                                            data-mdb-toggle="modal"
+                                            data-mdb-target="#updateModal"
+                                        <i class="fas fa-upload"></i><br>Open Modal
                                     </button>
                                 </div>
                             </div>
@@ -184,6 +160,60 @@
                     </div>
                 </div>
                 <br>
+                <div
+                        class="modal fade"
+                        id="updateModal"
+                        tabindex="-1"
+                        aria-labelledby="updateModal"
+                        aria-hidden="true"
+                >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="updateModalLabel">Update the main network</h5>
+                                <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-mdb-dismiss="modal"
+                                        aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <p style="color:black;margin-bottom: 0">Update the plugins on the main network. This action will trigger a network restart of all applicable servers. This action is irreversible.<br>
+                                Please input the build numbers as found on Jenkins. Any module you do not wish to update, please leave the field blank.</p>
+                                <form name="update"
+                                      id="update">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <input type='text' name='core' id='core' placeholder="Core Build Number"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='lobby' id='lobby' placeholder="Lobby Build Number"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='engine' id='engine' placeholder="Game Engine Build Number"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='game' id='game' placeholder="Game Build Number"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='build' id='build' placeholder="Build Core Build Number"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='event' id='event' placeholder="Event Build Number"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy Build Number"
+                                                   class="form-control"/>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <button type="button" class="btn btn-primary"
+                                        form="disable"
+                                        onclick="updateNetwork(this.form.network.value);"><i class="fas fa-upload"></i> Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <br>
                 <div class="row">
                     <div class="col-sm-4">
