@@ -113,7 +113,7 @@
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <p style="font-weight:900;color:black;">PLEASE NOTE:</p><p style="color:black;"> This action will not close any open servers.</p>
+                                <p style="font-weight:900;color:black;padding-bottom: 0;">PLEASE NOTE:</p><p style="color:black;padding-bottom: 0"> This action will not close any open servers.</p>
                                 <form name="disable"
                                       id="disable">
                                     <div class="md-form input-group input-group-lg">
