@@ -11,7 +11,7 @@ function networkChangeServerCreate(network) {
 function serverCreate(server, network, game, extradetails) {
     document.getElementById("create-server-button").disabled = true;
     $.ajax({
-        url:'/mission-control/utils/create-server.php',
+        url:'/mission-control/utils/server/create.php',
         type: 'post',
         data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network) + "&game=" + encodeURIComponent(game) + "&extradetails=" + encodeURIComponent(extradetails),
         success: function(result) {
@@ -24,7 +24,7 @@ function serverCreate(server, network, game, extradetails) {
 function serverClose(server, network) {
     document.getElementById("close-server-button").disabled = true;
     $.ajax({
-        url:'/mission-control/utils/close-server.php',
+        url:'/mission-control/utils/server/close.php',
         type: 'post',
         data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
         success: function(result) {
@@ -37,7 +37,7 @@ function serverClose(server, network) {
 function serverRestart(server, network) {
     document.getElementById("restart-server-button").disabled = true;
     $.ajax({
-        url:'/mission-control/utils/restart-server.php',
+        url:'/mission-control/utils/server/restart.php',
         type: 'post',
         data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
         success: function(result) {
