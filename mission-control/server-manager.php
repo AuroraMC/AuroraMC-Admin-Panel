@@ -83,7 +83,7 @@
                     <div class="col-sm-4">
                         <div class="card text-center mx-xl-5">
                             <div class="card-header">
-                                <h3 style="color:black;">CREATE A SERVER</h3>
+                                <p style="color:black;margin-bottom: 0">Create a server</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
