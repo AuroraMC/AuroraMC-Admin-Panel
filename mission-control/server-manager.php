@@ -122,7 +122,7 @@
                                         <button type="button" id="create-server-button" class="btn btn-default"
                                                 form="create_server"
                                                 onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">
-                                            <i class="fas fa-plus-circle"></i> Create
+                                            <i class="fas fa-plus"></i>  Create
                                         </button>
                                     </div>
                             </div>
@@ -152,7 +152,7 @@
                                         <button type="button" id="close-server-button" class="btn btn-default"
                                                 form="close_server"
                                                 onclick="serverClose(this.form.server.value, this.form.network.value);">
-                                            <i class="fas fa-times-circle"></i> Close
+                                            <i class="fas fa-times"></i>  Close
                                         </button>
                                     </div>
                             </div>
@@ -182,7 +182,7 @@
                                         <button type="button" id="restart-server-button" class="btn btn-default"
                                                 form="restart_server"
                                                 onclick="serverRestart(this.form.server.value, this.form.network.value);">
-                                            <i class="fas fa-sync-alt"></i> Restart
+                                            <i class="fas fa-sync-alt"></i>  Restart
                                         </button>
                                     </div>
                             </div>
