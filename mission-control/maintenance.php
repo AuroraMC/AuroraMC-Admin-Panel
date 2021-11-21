@@ -157,63 +157,63 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <br>
-                <div
-                        class="modal fade"
-                        id="updateModal"
-                        tabindex="-1"
-                        aria-labelledby="updateModal"
-                        aria-hidden="true"
-                >
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="updateModalLabel">Update the main network</h5>
-                                <button
-                                        type="button"
-                                        class="btn-close"
-                                        data-mdb-dismiss="modal"
-                                        aria-label="Close"
-                                ></button>
-                            </div>
-                            <div class="modal-body">
-                                <p style="color:black;margin-bottom: 0">Update the plugins on the main network. This action will trigger a network restart of all applicable servers. This action is irreversible.<br>
-                                Please input the build numbers as found on Jenkins. Any module you do not wish to update, please leave the field blank.</p>
-                                <form name="update"
-                                      id="update">
-                                    <div class="md-form input-group input-group-lg">
-                                        <fieldset>
-                                            <input type='text' name='core' id='core' placeholder="Core Build Number"
-                                                   class="form-control"/><br>
-                                            <input type='text' name='lobby' id='lobby' placeholder="Lobby Build Number"
-                                                   class="form-control"/><br>
-                                            <input type='text' name='engine' id='engine' placeholder="Game Engine Build Number"
-                                                   class="form-control"/><br>
-                                            <input type='text' name='game' id='game' placeholder="Game Build Number"
-                                                   class="form-control"/><br>
-                                            <input type='text' name='build' id='build' placeholder="Build Core Build Number"
-                                                   class="form-control"/><br>
-                                            <input type='text' name='event' id='event' placeholder="Event Build Number"
-                                                   class="form-control"/><br>
-                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy Build Number"
-                                                   class="form-control"/>
-                                        </fieldset>
+                        <div
+                                class="modal fade"
+                                id="updateModal"
+                                tabindex="-1"
+                                aria-labelledby="updateModal"
+                                aria-hidden="true"
+                        >
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="updateModalLabel">Update the main network</h5>
+                                        <button
+                                                type="button"
+                                                class="btn-close"
+                                                data-mdb-dismiss="modal"
+                                                aria-label="Close"
+                                        ></button>
                                     </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
-                                    Cancel
-                                </button>
-                                <button type="button" class="btn btn-primary"
-                                        form="disable"
-                                        onclick="updateNetwork(this.form.network.value);"><i class="fas fa-upload"></i> Update</button>
+                                    <div class="modal-body">
+                                        <p style="color:black;margin-bottom: 0">Update the plugins on the main network. This action will trigger a network restart of all applicable servers. This action is irreversible.<br>
+                                            Please input the build numbers as found on Jenkins. Any module you do not wish to update, please leave the field blank.</p>
+                                        <form name="update"
+                                              id="update">
+                                            <div class="md-form input-group input-group-lg">
+                                                <fieldset>
+                                                    <input type='text' name='core' id='core' placeholder="Core Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='lobby' id='lobby' placeholder="Lobby Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='engine' id='engine' placeholder="Game Engine Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='game' id='game' placeholder="Game Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='build' id='build' placeholder="Build Core Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='event' id='event' placeholder="Event Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='proxy' id='proxy' placeholder="Proxy Build Number"
+                                                           class="form-control"/>
+                                                </fieldset>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                        <button type="button" class="btn btn-primary"
+                                                form="disable"
+                                                onclick="updateNetwork(this.form.network.value);"><i class="fas fa-upload"></i> Update</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <br>
                 <br>
                 <div class="row">
                     <div class="col-sm-4">
