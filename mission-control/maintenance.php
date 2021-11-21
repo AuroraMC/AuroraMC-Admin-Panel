@@ -22,12 +22,15 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
+    <script type="text/javascript" src="js/main.js"></script>
+
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <link rel="icon"
           type="image/png"
@@ -73,7 +76,215 @@
             <h1><Strong><u>Network Maintenance</u></Strong></h1>
             <br>
             <br>
-
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card border-success text-center mx-xl-5">
+                            <div class="card-header bg-success">
+                                <p class="sm-card-title">Enable network monitoring</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="enable"
+                                      id="enable">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <select name="network" id="network" class="form-control"
+                                                    onchange="networkChangeServerCreate(this.form.network.value)">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                            </select><br>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="create-server-button" class="btn btn-success"
+                                            form="create_server"
+                                            onclick="enableNetwork(this.form.network.value);">
+                                        <i class="fas fa-check"></i><br>Enable
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-danger text-center mx-xl-5">
+                            <div class="card-header bg-danger">
+                                <p class="sm-card-title">Disable network monitoring</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <div class="alert alert-primary" role="alert">
+                                    <strong>PLEASE NOTE:</strong> This action will not close any open servers, it simply disabled the automatic creation of new servers.
+                                </div>
+                                <form name="disable"
+                                      id="disable">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                                   class="form-control"/><br>
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                            </select><br>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="restart-server-button" class="btn btn-danger"
+                                            form="restart_server"
+                                            onclick="disableNetwork(this.form.network.value);">
+                                        <i class="fas fa-sync-alt"></i><br>Restart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-danger text-center mx-xl-5">
+                            <div class="card-header bg-danger">
+                                <p class="sm-card-title">Close a server</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="close_server"
+                                      id="close_server">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                                   class="form-control"/><br>
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                                <option value="TEST">Test</option>
+                                            </select><br>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="close-server-button" class="btn btn-danger"
+                                            form="close_server"
+                                            onclick="serverClose(this.form.server.value, this.form.network.value);">
+                                        <i class="fas fa-times"></i><br>Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card border-success text-center mx-xl-5">
+                            <div class="card-header bg-success">
+                                <p class="sm-card-title">Create a proxy</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="create_proxy"
+                                      id="create_proxy">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset style="width:100%">
+                                            <select name="network" id="network" class="form-control"
+                                                    onchange="networkChangeProxyCreate(this.form.network.value)">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                                <option value="TEST">Test</option>
+                                            </select><br>
+                                            <div id="extra_create_proxy" style="visibility: hidden;display:none;">
+                                                <input type="text" name="extra_details" id="extra_details"
+                                                       placeholder="Extra Details" class="form-control"/>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="create-proxy-button" class="btn btn-success"
+                                            form="create_proxy"
+                                            onclick="proxyCreate(this.form.network.value, this.form.extra_details.value);">
+                                        <i class="fas fa-plus"></i><br>Create
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-warning text-center mx-xl-5">
+                            <div class="card-header bg-warning">
+                                <p class="sm-card-title">Restart a proxy</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="restart_proxy"
+                                      id="restart_proxy">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
+                                                   class="form-control"/><br>
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                                <option value="TEST">Test</option>
+                                            </select><br>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="restart-proxy-button" class="btn btn-warning"
+                                            form="restart_proxy"
+                                            onclick="proxyRestart(this.form.proxy.value, this.form.network.value);">
+                                        <i class="fas fa-sync-alt"></i><br>Restart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-danger text-center mx-xl-5">
+                            <div class="card-header  bg-danger">
+                                <p class="sm-card-title">Close a proxy</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="close_proxy"
+                                      id="close_proxy">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
+                                                   class="form-control"/><br>
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN" style>Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                                <option value="TEST">Test</option>
+                                            </select><br>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="close-proxy-button" class="btn btn-danger"
+                                            form="close_proxy"
+                                            onclick="proxyClose(this.form.proxy.value, this.form.network.value);">
+                                        <i class="fas fa-times"></i><br>Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>
