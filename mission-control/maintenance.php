@@ -149,19 +149,25 @@
                                       id="update">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <input type='text' name='core' id='core' placeholder="Core Build"
-                                                   class="form-control"/>
-                                            <input type='text' name='lobby' id='lobby' placeholder="Lobby Build"
-                                                   class="form-control"/><br>
-                                            <input type='text' name='game' id='game' placeholder="Game Build"
-                                                   class="form-control"/>
-                                            <input type='text' name='engine' id='engine' placeholder="Engine Build"
-                                                   class="form-control"/><br>
+                                            <div class="input-group">
+                                                <input type='text' name='core' id='core' placeholder="Core Build"
+                                                       class="form-control"/>
+                                                <input type='text' name='lobby' id='lobby' placeholder="Lobby Build"
+                                                       class="form-control"/>
+                                            </div><br>
+                                            <div class="input-group">
+                                                <input type='text' name='game' id='game' placeholder="Game Build"
+                                                       class="form-control"/>
+                                                <input type='text' name='engine' id='engine' placeholder="Engine Build"
+                                                       class="form-control"/>
+                                            </div><br>
+                                            <div class="input-group">
+                                                <input type='text' name='build' id='build' placeholder="Build Build"
+                                                       class="form-control"/>
+                                                <input type='text' name='event' id='event' placeholder="Event Build"
+                                                       class="form-control"/>
+                                            </div><br>
                                             <input type='text' name='proxy' id='proxy' placeholder="Proxy Build"
-                                                   class="form-control"/>
-                                            <input type='text' name='build' id='build' placeholder="Build Build"
-                                                   class="form-control"/><br>
-                                            <input type='text' name='event' id='event' placeholder="Event Build"
                                                    class="form-control"/>
                                         </fieldset>
                                     </div>
