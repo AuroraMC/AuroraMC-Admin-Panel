@@ -127,8 +127,10 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica'; text-align: center">Restart a server</legend>
                         <div class="card mx-xl-5">
+                            <div class="card-header">
+                                <p class="sm-card-title">Restart a server</p>
+                            </div>
                             <!-- Card body -->
                             <div class="card-body">
                                 <form name="restart_server"
@@ -156,8 +158,10 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica'; text-align: center">Close a server</legend>
                         <div class="card mx-xl-5">
+                            <div class="card-header">
+                                <p class="sm-card-title">Close a server</p>
+                            </div>
                             <!-- Card body -->
                             <div class="card-body">
                                 <form name="close_server"
@@ -189,8 +193,10 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica'; text-align: center">Create a proxy</legend>
                         <div class="card mx-xl-5">
+                            <div class="card-header">
+                                <p class="sm-card-title">Create a proxy</p>
+                            </div>
                             <!-- Card body -->
                             <div class="card-body">
                                 <form name="create_proxy"
@@ -221,8 +227,10 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica'; text-align: center">Restart a proxy</legend>
                         <div class="card mx-xl-5">
+                            <div class="card-header">
+                                <p class="sm-card-title">Restart a proxy</p>
+                            </div>
                             <!-- Card body -->
                             <div class="card-body">
                                 <form name="restart_proxy"
@@ -250,8 +258,10 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica'; text-align: center">Close a proxy</legend>
                         <div class="card mx-xl-5">
+                            <div class="card-header">
+                                <p class="sm-card-title">Close a proxy</p>
+                            </div>
                             <!-- Card body -->
                             <div class="card-body">
                                 <form name="close_proxy"
