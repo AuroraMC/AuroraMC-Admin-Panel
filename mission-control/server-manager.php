@@ -152,7 +152,7 @@
                                         <button type="button" id="close-server-button" class="btn btn-default"
                                                 form="close_server"
                                                 onclick="serverClose(this.form.server.value, this.form.network.value);">
-                                            <i class="fas fa-times-square"></i> Close
+                                            <i class="fas fa-times-circle"></i> Close
                                         </button>
                                     </div>
                             </div>
