@@ -113,9 +113,7 @@
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <div class="alert alert-primary" role="alert">
-                                    <p><strong>PLEASE NOTE:</strong> This action will not close any open servers.</p>
-                                </div>
+                                <p><strong>PLEASE NOTE:</strong> This action will not close any open servers.</p>
                                 <form name="disable"
                                       id="disable">
                                     <div class="md-form input-group input-group-lg">
