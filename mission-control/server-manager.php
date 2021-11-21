@@ -119,40 +119,10 @@
                                         </fieldset>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" id="create-server-button" class="btn btn-default"
+                                        <button type="button" id="create-server-button" class="btn btn-success"
                                                 form="create_server"
                                                 onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">
                                             <i class="fas fa-plus"></i>  Create
-                                        </button>
-                                    </div>
-                            </div>
-                        </div>
-                        </form>
-                    </div>
-                    <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica';">Close a server</legend>
-                        <hr>
-                        <div class="card mx-xl-5">
-                            <!-- Card body -->
-                            <div class="card-body">
-                                <form name="close_server"
-                                      id="close_server">
-                                    <div class="md-form input-group input-group-lg">
-                                        <fieldset>
-                                            <input type='text' name='server' id='server' placeholder="Server Name"
-                                                   class="form-control"/><br>
-                                            <select name="network" id="network" class="form-control">
-                                                <option value="MAIN">Main</option>
-                                                <option value="ALPHA">Alpha</option>
-                                                <option value="TEST">Test</option>
-                                            </select><br>
-                                        </fieldset>
-                                    </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" id="close-server-button" class="btn btn-default"
-                                                form="close_server"
-                                                onclick="serverClose(this.form.server.value, this.form.network.value);">
-                                            <i class="fas fa-times"></i>  Close
                                         </button>
                                     </div>
                             </div>
@@ -179,10 +149,40 @@
                                         </fieldset>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" id="restart-server-button" class="btn btn-default"
+                                        <button type="button" id="restart-server-button" class="btn btn-warning"
                                                 form="restart_server"
                                                 onclick="serverRestart(this.form.server.value, this.form.network.value);">
                                             <i class="fas fa-sync-alt"></i>  Restart
+                                        </button>
+                                    </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4">
+                        <legend style="font-family: 'Helvetica';">Close a server</legend>
+                        <hr>
+                        <div class="card mx-xl-5">
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="close_server"
+                                      id="close_server">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                                   class="form-control"/><br>
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                                <option value="TEST">Test</option>
+                                            </select><br>
+                                        </fieldset>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" id="close-server-button" class="btn btn-danger"
+                                                form="close_server"
+                                                onclick="serverClose(this.form.server.value, this.form.network.value);">
+                                            <i class="fas fa-times"></i>  Close
                                         </button>
                                     </div>
                             </div>
