@@ -201,7 +201,7 @@
                                       id="create_proxy">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <select name="network" id="network" class="form-control"
+                                            <select name="network" id="network" class="form-control" style="width:100%"
                                                     onchange="networkChangeProxyCreate(this.form.network.value)">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
