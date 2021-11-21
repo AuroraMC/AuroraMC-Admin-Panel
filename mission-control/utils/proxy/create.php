@@ -1,6 +1,6 @@
 <?php
 
-include_once '../socket-util.php';
+include '../socket-util.php';
 
 if (isset($_POST['network'], $_POST['extradetails'])) {
     $network = filter_input(INPUT_POST, 'network', FILTER_SANITIZE_STRING);

@@ -1,6 +1,6 @@
 <?php
 
-include_once '../socket-util.php';
+include '../socket-util.php';
 
 if (isset($_POST['proxy'], $_POST['network'])) {
     $server = filter_input(INPUT_POST, 'proxy', FILTER_SANITIZE_STRING);
