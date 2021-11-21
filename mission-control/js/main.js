@@ -46,3 +46,42 @@ function serverRestart(server, network) {
         }
     });
 }
+
+function proxyCreate(network, extradetails) {
+    document.getElementById("create-proxy-button").disabled = true;
+    $.ajax({
+        url:'/mission-control/utils/proxy/create.php',
+        type: 'post',
+        data: "network=" + encodeURIComponent(network) + "&extradetails=" + encodeURIComponent(extradetails),
+        success: function(result) {
+            alert(result);
+            document.getElementById("create-proxy-button").disabled = false;
+        }
+    });
+}
+
+function proxyClose(server, network) {
+    document.getElementById("close-proxy-button").disabled = true;
+    $.ajax({
+        url:'/mission-control/utils/proxy/close.php',
+        type: 'post',
+        data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
+        success: function(result) {
+            alert(result);
+            document.getElementById("close-proxy-button").disabled = false;
+        }
+    });
+}
+
+function proxyRestart(server, network) {
+    document.getElementById("restart-proxy-button").disabled = true;
+    $.ajax({
+        url:'/mission-control/utils/proxy/restart.php',
+        type: 'post',
+        data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
+        success: function(result) {
+            alert(result);
+            document.getElementById("restart-proxy-button").disabled = false;
+        }
+    });
+}

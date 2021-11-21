@@ -192,47 +192,31 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica';">Create a Proxy</legend>
+                        <legend style="font-family: 'Helvetica';">Create a proxy</legend>
                         <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="create_server"
-                                      id="create_server">
+                                <form name="create_proxy"
+                                      id="create_proxy">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <input type='text' name='server' id='server' placeholder="Server Name"
-                                                   class="form-control"/><br>
-                                            <select name="game" id="game" class="form-control">
-                                                <optgroup label="Lobby Servers">
-                                                    <option value="LOBBY">Lobby</option>
-                                                </optgroup>
-                                                <optgroup label="Game Servers">
-                                                    <option value="CRYSTAL_QUEST">Crystal Quest</option>
-                                                    <option value="MIXED_ARCADE">Mixed Arcade</option>
-                                                </optgroup>
-                                                <optgroup label="Misc Servers">
-                                                    <option value="BUILD">Build</option>
-                                                    <option value="EVENT">Event</option>
-                                                    <option value="STAFF">Staff</option>
-                                                </optgroup>
-                                            </select><br>
                                             <select name="network" id="network" class="form-control"
-                                                    onchange="networkChangeServerCreate(this.form.network.value)">
+                                                    onchange="networkChangeProxyCreate(this.form.network.value)">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select><br>
-                                            <div id="extra_create_server" style="visibility: hidden;display:none;">
+                                            <div id="extra_create_proxy" style="visibility: hidden;display:none;">
                                                 <input type="text" name="extra_details" id="extra_details"
                                                        placeholder="Extra Details" class="form-control"/>
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" id="create-server-button" class="btn btn-success"
-                                                form="create_server"
-                                                onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">
+                                        <button type="button" id="create-proxy-button" class="btn btn-success"
+                                                form="create_proxy"
+                                                onclick="proxyCreate(this.form.network.value, this.form.extra_details.value);">
                                             <i class="fas fa-plus"></i><br>Create
                                         </button>
                                     </div>
@@ -241,16 +225,16 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica';">Restart a server</legend>
+                        <legend style="font-family: 'Helvetica';">Restart a proxy</legend>
                         <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="restart_server"
-                                      id="restart_server">
+                                <form name="restart_proxy"
+                                      id="restart_proxy">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
                                                    class="form-control"/><br>
                                             <select name="network" id="network" class="form-control">
                                                 <option value="MAIN">Main</option>
@@ -260,9 +244,9 @@
                                         </fieldset>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" id="restart-server-button" class="btn btn-warning"
-                                                form="restart_server"
-                                                onclick="serverRestart(this.form.server.value, this.form.network.value);">
+                                        <button type="button" id="restart-proxy-button" class="btn btn-warning"
+                                                form="restart_proxy"
+                                                onclick="proxyRestart(this.form.proxy.value, this.form.network.value);">
                                             <i class="fas fa-sync-alt"></i><br>Restart
                                         </button>
                                     </div>
@@ -271,16 +255,16 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <legend style="font-family: 'Helvetica';">Close a server</legend>
+                        <legend style="font-family: 'Helvetica';">Close a proxy</legend>
                         <hr>
                         <div class="card mx-xl-5">
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="close_server"
-                                      id="close_server">
+                                <form name="close_proxy"
+                                      id="close_proxy">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
                                                    class="form-control"/><br>
                                             <select name="network" id="network" class="form-control">
                                                 <option value="MAIN">Main</option>
@@ -290,9 +274,9 @@
                                         </fieldset>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" id="close-server-button" class="btn btn-danger"
-                                                form="close_server"
-                                                onclick="serverClose(this.form.server.value, this.form.network.value);">
+                                        <button type="button" id="close-proxy-button" class="btn btn-danger"
+                                                form="close_proxy"
+                                                onclick="proxyClose(this.form.proxy.value, this.form.network.value);">
                                             <i class="fas fa-times"></i><br>Close
                                         </button>
                                     </div>
