@@ -115,16 +115,18 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" id="create-server-button" class="btn btn-success"
-                                                form="create_server"
-                                                onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">
-                                            <i class="fas fa-plus"></i><br>Create
-                                        </button>
-                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="create-server-button" class="btn btn-success"
+                                            form="create_server"
+                                            onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">
+                                        <i class="fas fa-plus"></i><br>Create
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        </form>
                     </div>
                     <div class="col-sm-4">
                         <div class="card border-warning text-center mx-xl-5">
@@ -146,16 +148,18 @@
                                             </select><br>
                                         </fieldset>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" id="restart-server-button" class="btn btn-warning"
-                                                form="restart_server"
-                                                onclick="serverRestart(this.form.server.value, this.form.network.value);">
-                                            <i class="fas fa-sync-alt"></i><br>Restart
-                                        </button>
-                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="restart-server-button" class="btn btn-warning"
+                                            form="restart_server"
+                                            onclick="serverRestart(this.form.server.value, this.form.network.value);">
+                                        <i class="fas fa-sync-alt"></i><br>Restart
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        </form>
                     </div>
                     <div class="col-sm-4">
                         <div class="card border-danger text-center mx-xl-5">
@@ -177,16 +181,18 @@
                                             </select><br>
                                         </fieldset>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" id="close-server-button" class="btn btn-danger"
-                                                form="close_server"
-                                                onclick="serverClose(this.form.server.value, this.form.network.value);">
-                                            <i class="fas fa-times"></i><br>Close
-                                        </button>
-                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="close-server-button" class="btn btn-danger"
+                                            form="close_server"
+                                            onclick="serverClose(this.form.server.value, this.form.network.value);">
+                                        <i class="fas fa-times"></i><br>Close
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        </form>
                     </div>
                 </div>
                 <br>
@@ -215,16 +221,18 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" id="create-proxy-button" class="btn btn-success"
-                                                form="create_proxy"
-                                                onclick="proxyCreate(this.form.network.value, this.form.extra_details.value);">
-                                            <i class="fas fa-plus"></i><br>Create
-                                        </button>
-                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="create-proxy-button" class="btn btn-success"
+                                            form="create_proxy"
+                                            onclick="proxyCreate(this.form.network.value, this.form.extra_details.value);">
+                                        <i class="fas fa-plus"></i><br>Create
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        </form>
                     </div>
                     <div class="col-sm-4">
                         <div class="card border-warning text-center mx-xl-5">
@@ -246,16 +254,18 @@
                                             </select><br>
                                         </fieldset>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" id="restart-proxy-button" class="btn btn-warning"
-                                                form="restart_proxy"
-                                                onclick="proxyRestart(this.form.proxy.value, this.form.network.value);">
-                                            <i class="fas fa-sync-alt"></i><br>Restart
-                                        </button>
-                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="restart-proxy-button" class="btn btn-warning"
+                                            form="restart_proxy"
+                                            onclick="proxyRestart(this.form.proxy.value, this.form.network.value);">
+                                        <i class="fas fa-sync-alt"></i><br>Restart
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        </form>
                     </div>
                     <div class="col-sm-4">
                         <div class="card border-danger text-center mx-xl-5">
@@ -277,16 +287,18 @@
                                             </select><br>
                                         </fieldset>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" id="close-proxy-button" class="btn btn-danger"
-                                                form="close_proxy"
-                                                onclick="proxyClose(this.form.proxy.value, this.form.network.value);">
-                                            <i class="fas fa-times"></i><br>Close
-                                        </button>
-                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="close-proxy-button" class="btn btn-danger"
+                                            form="close_proxy"
+                                            onclick="proxyClose(this.form.proxy.value, this.form.network.value);">
+                                        <i class="fas fa-times"></i><br>Close
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
