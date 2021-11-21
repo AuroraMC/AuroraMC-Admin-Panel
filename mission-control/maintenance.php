@@ -151,8 +151,8 @@
                                 <div class="d-flex justify-content-center">
                                     <button type="button" id="update-button" class="btn btn-info"
                                             data-toggle="modal"
-                                            data-target="#updateModal"
-                                        <i class="fas fa-file-upload"></i><br>Open Modal
+                                            data-target="#updateModal">
+                                        <i class="fas fa-upload"></i><br>Open Modal
                                     </button>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                     <div class="modal-body">
                                         <p style="color:black;margin-bottom: 0">Update the plugins on the main network. This action will trigger a network restart of all applicable servers. This action is irreversible.<br><br>
                                             Please input the build numbers as found on Jenkins. Any module you do not wish to update, please leave the field blank.</p>
-                                        <br><br>
+                                        <br>
                                         <form name="update"
                                               id="update">
                                             <div class="md-form input-group input-group-lg">
@@ -202,9 +202,9 @@
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">
                                             Cancel
                                         </button>
-                                        <button type="button" class="btn btn-primary"
+                                        <button type="button" class="btn btn-info"
                                                 form="update"
-                                                onclick="updateNetwork(this.form.network.value);"><i class="fas fa-file-upload"></i> Update</button>
+                                                onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
                                     </div>
                                 </div>
                             </div>
