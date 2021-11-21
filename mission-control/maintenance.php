@@ -98,8 +98,8 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="create-server-button" class="btn btn-success"
-                                            form="create_server"
+                                    <button type="button" id="enable-button" class="btn btn-success"
+                                            form="enable"
                                             onclick="enableNetwork(this.form.network.value);">
                                         <i class="fas fa-check"></i><br>Enable
                                     </button>
@@ -119,8 +119,6 @@
                                       id="disable">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <input type='text' name='server' id='server' placeholder="Server Name"
-                                                   class="form-control"/><br>
                                             <select name="network" id="network" class="form-control">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
@@ -131,10 +129,10 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="restart-server-button" class="btn btn-danger"
-                                            form="restart_server"
+                                    <button type="button" id="disable-button" class="btn btn-danger"
+                                            form="disable"
                                             onclick="disableNetwork(this.form.network.value);">
-                                        <i class="fas fa-sync-alt"></i><br>Restart
+                                        <i class="fas fa-times"></i><br>Disable
                                     </button>
                                 </div>
                             </div>
@@ -143,31 +141,38 @@
                     <div class="col-sm-4">
                         <div class="card border-danger text-center mx-xl-5">
                             <div class="card-header bg-danger">
-                                <p class="sm-card-title">Close a server</p>
+                                <p class="sm-card-title">Update main network</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="close_server"
-                                      id="close_server">
+                                <form name="update"
+                                      id="update">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
-                                            <input type='text' name='server' id='server' placeholder="Server Name"
+                                            <input type='text' name='core' id='core' placeholder="Core Build"
                                                    class="form-control"/><br>
-                                            <select name="network" id="network" class="form-control">
-                                                <option value="MAIN">Main</option>
-                                                <option value="ALPHA">Alpha</option>
-                                                <option value="TEST">Test</option>
-                                            </select><br>
+                                            <input type='text' name='lobby' id='lobby' placeholder="Lobby Build"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='game' id='game' placeholder="Game Build"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='engine' id='engine' placeholder="Engine Build"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy Build"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='build' id='build' placeholder="Build Build"
+                                                   class="form-control"/><br>
+                                            <input type='text' name='event' id='event' placeholder="Event Build"
+                                                   class="form-control"/><br>
                                         </fieldset>
                                     </div>
                                 </form>
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="close-server-button" class="btn btn-danger"
-                                            form="close_server"
-                                            onclick="serverClose(this.form.server.value, this.form.network.value);">
-                                        <i class="fas fa-times"></i><br>Close
+                                    <button type="button" id="update-button" class="btn btn-info"
+                                            form="update"
+                                            onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.game.value, this.form.engine.value, this.form.proxy.value, this.form.build.value, this.form.event.value);">
+                                        <i class="fas fa-upload"></i><br>Update
                                     </button>
                                 </div>
                             </div>
