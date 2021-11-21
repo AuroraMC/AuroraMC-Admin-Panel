@@ -29,6 +29,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/ef00ee83f1.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/navbar.css">
 
     <link rel="icon"
@@ -107,13 +109,13 @@
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select><br>
-                                            <div id="extra_create_server" style="visibility: hidden;">
+                                            <div id="extra_create_server" style="visibility: hidden;display:none;">
                                                 <input type="text" name="extra_details" id="extra_details" placeholder="Extra Details"  class="form-control" />
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" class="btn btn-default" form="create_server" onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);">Create</button></div></div>
+                                        <button type="button" id="create-server-button" class="btn btn-default" form="create_server" onclick="serverCreate(this.form.server.value, this.form.network.value, this.form.game.value, this.form.extra_details.value);"><i class="fas fa-plus-square"></i> Create</button></div></div>
                                     </div>
                         </form>
                     </div>
