@@ -173,8 +173,9 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p style="color:black;margin-bottom: 0">Update the plugins on the main network. This action will trigger a network restart of all applicable servers. This action is irreversible.<br>
+                                        <p style="color:black;margin-bottom: 0">Update the plugins on the main network. This action will trigger a network restart of all applicable servers. This action is irreversible.<br><br>
                                             Please input the build numbers as found on Jenkins. Any module you do not wish to update, please leave the field blank.</p>
+                                        <br><br>
                                         <form name="update"
                                               id="update">
                                             <div class="md-form input-group input-group-lg">
