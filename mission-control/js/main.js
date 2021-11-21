@@ -20,3 +20,29 @@ function serverCreate(server, network, game, extradetails) {
         }
     });
 }
+
+function serverClose(server, network) {
+    document.getElementById("close-server-button").disabled = true;
+    $.ajax({
+        url:'/mission-control/utils/close-server.php',
+        type: 'post',
+        data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
+        success: function(result) {
+            alert(result);
+            document.getElementById("close-server-button").disabled = false;
+        }
+    });
+}
+
+function serverRestart(server, network) {
+    document.getElementById("restart-server-button").disabled = true;
+    $.ajax({
+        url:'/mission-control/utils/restart-server.php',
+        type: 'post',
+        data: "server=" + encodeURIComponent(server) + "&network=" + encodeURIComponent(network),
+        success: function(result) {
+            alert(result);
+            document.getElementById("restart-server-button").disabled = false;
+        }
+    });
+}
