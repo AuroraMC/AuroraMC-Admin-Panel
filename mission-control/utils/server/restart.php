@@ -1,6 +1,6 @@
 <?php
 
-include '../socket-util.php';
+require '../socket-util.php';
 
 if (isset($_POST['server'], $_POST['network'])) {
     $server = filter_input(INPUT_POST, 'server', FILTER_SANITIZE_STRING);
