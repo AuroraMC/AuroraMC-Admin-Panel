@@ -88,7 +88,7 @@
                                 <form name="enable"
                                       id="enable">
                                     <div class="md-form input-group input-group-lg">
-                                        <fieldset>
+                                        <fieldset style="width:100%">
                                             <select name="network" id="network" class="form-control"
                                                     onchange="networkChangeServerCreate(this.form.network.value)">
                                                 <option value="MAIN">Main</option>
@@ -117,7 +117,7 @@
                             <!-- Card body -->
                             <div class="card-body">
                                 <div class="alert alert-primary" role="alert">
-                                    <strong>PLEASE NOTE:</strong> This action will not close any open servers, it simply disabled the automatic creation of new servers.
+                                    <p><strong>PLEASE NOTE:</strong> This action will not close any open servers.</p>
                                 </div>
                                 <form name="disable"
                                       id="disable">
