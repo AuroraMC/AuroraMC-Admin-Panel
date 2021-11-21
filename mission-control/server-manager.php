@@ -25,9 +25,10 @@
 
     <script type="text/javascript" src="js/main.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/ef00ee83f1.js" crossorigin="anonymous"></script>
 
@@ -82,7 +83,7 @@
                     <div class="col-sm-4">
                         <div class="card text-center mx-xl-5">
                             <div class="card-header">
-                                <h3 style="color:black;font-family: 'Roboto', sans-serif;font-weight: bolder">Create a server</h3>
+                                <h3 style="color:black;">CREATE A SERVER</h3>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
