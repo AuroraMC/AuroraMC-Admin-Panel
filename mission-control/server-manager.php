@@ -77,9 +77,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="card text-center mx-xl-5">
+                        <div class="card border-success text-center mx-xl-5">
                             <div class="card-header">
-                                <p class="sm-card-title">Create a server</p>
+                                <p class="sm-card-title text-success">Create a server</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
@@ -127,9 +127,9 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card text-center mx-xl-5">
+                        <div class="card border-warning text-center mx-xl-5">
                             <div class="card-header">
-                                <p class="sm-card-title">Restart a server</p>
+                                <p class="sm-card-title text-warning">Restart a server</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
@@ -158,9 +158,9 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card text-center mx-xl-5">
+                        <div class="card border-danger text-center mx-xl-5">
                             <div class="card-header">
-                                <p class="sm-card-title">Close a server</p>
+                                <p class="sm-card-title text-danger">Close a server</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
@@ -193,9 +193,9 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="card text-center mx-xl-5">
+                        <div class="card border-success text-center mx-xl-5">
                             <div class="card-header">
-                                <p class="sm-card-title">Create a proxy</p>
+                                <p class="sm-card-title text-success">Create a proxy</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
@@ -227,9 +227,9 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card text-center mx-xl-5">
+                        <div class="card border-warning text-center mx-xl-5">
                             <div class="card-header">
-                                <p class="sm-card-title">Restart a proxy</p>
+                                <p class="sm-card-title text-warning">Restart a proxy</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
@@ -258,9 +258,9 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card text-center mx-xl-5">
+                        <div class="card border-danger text-center mx-xl-5">
                             <div class="card-header">
-                                <p class="sm-card-title">Close a proxy</p>
+                                <p class="sm-card-title text-danger">Close a proxy</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
