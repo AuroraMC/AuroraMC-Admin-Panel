@@ -127,7 +127,7 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card mx-xl-5">
+                        <div class="card text-center mx-xl-5">
                             <div class="card-header">
                                 <p class="sm-card-title">Restart a server</p>
                             </div>
@@ -158,7 +158,7 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card mx-xl-5">
+                        <div class="card text-center mx-xl-5">
                             <div class="card-header">
                                 <p class="sm-card-title">Close a server</p>
                             </div>
@@ -193,7 +193,7 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="card mx-xl-5">
+                        <div class="card text-center mx-xl-5">
                             <div class="card-header">
                                 <p class="sm-card-title">Create a proxy</p>
                             </div>
@@ -227,7 +227,7 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card mx-xl-5">
+                        <div class="card text-center mx-xl-5">
                             <div class="card-header">
                                 <p class="sm-card-title">Restart a proxy</p>
                             </div>
@@ -258,7 +258,7 @@
                         </form>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card mx-xl-5">
+                        <div class="card text-center mx-xl-5">
                             <div class="card-header">
                                 <p class="sm-card-title">Close a proxy</p>
                             </div>
