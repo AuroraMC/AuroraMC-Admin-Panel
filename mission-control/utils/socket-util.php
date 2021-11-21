@@ -1,12 +1,11 @@
 <?php
-if (isset($_POST['server'], $_POST['network'])) {
-    $server = filter_input(INPUT_POST, 'server', FILTER_SANITIZE_STRING);
-    $network = filter_input(INPUT_POST, 'network', FILTER_SANITIZE_STRING);
-
-    $host = "auroramc.block2block.me";
-    $port = 35567;
-    $data = "restartserver;". $network . ";" . $server ."\r\n";
-
+/**
+ * @param string $host
+ * @param int $port
+ * @param string $data
+ */
+function socket_send(string $host, int $port, string $data): void
+{
     if (($socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) === FALSE) {
         echo "Failed to initialise socket.";
     } else {

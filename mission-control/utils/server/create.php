@@ -9,18 +9,5 @@ if (isset($_POST['server'], $_POST['network'], $_POST['game'], $_POST['extradeta
     $port = 35567;
     $data = "createserver;". $network . ";" . $game . ";" . $server . ";" . $extra_details ."\r\n";
 
-    if (($socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) === FALSE) {
-        echo "Failed to initialise socket.";
-    } else {
-        if (($result = socket_connect($socket, $host, $port)) === false) {
-            echo "Failed to create connection.";
-        } else {
-            socket_write($socket, $data, strlen($data));
-
-            while (($out = socket_read($socket, 2048)) != "") {
-                echo $out;
-            }
-        }
-        socket_close($socket);
-    }
+    socket_send($host, $port, $data);
 }
