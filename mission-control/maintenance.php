@@ -118,7 +118,7 @@
                                 <form name="disable"
                                       id="disable">
                                     <div class="md-form input-group input-group-lg">
-                                        <fieldset>
+                                        <fieldset style="width: 100%">
                                             <select name="network" id="network" class="form-control">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
@@ -150,19 +150,19 @@
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
                                             <input type='text' name='core' id='core' placeholder="Core Build"
-                                                   class="form-control"/><br>
+                                                   class="form-control"/>
                                             <input type='text' name='lobby' id='lobby' placeholder="Lobby Build"
                                                    class="form-control"/><br>
                                             <input type='text' name='game' id='game' placeholder="Game Build"
-                                                   class="form-control"/><br>
+                                                   class="form-control"/>
                                             <input type='text' name='engine' id='engine' placeholder="Engine Build"
                                                    class="form-control"/><br>
                                             <input type='text' name='proxy' id='proxy' placeholder="Proxy Build"
-                                                   class="form-control"/><br>
+                                                   class="form-control"/>
                                             <input type='text' name='build' id='build' placeholder="Build Build"
                                                    class="form-control"/><br>
                                             <input type='text' name='event' id='event' placeholder="Event Build"
-                                                   class="form-control"/><br>
+                                                   class="form-control"/>
                                         </fieldset>
                                     </div>
                                 </form>
