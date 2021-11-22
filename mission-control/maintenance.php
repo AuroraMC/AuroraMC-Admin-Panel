@@ -73,6 +73,7 @@
             <h1><Strong><u>Network Maintenance</u></Strong></h1>
             <br>
             <br>
+            <h2><u>Network</u></h2>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
@@ -212,17 +213,18 @@
                     </div>
                 </div>
                 <br>
+                <h2><u>Alpha</u></h2>
                 <br>
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="card border-success text-center mx-xl-5">
                             <div class="card-header bg-success">
-                                <p class="sm-card-title">Create a proxy</p>
+                                <p class="sm-card-title">Enable Alpha Network</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="create_proxy"
-                                      id="create_proxy">
+                                <form name="enable_alpha"
+                                      id="enable_alpha">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset style="width:100%">
                                             <select name="network" id="network" class="form-control"
@@ -241,9 +243,9 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="create-proxy-button" class="btn btn-success"
-                                            form="create_proxy"
-                                            onclick="proxyCreate(this.form.network.value, this.form.extra_details.value);">
+                                    <button type="button" id="enable-alpha-button" class="btn btn-success"
+                                            form="enable_alpha"
+                                            onclick="enableAlpha(this.form.network.value, this.form.extra_details.value);">
                                         <i class="fas fa-plus"></i><br>Create
                                     </button>
                                 </div>
@@ -251,14 +253,14 @@
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card border-warning text-center mx-xl-5">
-                            <div class="card-header bg-warning">
-                                <p class="sm-card-title">Restart a proxy</p>
+                        <div class="card border-danger text-center mx-xl-5">
+                            <div class="card-header bg-danger">
+                                <p class="sm-card-title">Disable Alpha Network</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="restart_proxy"
-                                      id="restart_proxy">
+                                <form name="disable_alpha"
+                                      id="disable_alpha">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset>
                                             <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
@@ -274,9 +276,9 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="restart-proxy-button" class="btn btn-warning"
-                                            form="restart_proxy"
-                                            onclick="proxyRestart(this.form.proxy.value, this.form.network.value);">
+                                    <button type="button" id="disable-alpha-button" class="btn btn-danger"
+                                            form="disable_alpha"
+                                            onclick="disableAlpha(this.form.proxy.value, this.form.network.value);">
                                         <i class="fas fa-sync-alt"></i><br>Restart
                                     </button>
                                 </div>
