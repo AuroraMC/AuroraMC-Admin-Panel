@@ -484,8 +484,8 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="card border-success text-center mx-xl-5">
-                            <div class="card-header bg-success">
+                        <div class="card border-warning text-center mx-xl-5">
+                            <div class="card-header bg-warning">
                                 <p class="sm-card-title">Set maintenance mode</p>
                             </div>
                             <!-- Card body -->
@@ -510,7 +510,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="maintenance-mode-button" class="btn btn-success"
+                                    <button type="button" id="maintenance-mode-button" class="btn btn-warning"
                                             form="maintenance_mode"
                                             onclick="maintenanceMode(this.form.network.value, this.form.mode.value);">
                                         <i class="fas fa-check"></i><br>Set
@@ -520,8 +520,8 @@
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card border-danger text-center mx-xl-5">
-                            <div class="card-header bg-danger">
+                        <div class="card border-primary text-center mx-xl-5">
+                            <div class="card-header bg-primary">
                                 <p class="sm-card-title">Set Maintenance MOTD</p>
                             </div>
                             <!-- Card body -->
@@ -542,7 +542,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="maintenance-motd-button" class="btn btn-danger"
+                                    <button type="button" id="maintenance-motd-button" class="btn btn-primary"
                                             form="maintenance_motd"
                                             onclick="maintenanceMotd(this.form.network.value, this.form.motd.value);">
                                         <i class="fas fa-upload"></i><br>Change
