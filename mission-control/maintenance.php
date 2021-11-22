@@ -477,6 +477,113 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
+                <div class="text-center">
+                    <h2><u>Maintenance</u></h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card border-success text-center mx-xl-5">
+                            <div class="card-header bg-success">
+                                <p class="sm-card-title">Set a maintenance mode</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="maintenance_mode"
+                                      id="maintenance_mode">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset style="width:100%">
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                            </select><br>
+                                            <select name="mode" id="mode" class="form-control">
+                                                <option value="DISABLED">Off</option>
+                                                <option value="STAFF_ONLY">Staff Only</option>
+                                                <option value="LEADERSHIP_ONLY">Leadership Only</option>
+                                                <option value="LOCKDOWN">Essential Staff Only</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="maintenance-mode-button" class="btn btn-success"
+                                            form="maintenance_mode"
+                                            onclick="maintenanceMode(this.form.network.value, this.form.mode.value);">
+                                        <i class="fas fa-check"></i><br>Set
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-danger text-center mx-xl-5">
+                            <div class="card-header bg-danger">
+                                <p class="sm-card-title">Set Maintenance Mode MOTD</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="maintenance_motd"
+                                      id="maintenance_motd">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset style="width:100%">
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                            </select><br>
+                                            <input type='text' name='motd' id='motd' placeholder="MOTD"
+                                                   class="form-control"/>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="maintenance-motd-button" class="btn btn-danger"
+                                            form="maintenance_motd"
+                                            onclick="maintenanceMotd(this.form.network.value, this.form.motd.value);">
+                                        <i class="fas fa-upload"></i><br>Change
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-info text-center mx-xl-5">
+                            <div class="card-header  bg-info">
+                                <p class="sm-card-title">Set normal MOTD</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="normal_motd"
+                                      id="normal_motd">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset style="width:100%">
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                            </select><br>
+                                            <input type='text' name='motd' id='motd' placeholder="MOTD"
+                                                   class="form-control"/>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="monitoring-button" class="btn btn-info"
+                                            form="normal_motd"
+                                            onclick="normalMotd(this.form.network.value, this.form.motd.value);">
+                                        <i class="fas fa-upload"></i><br>Change
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
