@@ -486,7 +486,7 @@
                     <div class="col-sm-4">
                         <div class="card border-success text-center mx-xl-5">
                             <div class="card-header bg-success">
-                                <p class="sm-card-title">Set a maintenance mode</p>
+                                <p class="sm-card-title">Set maintenance mode</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
@@ -522,7 +522,7 @@
                     <div class="col-sm-4">
                         <div class="card border-danger text-center mx-xl-5">
                             <div class="card-header bg-danger">
-                                <p class="sm-card-title">Set Maintenance Mode MOTD</p>
+                                <p class="sm-card-title">Set Maintenance MOTD</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
@@ -554,7 +554,7 @@
                     <div class="col-sm-4">
                         <div class="card border-info text-center mx-xl-5">
                             <div class="card-header  bg-info">
-                                <p class="sm-card-title">Set normal MOTD</p>
+                                <p class="sm-card-title">Update normal MOTD</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
@@ -585,6 +585,8 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>
