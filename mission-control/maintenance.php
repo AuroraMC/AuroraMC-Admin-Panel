@@ -334,6 +334,149 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
+                <div class="text-center">
+                    <h2><u>Games</u></h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card border-success text-center mx-xl-5">
+                            <div class="card-header bg-success">
+                                <p class="sm-card-title">Enable a game</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="enable_game"
+                                      id="enable_game">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset style="width:100%">
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                            </select><br>
+                                            <select name="game" id="game" class="form-control">
+                                                <optgroup label="Lobby Servers">
+                                                    <option value="LOBBY">Lobby</option>
+                                                </optgroup>
+                                                <optgroup label="Game Servers">
+                                                    <option value="CRYSTAL_QUEST">Crystal Quest</option>
+                                                    <option value="MIXED_ARCADE">Mixed Arcade</option>
+                                                </optgroup>
+                                                <optgroup label="Misc Servers">
+                                                    <option value="BUILD">Build</option>
+                                                    <option value="EVENT">Event</option>
+                                                    <option value="STAFF">Staff</option>
+                                                </optgroup>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="enable-game-button" class="btn btn-success"
+                                            form="enable_game"
+                                            onclick="enableGame(this.form.game.value, this.form.network.value);">
+                                        <i class="fas fa-check"></i><br>Enable
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-danger text-center mx-xl-5">
+                            <div class="card-header bg-danger">
+                                <p class="sm-card-title">Disable a game</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="disable_game"
+                                      id="disable_game">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset style="width:100%">
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                            </select><br>
+                                            <select name="game" id="game" class="form-control">
+                                                <optgroup label="Lobby Servers">
+                                                    <option value="LOBBY">Lobby</option>
+                                                </optgroup>
+                                                <optgroup label="Game Servers">
+                                                    <option value="CRYSTAL_QUEST">Crystal Quest</option>
+                                                    <option value="MIXED_ARCADE">Mixed Arcade</option>
+                                                </optgroup>
+                                                <optgroup label="Misc Servers">
+                                                    <option value="BUILD">Build</option>
+                                                    <option value="EVENT">Event</option>
+                                                    <option value="STAFF">Staff</option>
+                                                </optgroup>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="disable-game-button" class="btn btn-danger"
+                                            form="disable_game"
+                                            onclick="disableGame(this.form.game.value, this.form.network.value);">
+                                        <i class="fas fa-times"></i><br>Disable
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-info text-center mx-xl-5">
+                            <div class="card-header  bg-info">
+                                <p class="sm-card-title">Game Monitoring</p>
+                            </div>
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <form name="monitoring"
+                                      id="monitoring">
+                                    <div class="md-form input-group input-group-lg">
+                                        <fieldset>
+                                            <select name="network" id="network" class="form-control">
+                                                <option value="MAIN">Main</option>
+                                                <option value="ALPHA">Alpha</option>
+                                            </select><br>
+                                            <select name="game" id="game" class="form-control">
+                                                <optgroup label="Lobby Servers">
+                                                    <option value="LOBBY">Lobby</option>
+                                                </optgroup>
+                                                <optgroup label="Game Servers">
+                                                    <option value="CRYSTAL_QUEST">Crystal Quest</option>
+                                                    <option value="MIXED_ARCADE">Mixed Arcade</option>
+                                                </optgroup>
+                                                <optgroup label="Misc Servers">
+                                                    <option value="BUILD">Build</option>
+                                                    <option value="EVENT">Event</option>
+                                                    <option value="STAFF">Staff</option>
+                                                </optgroup>
+                                            </select><br>
+                                            <select name="enabled" id="enabled" class="form-control">
+                                                <option value="true">Enable</option>
+                                                <option value="false">Disabled</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" id="monitoring-button" class="btn btn-danger"
+                                            form="monitoring"
+                                            onclick="monitoringToggle(this.form.enabled.value, this.form.game.value, this.form.network.value);">
+                                        <i class="fas fa-upload"></i><br>Change
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
