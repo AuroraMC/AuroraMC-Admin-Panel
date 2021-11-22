@@ -73,9 +73,11 @@
             <h1><Strong><u>Network Maintenance</u></Strong></h1>
             <br>
             <br>
-            <h2><u>Network</u></h2>
             <div class="container">
                 <div class="row">
+                    <div class="text-center">
+                        <h2><u>Network</u></h2>
+                    </div>
                     <div class="col-sm-4">
                         <div class="card border-success text-center mx-xl-5">
                             <div class="card-header bg-success">
@@ -214,7 +216,9 @@
                 </div>
                 <br>
                 <br>
-                <h2><u>Alpha</u></h2>
+                <div class="text-center">
+                    <h2><u>Alpha</u></h2>
+                </div>
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="card border-success text-center mx-xl-5">
@@ -272,6 +276,58 @@
                                             data-target="#alphaModal">
                                         <i class="fas fa-upload"></i><br>Open Modal
                                     </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                                class="modal fade"
+                                id="alphaModal"
+                                tabindex="-1"
+                                aria-labelledby="updateModal"
+                                aria-hidden="true"
+                        >
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="updateModalLabel" style="color:black;">Update the alpha network</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p style="color:black;margin-bottom: 0">Update the plugins on the alpha network. This action will trigger a network restart of all applicable servers. This action is irreversible.<br><br>
+                                            Please input the build numbers and branches as found on Jenkins. It should be in the format <i>branch:build</i>. Any module you do not wish to update, please leave the field blank.</p>
+                                        <br>
+                                        <form name="update_alpha"
+                                              id="update_alpha">
+                                            <div class="md-form input-group input-group-lg">
+                                                <fieldset>
+                                                    <input type='text' name='core' id='core' placeholder="Core Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='lobby' id='lobby' placeholder="Lobby Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='engine' id='engine' placeholder="Engine Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='game' id='game' placeholder="Game Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='build' id='build' placeholder="Build Core Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='event' id='event' placeholder="Event Build Number"
+                                                           class="form-control"/><br>
+                                                    <input type='text' name='proxy' id='proxy' placeholder="Proxy Build Number"
+                                                           class="form-control"/>
+                                                </fieldset>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                        <button type="button" class="btn btn-info"
+                                                form="update_alpha"
+                                                onclick="updateAlphaNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
