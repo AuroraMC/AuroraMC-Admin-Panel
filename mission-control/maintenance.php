@@ -438,7 +438,7 @@
                                 <form name="monitoring"
                                       id="monitoring">
                                     <div class="md-form input-group input-group-lg">
-                                        <fieldset>
+                                        <fieldset style="width:100%">
                                             <select name="network" id="network" class="form-control">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
