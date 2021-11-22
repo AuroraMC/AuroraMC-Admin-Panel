@@ -235,7 +235,7 @@
                                     <button type="button" id="enable-alpha-button" class="btn btn-success"
                                             form="enable_alpha"
                                             onclick="enableAlpha(this.form.network.value, this.form.extra_details.value);">
-                                        <i class="fas fa-plus"></i><br>Create
+                                        <i class="fas fa-check"></i><br>Enable
                                     </button>
                                 </div>
                             </div>
@@ -255,7 +255,7 @@
                                     <button type="button" id="disable-alpha-button" class="btn btn-danger"
                                             form="disable_alpha"
                                             onclick="disableAlpha(this.form.proxy.value, this.form.network.value);">
-                                        <i class="fas fa-sync-alt"></i><br>Restart
+                                        <i class="fas fa-times"></i><br>Disable
                                     </button>
                                 </div>
                             </div>
