@@ -213,8 +213,8 @@
                     </div>
                 </div>
                 <br>
-                <h2><u>Alpha</u></h2>
                 <br>
+                <h2><u>Alpha</u></h2>
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="card border-success text-center mx-xl-5">
@@ -223,23 +223,7 @@
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="enable_alpha"
-                                      id="enable_alpha">
-                                    <div class="md-form input-group input-group-lg">
-                                        <fieldset style="width:100%">
-                                            <select name="network" id="network" class="form-control"
-                                                    onchange="networkChangeProxyCreate(this.form.network.value)">
-                                                <option value="MAIN">Main</option>
-                                                <option value="ALPHA">Alpha</option>
-                                                <option value="TEST">Test</option>
-                                            </select><br>
-                                            <div id="extra_create_proxy" style="visibility: hidden;display:none;">
-                                                <input type="text" name="extra_details" id="extra_details"
-                                                       placeholder="Extra Details" class="form-control"/>
-                                            </div>
-                                        </fieldset>
-                                    </div>
-                                </form>
+                                <p style="font-weight:900;color:black;margin-bottom: 0;">PLEASE NOTE:</p><p style="color:black;margin-bottom: 0"> This action enables the Alpha network and starts network monitoring with the already selected branch and build details.</p>
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
@@ -259,20 +243,7 @@
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="disable_alpha"
-                                      id="disable_alpha">
-                                    <div class="md-form input-group input-group-lg">
-                                        <fieldset>
-                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
-                                                   class="form-control"/><br>
-                                            <select name="network" id="network" class="form-control">
-                                                <option value="MAIN">Main</option>
-                                                <option value="ALPHA">Alpha</option>
-                                                <option value="TEST">Test</option>
-                                            </select><br>
-                                        </fieldset>
-                                    </div>
-                                </form>
+                                <p style="font-weight:900;color:black;margin-bottom: 0;">PLEASE NOTE:</p><p style="color:black;margin-bottom: 0"> This action will close any open server or connection node and disable network monitoring for the Alpha Network.</p>
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
@@ -286,33 +257,20 @@
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="card border-danger text-center mx-xl-5">
-                            <div class="card-header  bg-danger">
-                                <p class="sm-card-title">Close a proxy</p>
+                        <div class="card border-info text-center mx-xl-5">
+                            <div class="card-header  bg-info">
+                                <p class="sm-card-title">Change Module Branch</p>
                             </div>
                             <!-- Card body -->
                             <div class="card-body">
-                                <form name="close_proxy"
-                                      id="close_proxy">
-                                    <div class="md-form input-group input-group-lg">
-                                        <fieldset>
-                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
-                                                   class="form-control"/><br>
-                                            <select name="network" id="network" class="form-control">
-                                                <option value="MAIN" style>Main</option>
-                                                <option value="ALPHA">Alpha</option>
-                                                <option value="TEST">Test</option>
-                                            </select><br>
-                                        </fieldset>
-                                    </div>
-                                </form>
+                                <p style="color:black;margin-bottom: 0">In order to update the Alpha network, please open the update modal.</p>
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="close-proxy-button" class="btn btn-danger"
-                                            form="close_proxy"
-                                            onclick="proxyClose(this.form.proxy.value, this.form.network.value);">
-                                        <i class="fas fa-times"></i><br>Close
+                                    <button type="button" id="update-button" class="btn btn-info"
+                                            data-toggle="modal"
+                                            data-target="#alphaModal">
+                                        <i class="fas fa-upload"></i><br>Open Modal
                                     </button>
                                 </div>
                             </div>
