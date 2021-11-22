@@ -74,10 +74,11 @@
             <br>
             <br>
             <div class="container">
+                <div class="text-center">
+                    <h2><u>Network</u></h2>
+                </div>
                 <div class="row">
-                    <div class="text-center">
-                        <h2><u>Network</u></h2>
-                    </div>
+
                     <div class="col-sm-4">
                         <div class="card border-success text-center mx-xl-5">
                             <div class="card-header bg-success">
