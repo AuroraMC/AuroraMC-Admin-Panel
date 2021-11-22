@@ -458,7 +458,7 @@
                                                 </optgroup>
                                             </select><br>
                                             <select name="enabled" id="enabled" class="form-control">
-                                                <option value="true">Enable</option>
+                                                <option value="true">Enabled</option>
                                                 <option value="false">Disabled</option>
                                             </select>
                                         </fieldset>
@@ -467,7 +467,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="monitoring-button" class="btn btn-danger"
+                                    <button type="button" id="monitoring-button" class="btn btn-info"
                                             form="monitoring"
                                             onclick="monitoringToggle(this.form.enabled.value, this.form.game.value, this.form.network.value);">
                                         <i class="fas fa-upload"></i><br>Change
