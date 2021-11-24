@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 include_once '../../../database/db-connect.php';
 
 $account_type = login_check($mysqli);
