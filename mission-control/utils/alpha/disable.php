@@ -1,4 +1,16 @@
 <?php
+
+include_once '../../database/db-connect.php';
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "SR_DEV") {
+    header("Location: ../../login");
+}
+
     $host = "auroramc.block2block.me";
     $port = 35567;
     $data = "disablealpha\r\n";

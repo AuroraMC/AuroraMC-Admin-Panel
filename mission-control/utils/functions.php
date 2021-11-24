@@ -1,5 +1,4 @@
 <?php
-
 include_once '../../database/db-connect.php';
 
 $account_type = login_check($mysqli);
