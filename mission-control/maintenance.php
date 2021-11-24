@@ -406,6 +406,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                 <i class="fas fa-check"></i><br>Enable
                                             </button>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-4">
