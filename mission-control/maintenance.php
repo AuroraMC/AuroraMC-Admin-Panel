@@ -326,7 +326,7 @@
                                         </button>
                                         <button type="button" class="btn btn-info"
                                                 form="update_alpha"
-                                                id="update-alpha-network"
+                                                id="update-alpha-button"
                                                 onclick="updateAlphaNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
                                     </div>
                                 </div>
