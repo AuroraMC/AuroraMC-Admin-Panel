@@ -91,8 +91,7 @@
                                       id="enable">
                                     <div class="md-form input-group input-group-lg">
                                         <fieldset style="width:100%">
-                                            <select name="network" id="network" class="form-control"
-                                                    onchange="networkChangeServerCreate(this.form.network.value)">
+                                            <select name="network" id="network" class="form-control">
                                                 <option value="MAIN">Main</option>
                                                 <option value="ALPHA">Alpha</option>
                                             </select>
@@ -207,7 +206,7 @@
                                             Cancel
                                         </button>
                                         <button type="button" class="btn btn-info"
-                                                form="update"
+                                                form="update" id="update-button"
                                                 onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
                                     </div>
                                 </div>
@@ -234,7 +233,7 @@
                                 <div class="d-flex justify-content-center">
                                     <button type="button" id="enable-alpha-button" class="btn btn-success"
                                             form="enable_alpha"
-                                            onclick="enableAlpha(this.form.network.value, this.form.extra_details.value);">
+                                            onclick="enableAlpha();">
                                         <i class="fas fa-check"></i><br>Enable
                                     </button>
                                 </div>
@@ -254,7 +253,7 @@
                                 <div class="d-flex justify-content-center">
                                     <button type="button" id="disable-alpha-button" class="btn btn-danger"
                                             form="disable_alpha"
-                                            onclick="disableAlpha(this.form.proxy.value, this.form.network.value);">
+                                            onclick="disableAlpha();">
                                         <i class="fas fa-times"></i><br>Disable
                                     </button>
                                 </div>
@@ -327,6 +326,7 @@
                                         </button>
                                         <button type="button" class="btn btn-info"
                                                 form="update_alpha"
+                                                id="update-alpha-network"
                                                 onclick="updateAlphaNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
                                     </div>
                                 </div>
@@ -574,7 +574,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" id="monitoring-button" class="btn btn-info"
+                                    <button type="button" id="normal-motd-button" class="btn btn-info"
                                             form="normal_motd"
                                             onclick="normalMotd(this.form.network.value, this.form.motd.value);">
                                         <i class="fas fa-upload"></i><br>Change
