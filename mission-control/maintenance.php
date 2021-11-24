@@ -398,15 +398,14 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                            Cancel
-                                        </button>
-                                        <button type="button" class="btn btn-info"
-                                                form="update_alpha"
-                                                id="update-alpha-button"
-                                                onclick="updateAlphaNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
-                                    </div>
+                                    <div class="card-footer">
+                                        <div class="d-flex justify-content-center">
+                                            <button type="button" id="enable-game-button" class="btn btn-success"
+                                                    form="enable_game"
+                                                    onclick="enableGame(this.form.game.value, this.form.network.value);">
+                                                <i class="fas fa-check"></i><br>Enable
+                                            </button>
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-sm-4">
