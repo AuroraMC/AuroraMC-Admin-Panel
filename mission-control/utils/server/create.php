@@ -1,13 +1,13 @@
 <?php
-include_once '../../database/db-connect.php';
+include_once '../../../database/db-connect.php';
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../login");
+    header("Location: ../../../login");
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV") {
-    header("Location: ../../login");
+    header("Location: ../../../login");
 }
 if (isset($_POST['server'], $_POST['network'], $_POST['game'], $_POST['extradetails'])) {
     $server = filter_input(INPUT_POST, 'server', FILTER_SANITIZE_STRING);
