@@ -1,8 +1,8 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
 include_once '../../../database/db-connect.php';
+include_once "../../../utils/functions.php";
+
+sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {

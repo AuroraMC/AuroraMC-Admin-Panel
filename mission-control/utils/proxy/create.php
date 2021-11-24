@@ -1,5 +1,8 @@
 <?php
-include_once '../../database/db-connect.php';
+include_once '../../../database/db-connect.php';
+include_once "../../../utils/functions.php";
+
+sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
