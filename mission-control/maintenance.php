@@ -501,6 +501,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                 </div>
                             </div>
                         </div>
+                        </div>
                         <br>
                         <br>
                     <?php endif; ?>
