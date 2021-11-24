@@ -1,4 +1,15 @@
 <?php
+include_once '../../database/db-connect.php';
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "SR_DEV") {
+    header("Location: ../../login");
+}
+
 if (isset($_POST['data'])) {
     $data = filter_input(INPUT_POST, 'data', FILTER_SANITIZE_STRING);
 

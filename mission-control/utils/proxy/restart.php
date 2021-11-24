@@ -1,8 +1,22 @@
 <?php
+include_once '../../database/db-connect.php';
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV") {
+    header("Location: ../../login");
+}
 if (isset($_POST['proxy'], $_POST['network'])) {
     $server = filter_input(INPUT_POST, 'proxy', FILTER_SANITIZE_STRING);
     $network = filter_input(INPUT_POST, 'network', FILTER_SANITIZE_STRING);
 
+    if ($network == "MAIN" && $account_type == "DEV") {
+        echo "You do not have permission to manage servers on the main network.";
+        return;
+    }
     $host = "auroramc.block2block.me";
     $port = 35567;
     $data = "restartproxy;". $network . ";" . $server ."\r\n";

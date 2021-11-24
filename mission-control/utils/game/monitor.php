@@ -1,4 +1,14 @@
 <?php
+include_once '../../database/db-connect.php';
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER") {
+    header("Location: ../../login");
+}
 if (isset($_POST['network'], $_POST['game'], $_POST['enabled'])) {
     $network = filter_input(INPUT_POST, 'network', FILTER_SANITIZE_STRING);
     $game = filter_input(INPUT_POST, 'game', FILTER_SANITIZE_STRING);
