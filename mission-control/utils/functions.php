@@ -2,6 +2,15 @@
 
 include_once '../../database/db-connect.php';
 
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV") {
+    header("Location: ../../login");
+}
+
 if (isset($_POST['stat'], $_POST['time'])) {
     $stat = filter_input(INPUT_POST, 'stat', FILTER_SANITIZE_STRING);
     $time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_STRING);

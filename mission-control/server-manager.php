@@ -1,3 +1,18 @@
+<?php
+include_once '../database/db-connect.php';
+include_once "../utils/functions.php";
+
+sec_session_start();
+
+$account_type = login_check($mysqli);
+if (!$account_type) {
+    header("Location: ../../login");
+}
+
+if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV") {
+    header("Location: ../../login");
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -105,7 +120,9 @@
                                             </select><br>
                                             <select name="network" id="network" class="form-control"
                                                     onchange="networkChangeServerCreate(this.form.network.value)">
-                                                <option value="MAIN">Main</option>
+                                                <?php if ($account_type != "DEV") : ?>
+                                                    <option value="MAIN">Main</option>
+                                                <?php endif; ?>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select>
@@ -143,7 +160,9 @@
                                             <input type='text' name='server' id='server' placeholder="Server Name"
                                                    class="form-control"/><br>
                                             <select name="network" id="network" class="form-control">
-                                                <option value="MAIN">Main</option>
+                                                <?php if ($account_type != "DEV") : ?>
+                                                    <option value="MAIN">Main</option>
+                                                <?php endif; ?>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select>
@@ -176,7 +195,9 @@
                                             <input type='text' name='server' id='server' placeholder="Server Name"
                                                    class="form-control"/><br>
                                             <select name="network" id="network" class="form-control">
-                                                <option value="MAIN">Main</option>
+                                                <?php if ($account_type != "DEV") : ?>
+                                                    <option value="MAIN">Main</option>
+                                                <?php endif; ?>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select>
@@ -212,7 +233,9 @@
                                         <fieldset style="width:100%">
                                             <select name="network" id="network" class="form-control"
                                                     onchange="networkChangeProxyCreate(this.form.network.value)">
-                                                <option value="MAIN">Main</option>
+                                                <?php if ($account_type != "DEV") : ?>
+                                                    <option value="MAIN">Main</option>
+                                                <?php endif; ?>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select>
@@ -250,7 +273,9 @@
                                             <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
                                                    class="form-control"/><br>
                                             <select name="network" id="network" class="form-control">
-                                                <option value="MAIN">Main</option>
+                                                <?php if ($account_type != "DEV") : ?>
+                                                    <option value="MAIN">Main</option>
+                                                <?php endif; ?>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select>
@@ -283,7 +308,9 @@
                                             <input type='text' name='proxy' id='proxy' placeholder="Proxy UUID"
                                                    class="form-control"/><br>
                                             <select name="network" id="network" class="form-control">
-                                                <option value="MAIN" style>Main</option>
+                                                <?php if ($account_type != "DEV") : ?>
+                                                    <option value="MAIN">Main</option>
+                                                <?php endif; ?>
                                                 <option value="ALPHA">Alpha</option>
                                                 <option value="TEST">Test</option>
                                             </select>
