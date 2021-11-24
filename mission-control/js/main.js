@@ -205,7 +205,7 @@ function updateAlphaNetwork(core, lobby, engine, game, build, event, proxy) {
     if (proxy !== "") {
         modules.push("proxy;" + proxy);
     }
-    document.getElementById("update-alpga-button").disabled = true;
+    document.getElementById("update-alpha-button").disabled = true;
     $.ajax({
         url:'/mission-control/utils/alpha/update.php',
         type: 'post',
