@@ -530,6 +530,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                         <option value="STAFF_ONLY">Staff Only</option>
                                                         <option value="LEADERSHIP_ONLY">Leadership Only</option>
                                                         <option value="LOCKDOWN">Essential Staff Only</option>
+                                                        <option value="NOT_OPEN">Not Open</option>
                                                     </select>
                                                 </fieldset>
                                             </div>
