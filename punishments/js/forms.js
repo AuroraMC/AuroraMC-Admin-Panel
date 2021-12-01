@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
 function validatecode(form, code) {
     let re = /^[A-Za-z0-9]{8}$/
     if (!re.test(code)) {

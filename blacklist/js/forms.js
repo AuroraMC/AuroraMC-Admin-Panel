@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
 function validateusername(form, code, type) {
     let re = /^[A-Za-z0-9_]{1,16}$/
     if (!re.test(code)) {

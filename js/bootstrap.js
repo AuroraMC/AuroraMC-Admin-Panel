@@ -1,8 +1,6 @@
-/*!
-  * Bootstrap v4.5.0 (https://getbootstrap.com/)
-  * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-  */
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('js/jquery'), require('./popper')) :
   typeof define === 'function' && define.amd ? define(['exports', 'js/jquery', 'popper.js'], factory) :

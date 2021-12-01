@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
 function networkChangeServerCreate(network) {
     if (network === 'TEST') {
         document.getElementById("extra_create_server").style.visibility = "visible";

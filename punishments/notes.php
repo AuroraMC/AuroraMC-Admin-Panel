@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
 function username_to_uuid($username) {
     $profile = username_to_profile($username);
     if (is_array($profile) and isset($profile['id'])) {

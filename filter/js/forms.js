@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
 function addWord(form, word, type, textbox) {
     if (type === 'phrase') {
         if (!word.includes(" ")) {

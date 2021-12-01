@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
 include_once 'db-config.php';
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
 $redis = new Redis();
