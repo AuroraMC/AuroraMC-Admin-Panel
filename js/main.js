@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
 // If you don't want the particles, change the following to false
 const doParticles = true;
 

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);
 }
