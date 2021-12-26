@@ -24,7 +24,7 @@ if (isset($_POST['proxy'], $_POST['network'])) {
         echo "You do not have permission to manage servers on the main network.";
         return;
     }
-    $host = "auroramc.block2block.me";
+    $host = "db.block2block.me";
     $port = 35567;
     $data = "restartproxy;". $network . ";" . $server ."\r\n";
 

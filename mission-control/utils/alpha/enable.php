@@ -17,7 +17,7 @@ if ($account_type != "OWNER" && $account_type != "SR_DEV") {
     header("Location: ../../../login");
 }
 
-    $host = "auroramc.block2block.me";
+    $host = "db.block2block.me";
     $port = 35567;
     $data = "enablealpha\r\n";
 

@@ -25,7 +25,7 @@ if (isset($_POST['network'], $_POST['extradetails'])) {
         return;
     }
 
-    $host = "auroramc.block2block.me";
+    $host = "db.block2block.me";
     $port = 35567;
     $data = "createproxy;". $network . ";" . $extra_details ."\r\n";
 
