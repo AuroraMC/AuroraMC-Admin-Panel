@@ -20,7 +20,7 @@ if (isset($_POST['network'], $_POST['game'])) {
     $network = filter_input(INPUT_POST, 'network', FILTER_SANITIZE_STRING);
     $game = filter_input(INPUT_POST, 'game', FILTER_SANITIZE_STRING);
 
-    $host = "auroramc.block2block.me";
+    $host = "db.block2block.me";
     $port = 35567;
     $data = "disablegame;". $network . ";" . $game . "\r\n";
 
