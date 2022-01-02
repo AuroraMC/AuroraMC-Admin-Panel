@@ -82,6 +82,16 @@ function archive(id) {
     });
 }
 
+function updateRules() {
+    $.ajax({
+        url:"/rules/utils/update.php", //the page containing php script
+        type: "post", //request type,
+        success:function(result){
+            alert(result)
+        }
+    });
+}
+
 function editName(id) {
     var newname = document.getElementById(id + "-newname").value;
     if (newname === ""|| newname == null) {

@@ -93,6 +93,9 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             <legend style="font-family: 'Helvetica';">Welcome!</legend>
             <hr>
             <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Rules Committee Admin Panel! Here, you can see all active rules that appear in the Punishment GUI. You can modify, rename, archive and create rules using this Web GUI.</p>
+            <br>
+            <br>
+            <button type='button' class='btn btn-secondary' onclick='updateRules()'><i class='fas fa-pencil-alt'></i> Push Rule Update</button>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>
