@@ -40,6 +40,16 @@ function removeWord(word, type) {
     });
 }
 
+function updateRules() {
+    $.ajax({
+        url:"/filter/utils/update.php", //the page containing php script
+        type: "post", //request type,
+        success:function(result){
+            alert(result)
+        }
+    });
+}
+
 $(document).ready(function() {
     $('#core').keydown(function(event){
         if(event.keyCode === 13) {

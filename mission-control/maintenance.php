@@ -208,19 +208,19 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                       id="update">
                                                     <div class="md-form input-group input-group-lg">
                                                         <fieldset>
-                                                            <input type='text' name='core' id='core' placeholder="Core Build Number"
+                                                            <input type='text' name='core' id='main-core' placeholder="Core Build Number"
                                                                    class="form-control"/><br>
-                                                            <input type='text' name='lobby' id='lobby' placeholder="Lobby Build Number"
+                                                            <input type='text' name='lobby' id='main-lobby' placeholder="Lobby Build Number"
                                                                    class="form-control"/><br>
-                                                            <input type='text' name='engine' id='engine' placeholder="Engine Build Number"
+                                                            <input type='text' name='engine' id='main-engine' placeholder="Game Engine Build Number"
                                                                    class="form-control"/><br>
-                                                            <input type='text' name='game' id='game' placeholder="Game Build Number"
+                                                            <input type='text' name='game' id='main-game' placeholder="Game Build Number"
                                                                    class="form-control"/><br>
-                                                            <input type='text' name='build' id='build' placeholder="Build Core Build Number"
+                                                            <input type='text' name='build' id='main-build' placeholder="Build Core Build Number"
                                                                    class="form-control"/><br>
-                                                            <input type='text' name='event' id='event' placeholder="Event Build Number"
+                                                            <input type='text' name='event' id='main-event' placeholder="Event Build Number"
                                                                    class="form-control"/><br>
-                                                            <input type='text' name='proxy' id='proxy' placeholder="Proxy Build Number"
+                                                            <input type='text' name='proxy' id='main-proxy' placeholder="Proxy Build Number"
                                                                    class="form-control"/>
                                                         </fieldset>
                                                     </div>
