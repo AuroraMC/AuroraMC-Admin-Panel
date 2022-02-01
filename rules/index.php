@@ -47,6 +47,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
     <link rel="stylesheet" href="css/navbar.css">
 
+    <script src="js/rules.js"></script>
+
     <link rel="icon"
           type="image/png"
           href="../img/logo.png">
