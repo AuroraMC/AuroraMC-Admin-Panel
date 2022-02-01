@@ -157,6 +157,14 @@ function updateNetwork(core, lobby, engine, game, build, event, proxy) {
         success: function(result) {
             alert(result);
             document.getElementById("update-button").disabled = false;
+            document.getElementById("main-core").value = "";
+            document.getElementById("main-lobby").value = "";
+            document.getElementById("main-engine").value = "";
+            document.getElementById("main-game").value = "";
+            document.getElementById("main-build").value = "";
+            document.getElementById("main-proxy").value = "";
+            document.getElementById("main-event").value = "";
+
             $('#updateModal').modal('hide');
         }
     });
