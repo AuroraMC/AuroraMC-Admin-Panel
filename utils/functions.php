@@ -184,9 +184,6 @@ function login_check($mysqli) {
 }
 
 function genCode($uuid, $name) {
-    $uuid = filter_input(INPUT_POST, 'uuid', FILTER_SANITIZE_STRING);
-    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-
     $host = "db.block2block.me";
     $port = 35567;
     $data = "gencode;". $uuid . ";" . $name ."\r\n";
