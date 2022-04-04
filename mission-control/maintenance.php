@@ -390,7 +390,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                         </optgroup>
                                                         <optgroup label="Game Servers">
                                                             <option value="CRYSTAL_QUEST">Crystal Quest</option>
-                                                            <option value="MIXED_ARCADE">Mixed Arcade</option>
+                                                            <option value="ARCADE_MODE">Arcade Mode</option>
                                                         </optgroup>
                                                         <optgroup label="Misc Servers">
                                                             <option value="BUILD">Build</option>
@@ -434,7 +434,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                         </optgroup>
                                                         <optgroup label="Game Servers">
                                                             <option value="CRYSTAL_QUEST">Crystal Quest</option>
-                                                            <option value="MIXED_ARCADE">Mixed Arcade</option>
+                                                            <option value="ARCADE_MODE">Arcade Mode</option>
                                                         </optgroup>
                                                         <optgroup label="Misc Servers">
                                                             <option value="BUILD">Build</option>
@@ -478,7 +478,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                         </optgroup>
                                                         <optgroup label="Game Servers">
                                                             <option value="CRYSTAL_QUEST">Crystal Quest</option>
-                                                            <option value="MIXED_ARCADE">Mixed Arcade</option>
+                                                            <option value="ARCADE_MODE">Arcade Mode</option>
                                                         </optgroup>
                                                         <optgroup label="Misc Servers">
                                                             <option value="BUILD">Build</option>
