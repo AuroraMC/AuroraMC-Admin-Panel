@@ -54,7 +54,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item active">
+            <li class="nav-item">
             <a class="nav-link" href="/map-database/">Home</a>
             </li>
             <li class="nav-item">
@@ -73,7 +73,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     </div>
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
         <ul class="navbar-nav mr-auto text-center">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="#">Live Maps</a>
             </li>
             <li class="nav-item">
