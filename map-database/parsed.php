@@ -121,42 +121,43 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                     <h1 style="text-align: center;margin-right: auto;margin-left: auto">Parsed Maps</h1>
                 </div>
                 <div class="row">
-                    <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtParsed" width="100%">
-                        <thead>
-                        <tr>
-                            <th class="th-sm">ID</th>
-                            <th class="th-sm">Name</th>
-                            <th class="th-sm">Author</th>
-                            <th class="th-sm">Game Type</th>
-                            <th class="th-sm">World Name</th>
-                            <th class="th-sm">Remove</th>
-                        </tr>
-                        </thead>
-                        <tbody id="table-values" style="color: white">
-                        <?php
-                        if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE parse_version = 'TEST'")) {
-                            $sql->execute();    // Execute the prepared query.
-                            $result2 = $sql->get_result();
-                            $numRows = $result2->num_rows;
-                            $results = $result2->fetch_all(MYSQLI_ASSOC);
-                            $result2->free_result();
-                            $sql->free_result();
+                    <div class="col-12">
+                        <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtParsed" width="100%">
+                            <thead>
+                            <tr>
+                                <th class="th-sm">ID</th>
+                                <th class="th-sm">Name</th>
+                                <th class="th-sm">Author</th>
+                                <th class="th-sm">Game Type</th>
+                                <th class="th-sm">World Name</th>
+                                <th class="th-sm">Remove</th>
+                            </tr>
+                            </thead>
+                            <tbody id="table-values" style="color: white">
+                            <?php
+                            if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE parse_version = 'TEST'")) {
+                                $sql->execute();    // Execute the prepared query.
+                                $result2 = $sql->get_result();
+                                $numRows = $result2->num_rows;
+                                $results = $result2->fetch_all(MYSQLI_ASSOC);
+                                $result2->free_result();
+                                $sql->free_result();
 
 
-                            foreach ($results as $result) {
-                                if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
-                                    $sql2->bind_param('i', $result['map_id']);
-                                    $sql2->execute();    // Execute the prepared query.
+                                foreach ($results as $result) {
+                                    if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
+                                        $sql2->bind_param('i', $result['map_id']);
+                                        $sql2->execute();    // Execute the prepared query.
 
-                                    $world_name = null;
-                                    $game_type = null;
+                                        $world_name = null;
+                                        $game_type = null;
 
-                                    $sql2->bind_result($world_name, $game_type);
-                                    $sql2->fetch();
-                                    $sql2->store_result();
-                                    $sql2->free_result();
+                                        $sql2->bind_result($world_name, $game_type);
+                                        $sql2->fetch();
+                                        $sql2->store_result();
+                                        $sql2->free_result();
 
-                                    echo '
+                                        echo '
                                                    <tr id="map-', $result['map_id'],'">
                                                     <td>', $result['map_id'], '</td>
                                                     <td>', $result['map_name'],'</td>
@@ -164,16 +165,15 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                     <td>', $game_type, '</td>
                                                     <td>', $world_name, '</td>
                                                     <td><button type="button" class="btn btn-success" onclick=\'addMap(', $result['map_id'], '")\'><i class="fas fa-plus"></i> Add</button></td></tr>';
-                                } else {
-                                    echo "There has been an error connecting to the database. Please try again. 2";
+                                    } else {
+                                        echo "There has been an error connecting to the database. Please try again. 2";
+                                    }
                                 }
                             }
-                        }
-                        ?>
-                        </tbody>
-                    </table>
-
-
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
