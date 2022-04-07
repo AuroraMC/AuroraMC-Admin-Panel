@@ -34,6 +34,7 @@ foreach ($removals as $removal) {
 foreach ($additions as $addition) {
     if ($sql = $mysqli->prepare("SELECT count(*) FROM maps WHERE parse_version = 'LIVE' AND map_id = ?")) {
         $sql->bind_param('s', $addition);
+        $sql->execute();
         $results2 = $sql->get_result();
         $results = $results2->fetch_array(MYSQLI_NUM);
         $results2->free_result();
