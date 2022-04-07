@@ -227,7 +227,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btn-success" onclick="pushUpdate()" style="margin-left:50%;margin-right:50%;"><i class="fa-solid fa-upload"></i> Push Update</button>
+                        <button type="button" class="btn btn-success" onclick="pushUpdate()" style="margin-left:50%;margin-right:50%;"><i class="fas fa-upload"></i> Push Update</button>
                     </div>
                 </div>
             </div>
