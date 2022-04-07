@@ -27,7 +27,7 @@ function removeNewMap(id) {
 function addOldMap(id) {
     document.getElementById("map-" + id).remove();
     $.ajax({
-        url:'/map-database/util/create.php',
+        url:'/map-database/util/functions.php',
         type: 'post',
         data: "addOld=" + encodeURIComponent(id),
         success: function(result) {
@@ -38,7 +38,7 @@ function addOldMap(id) {
 function removeOldMap(id) {
     document.getElementById("map-" + id).remove();
     $.ajax({
-        url:'/map-database/util/create.php',
+        url:'/map-database/util/functions.php',
         type: 'post',
         data: "removeOld=" + encodeURIComponent(id),
         success: function(result) {
@@ -47,7 +47,6 @@ function removeOldMap(id) {
 }
 
 function pushUpdate() {
-    document.getElementById("create-server-button").disabled = true;
     $.ajax({
         url:'/map-database/utils/push.php',
         type: 'post',
