@@ -153,7 +153,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
                                     foreach ($results as $result) {
                                         if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
-                                            $sql2->bind_param('i', $result['map_id']);
+                                            $sql2->bind_param('s', $result['map_id']);
                                             $sql2->execute();    // Execute the prepared query.
 
                                             $world_name = null;
