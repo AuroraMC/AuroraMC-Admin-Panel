@@ -88,11 +88,11 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
         <div class="col-sm-2"></div> <!-- Gap at left side of form -->
         <div class="col-sm-8 col-xs-12">
             <br>
-            <h1><Strong>AuroraMC Network Chat Filter Admin Panel</Strong></h1>
+            <h1><Strong>AuroraMC Network Map Database</Strong></h1>
             <br>
             <legend style="font-family: 'Helvetica';">Welcome!</legend>
             <hr>
-            <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Map Database! Here, you can see and manage live maps, view parsed but not live maps and push map updates to the network!.</p>
+
             <br>
             <legend style="font-family: 'Helvetica';">Map Statistics</legend>
             <hr>
