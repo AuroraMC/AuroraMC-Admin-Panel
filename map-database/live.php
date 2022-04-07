@@ -90,15 +90,10 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             <br>
             <h1><Strong>AuroraMC Network Map Database</Strong></h1>
             <br>
-            <legend style="font-family: 'Helvetica';">Welcome!</legend>
-            <hr>
-            <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Map Database! Here, you can see and manage live maps, view parsed but not live maps and push map updates to the network!.</p>
             <br>
-            <legend style="font-family: 'Helvetica';">Map Statistics</legend>
-            <hr>
             <div class="container">
                 <div class="row">
-                    <h1 style="text-align: center;margin-right: auto;margin-left: auto">', $raw_name,'\'s Punishment History</h1>
+                    <h1 style="text-align: center;margin-right: auto;margin-left: auto">Live Maps</h1>
                     <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtHistory" width="100%">
                         <thead>
                         <tr>
