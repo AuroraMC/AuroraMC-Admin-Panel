@@ -166,7 +166,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                     <td>', $result['map_author'], '</td>
                                                     <td>', $game_type, '</td>
                                                     <td>', $world_name, '</td>
-                                                    <td><button type="button" class="btn btn-danger" onclick=\'removeOldMap(', $result['map_id'], '")\'><i class="fas fa-trash-alt"></i> Remove</button></td></tr>';
+                                                    <td><button type="button" class="btn btn-danger" onclick=\'removeOldMap(', $result['map_id'], ')\'><i class="fas fa-trash-alt"></i> Remove</button></td></tr>';
                                     } else {
                                         echo "There has been an error connecting to the database. Please try again. 2";
                                     }
