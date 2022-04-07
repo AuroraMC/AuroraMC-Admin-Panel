@@ -44,13 +44,13 @@ foreach ($additions as $addition) {
             echo "Deleting map " . $addition;
             if ($sql2 = $mysqli->prepare("DELETE FROM maps WHERE parse_version = 'LIVE' AND map_id = ?")) {
                 $sql2->bind_param('s', $addition);
-                $sql->execute();
+                $sql2->execute();
             }
         }
     }
-    if ($sql = $mysqli->prepare("UPDATE maps SET parse_version = 'LIVE' WHERE map_id = ? AND parse_version = 'TEST'")) {
-        $sql->bind_param('s', $addition);
-        $sql->execute();    // Execute the prepared query.
+    if ($sql3 = $mysqli->prepare("UPDATE maps SET parse_version = 'LIVE' WHERE map_id = ? AND parse_version = 'TEST'")) {
+        $sql3->bind_param('s', $addition);
+        $sql3->execute();    // Execute the prepared query.
         echo "Pushing map " . $addition;
     }
 }
