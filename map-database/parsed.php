@@ -51,6 +51,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <script type="text/javascript" src="../js/addons/datatables.min.js"></script>
 
     <link rel="stylesheet" href="css/navbar.css">
+    <script src="js/main.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -145,6 +146,9 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
 
                                 foreach ($results as $result) {
+                                    if ($redis->sIsMember("map.additions", $result['map_id'])) {
+                                        continue;
+                                    }
                                     if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
                                         $sql2->bind_param('i', $result['map_id']);
                                         $sql2->execute();    // Execute the prepared query.
@@ -164,7 +168,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                     <td>', $result['map_author'], '</td>
                                                     <td>', $game_type, '</td>
                                                     <td>', $world_name, '</td>
-                                                    <td><button type="button" class="btn btn-success" onclick=\'addMap(', $result['map_id'], '")\'><i class="fas fa-plus"></i> Add</button></td></tr>';
+                                                    <td><button type="button" class="btn btn-success" onclick=\'addNewMap(', $result['map_id'], '")\'><i class="fas fa-plus"></i> Add</button></td></tr>';
                                     } else {
                                         echo "There has been an error connecting to the database. Please try again. 2";
                                     }
