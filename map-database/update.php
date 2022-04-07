@@ -150,10 +150,10 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                     $results = $result2->fetch_all(MYSQLI_ASSOC);
                                     $result2->free_result();
                                     $sql->free_result();
-
+                                    echo $addition . " 2";
 
                                     foreach ($results as $result) {
-                                        echo $addition . " 2";
+
                                         if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
                                             $sql2->bind_param('s', $result['map_id']);
                                             $sql2->execute();    // Execute the prepared query.
