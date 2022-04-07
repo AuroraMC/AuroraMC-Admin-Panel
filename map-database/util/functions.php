@@ -20,8 +20,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
 if(isset($_POST['addNew'])) {
     $id = filter_input(INPUT_POST, 'addNew', FILTER_SANITIZE_STRING);
-    if (!$redis->sIsMember("mapupdateadditions", $id)) {
-        $redis->sAdd("mapupdateadditions", $id);
+    if (!$redis->sIsMember("map.additions", $id)) {
+        $redis->sAdd("map.additionss", $id);
     }
 }
 
