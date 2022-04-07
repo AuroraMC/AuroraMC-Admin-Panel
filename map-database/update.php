@@ -141,18 +141,19 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                             $removals = $redis->sMembers("map.removals");
 
                             foreach ($additions as $addition) {
+                                echo $addition;
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'TEST'")) {
                                     $sql->bind_params('i', intval($addition));
                                     $sql->execute();    // Execute the prepared query.
                                     $result2 = $sql->get_result();
                                     $numRows = $result2->num_rows;
-                                    echo $numRows;
                                     $results = $result2->fetch_all(MYSQLI_ASSOC);
                                     $result2->free_result();
                                     $sql->free_result();
 
 
                                     foreach ($results as $result) {
+                                        echo $addition . " 2";
                                         if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
                                             $sql2->bind_param('s', $result['map_id']);
                                             $sql2->execute();    // Execute the prepared query.
