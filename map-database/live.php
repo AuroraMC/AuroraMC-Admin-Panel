@@ -43,6 +43,11 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
+    <!-- MDBootstrap Datatables  -->
+    <link href="../css/addons/datatables.min.css" rel="stylesheet">
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="../js/addons/datatables.min.js"></script>
+
     <link rel="stylesheet" href="css/navbar.css">
 
     <!-- Font Awesome -->
@@ -52,6 +57,20 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <link rel="icon"
           type="image/png"
           href="../img/logo.png">
+
+    <script>
+        // Basic example
+        $(document).ready(function () {
+            $('#dtLive').DataTable({
+                "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
+                "autoWidth": true,
+                "scrollY": "498px",
+                "scrollCollapse": true,
+                "ordering": false
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
 </head>
 
 <body style="background-color: #23272A;color:white">
@@ -98,7 +117,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             <div class="container">
                 <div class="row">
                     <h1 style="text-align: center;margin-right: auto;margin-left: auto">Live Maps</h1>
-                    <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtHistory" width="100%">
+                    <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtLive" width="100%">
                         <thead>
                         <tr>
                             <th class="th-sm">ID</th>
