@@ -45,6 +45,10 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
     <link rel="stylesheet" href="css/navbar.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="https://kit.fontawesome.com/a06911b3f6.js" crossorigin="anonymous"></script>
+
     <link rel="icon"
           type="image/png"
           href="../img/logo.png">
