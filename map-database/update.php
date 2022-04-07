@@ -169,7 +169,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                     <td>', $result['map_author'], '</td>
                                                     <td>', $game_type, '</td>
                                                     <td>', $world_name, '</td>
-                                                    <td>Addition</td>
+                                                    <td><strong style="color:#00AA00;font-weight: bold">Addition</strong></td>
                                                     <td><button type="button" class="btn btn-danger" onclick=\'removeNewMap(', $result['map_id'], ')\'><i class="fas fa-trash-alt"></i> Remove From Update</button></td></tr>';
                                         } else {
                                             echo "There has been an error connecting to the database. Please try again. 2";
@@ -210,7 +210,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                     <td>', $result['map_author'], '</td>
                                                     <td>', $game_type, '</td>
                                                     <td>', $world_name, '</td>
-                                                    <td>Removal</td>
+                                                    <td><strong style="color:#AA0000;font-weight: bold">Removal</strong></td>
                                                     <td><button type="button" class="btn btn-danger" onclick=\'addOldMap(', $result['map_id'], ')\'><i class="fas fa-trash-alt"></i> Remove From Update</button></td></tr>';
                                         } else {
                                             echo "There has been an error connecting to the database. Please try again. 2";
