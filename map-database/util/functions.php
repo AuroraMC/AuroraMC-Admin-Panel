@@ -26,21 +26,21 @@ if(isset($_POST['addNew'])) {
 }
 
 if(isset($_POST['removeNew'])) {
-    $id = filter_input(INPUT_POST, 'addNew', FILTER_SANITIZE_STRING);
+    $id = filter_input(INPUT_POST, 'removeNew', FILTER_SANITIZE_STRING);
     if ($redis->sIsMember("map.additions", $id)) {
         $redis->sRem("map.additions", $id);
     }
 }
 
 if(isset($_POST['removeOld'])) {
-    $id = filter_input(INPUT_POST, 'addNew', FILTER_SANITIZE_STRING);
+    $id = filter_input(INPUT_POST, 'removeOld', FILTER_SANITIZE_STRING);
     if (!$redis->sIsMember("map.removals", $id)) {
         $redis->sAdd("map.removals", $id);
     }
 }
 
 if(isset($_POST['addOld'])) {
-    $id = filter_input(INPUT_POST, 'addNew', FILTER_SANITIZE_STRING);
+    $id = filter_input(INPUT_POST, 'addOld', FILTER_SANITIZE_STRING);
     if ($redis->sIsMember("map.removals", $id)) {
         $redis->sRem("map.removals", $id);
     }
