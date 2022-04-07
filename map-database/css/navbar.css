@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
+@media (min-width: 992px) {
+    .navbar {
+        height:50px;
+    }
+}
+
+.navbar-nav > li{
+    padding-left:100px;
+    padding-right:100px;
+}

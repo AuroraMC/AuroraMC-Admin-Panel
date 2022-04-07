@@ -80,79 +80,16 @@ if (!$account_type) {
             </div>
         </a>
         <?php endif; ?>
-        <?php if ($account_type == "OWNER" ||  $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "DEV" ||  $account_type == "QA") :?>
-            <a href="https://jira.block2block.me/" class="item">
+        <?php if ($account_type == "OWNER" ||  $account_type == "ADMIN" || $account_type == "SR_DEV") :?>
+            <a href="/map-database/" class="item">
                 <div>
-                    <img src="img/jira.png" alt="Jira icon" class="img">
+                    <img src="img/map.png" alt="Map Database icon" class="img">
                     <p class="subtitle">Access</p>
-                    <p class="title">Jira</p>
+                    <p class="title">Map Database</p>
                 </div>
             </a>
         <?php endif; ?>
     </div>
-    <?php if ($account_type == "OWNER" || $account_type == "SR_DEV" || $account_type == "DEV"): ?>
-        <div class="items">
-            <?php if ($account_type == "OWNER") :?>
-                <a href="https://panel.auroramc.block2block.me/" class="item">
-                    <div>
-                        <img src="img/pterodactyl.png" alt="Pterodactyl icon" class="img">
-                        <p class="subtitle">Access</p>
-                        <p class="title">Pterodactyl</p>
-                    </div>
-                </a>
-            <?php endif; ?>
-
-            <?php if ($account_type == "OWNER" || $account_type == "SR_DEV" || $account_type == "DEV") :?>
-                <a href="https://ci.auroramc.block2block.me/" class="item">
-                    <div>
-                        <img src="img/jenkins.png" alt="Jenkins icon" class="img">
-                        <p class="subtitle">Access</p>
-                        <p class="title">Jenkins</p>
-                    </div>
-                </a>
-            <?php endif; ?>
-
-            <?php if ($account_type == "OWNER" || $account_type == "SR_DEV" || $account_type == "DEV") :?>
-                <a href="https://bitbucket.block2block.me/" class="item">
-                    <div>
-                        <img src="img/bitbucket.png" alt="BitBucket icon" class="img">
-                        <p class="subtitle">Access</p>
-                        <p class="title">BitBucket</p>
-                    </div>
-                </a>
-            <?php endif; ?>
-
-            <?php if ($account_type == "OWNER") :?>
-                <a href="https://auroramc.block2block.me/" class="item mission-control">
-                    <div>
-                        <img src="img/mysql.png" alt="MySQL icon" class="img">
-                        <p class="subtitle">Access</p>
-                        <p class="title">phpMyAdmin</p>
-                    </div>
-                </a>
-            <?php endif; ?>
-
-            <?php if ($account_type == "OWNER") :?>
-                <a href="https://store.auroramc.net/control-panel/login" class="item mission-control">
-                    <div>
-                        <img src="img/donationstore.png" alt="DonationStore icon" class="img">
-                        <p class="subtitle">Manage</p>
-                        <p class="title">DonationStore</p>
-                    </div>
-                </a>
-            <?php endif; ?>
-
-            <?php if ($account_type == "OWNER" || $account_type == "SR_DEV") :?>
-                <a href="https://manage.statuspage.io/pages/29hv5gfdnvyw/incidents" class="item mission-control">
-                    <div>
-                        <img src="img/statuspage.png" alt="StatusPage icon" class="img">
-                        <p class="subtitle">Manage</p>
-                        <p class="title">StatusPage</p>
-                    </div>
-                </a>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

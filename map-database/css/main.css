@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2021 AuroraMC Ltd. All Rights Reserved.
+ */
+
+.md-form {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.sm-card-title {
+    color:black;
+    margin-bottom: 0;
+    font-weight: 900;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+.card {
+    min-height:100%;
+}
