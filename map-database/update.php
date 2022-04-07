@@ -16,7 +16,7 @@ if (!$account_type) {
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV") {
     header("Location: ../../login");
 }
-
+error_reporting(E_ALL);
 ?>
 <!doctype html>
 <html>
