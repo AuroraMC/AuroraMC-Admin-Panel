@@ -16,9 +16,6 @@ if (!$account_type) {
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV") {
     header("Location: ../../login");
 }
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 ?>
 <!doctype html>
 <html>
@@ -143,19 +140,16 @@ error_reporting(E_ALL);
                             $removals = $redis->sMembers("map.removals");
 
                             foreach ($additions as $addition) {
-                                echo $addition;
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'TEST'")) {
-                                    $sql->bind_params('i', intval($addition));
+                                    $sql->bind_param('s', $addition);
                                     $sql->execute();    // Execute the prepared query.
                                     $result2 = $sql->get_result();
                                     $numRows = $result2->num_rows;
                                     $results = $result2->fetch_all(MYSQLI_ASSOC);
                                     $result2->free_result();
                                     $sql->free_result();
-                                    echo $addition . " 2";
 
                                     foreach ($results as $result) {
-
                                         if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
                                             $sql2->bind_param('s', $result['map_id']);
                                             $sql2->execute();    // Execute the prepared query.
@@ -187,11 +181,10 @@ error_reporting(E_ALL);
                             }
                             foreach ($removals as $addition) {
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'LIVE'")) {
-                                    $sql->bind_params('i', intval($addition));
+                                    $sql->bind_param('s', $addition);
                                     $sql->execute();    // Execute the prepared query.
                                     $result2 = $sql->get_result();
                                     $numRows = $result2->num_rows;
-                                    echo $numRows;
                                     $results = $result2->fetch_all(MYSQLI_ASSOC);
                                     $result2->free_result();
                                     $sql->free_result();
