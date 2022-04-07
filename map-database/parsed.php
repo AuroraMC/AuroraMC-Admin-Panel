@@ -88,38 +88,67 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
         <div class="col-sm-2"></div> <!-- Gap at left side of form -->
         <div class="col-sm-8 col-xs-12">
             <br>
-            <h1><Strong>AuroraMC Network Chat Filter Admin Panel</Strong></h1>
+            <h1><Strong>AuroraMC Network Map Database</Strong></h1>
             <br>
-            <legend style="font-family: 'Helvetica';">Welcome!</legend>
-            <hr>
-            <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Map Database! Here, you can see and manage live maps, view parsed but not live maps and push map updates to the network!.</p>
             <br>
-            <legend style="font-family: 'Helvetica';">Map Statistics</legend>
-            <hr>
-            <?php
-            if ($sql = $mysqli->prepare("SELECT count(*) FROM maps WHERE parse_version = 'LIVE'")) {
-                $sql->execute();
-                $results2 = $sql->get_result();
-                $results = $results2->fetch_array(MYSQLI_NUM);
-                $results2->free_result();
-                $sql->free_result();
-                $maps = $results[0];
-                echo '<p><strong style="font-weight: bold">Total Live Maps:</strong> ', $maps,'</p>';
-            } else {
-                echo 'An error occurred when trying to connect to the database. Please try again.';
-            }
-            if ($sql = $mysqli->prepare("SELECT count(*) FROM maps WHERE parse_version = 'TEST'")) {
-                $sql->execute();
-                $results2 = $sql->get_result();
-                $results = $results2->fetch_array(MYSQLI_NUM);
-                $results2->free_result();
-                $sql->free_result();
-                $maps = $results[0];
-                echo '<p><strong style="font-weight: bold">Total Parsed Maps:</strong> ', $maps,'</p>';
-            } else {
-                echo 'An error occurred when trying to connect to the database. Please try again.';
-            }
-            ?>
+            <div class="container">
+                <div class="row">
+                    <h1 style="text-align: center;margin-right: auto;margin-left: auto">Live Maps</h1>
+                    <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtHistory" width="100%">
+                        <thead>
+                        <tr>
+                            <th class="th-sm">ID</th>
+                            <th class="th-sm">Name</th>
+                            <th class="th-sm">Author</th>
+                            <th class="th-sm">Game Type</th>
+                            <th class="th-sm">World Name</th>
+                            <th class="th-sm">Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table-values" style="color: white">
+                        <?php
+                        if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE parse_version = 'TEST'")) {
+                            $sql->execute();    // Execute the prepared query.
+                            $result2 = $sql->get_result();
+                            $numRows = $result2->num_rows;
+                            $results = $result2->fetch_all(MYSQLI_ASSOC);
+                            $result2->free_result();
+                            $sql->free_result();
+
+
+                            foreach ($results as $result) {
+                                if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
+                                    $sql2->bind_param('i', $result['map_id']);
+                                    $sql2->execute();    // Execute the prepared query.
+
+                                    $world_name = null;
+                                    $game_type = null;
+
+                                    $sql2->bind_result($world_name, $game_type);
+                                    $sql2->fetch();
+                                    $sql2->store_result();
+                                    $sql2->free_result();
+
+                                    echo '
+                                                   <tr id="map-', $result['map_id'],'">
+                                                    <td>', $result['map_id'], '</td>
+                                                    <td>', $result['map_name'],'</td>
+                                                    <td>', $result['map_author'], '</td>
+                                                    <td>', $game_type, '</td>
+                                                    <td>', $world_name, '</td>
+                                                    <td><button type="button" class="btn btn-success" onclick=\'addMap(', $result['map_id'], '")\'><i class="fas fa-plus"></i> Add</button></td></tr>';
+                                } else {
+                                    echo "There has been an error connecting to the database. Please try again. 2";
+                                }
+                            }
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>

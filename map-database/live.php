@@ -134,7 +134,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                     $sql2->free_result();
 
                                     echo '
-                                                   <tr>
+                                                   <tr id="map-', $result['map_id'],'">
                                                     <td>', $result['map_id'], '</td>
                                                     <td>', $result['map_name'],'</td>
                                                     <td>', $result['map_author'], '</td>
