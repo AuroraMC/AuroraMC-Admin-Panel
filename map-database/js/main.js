@@ -52,6 +52,9 @@ function pushUpdate() {
         type: 'post',
         success: function(result) {
             alert(result);
+        },
+        error: function(err) {
+
         }
     });
 }
