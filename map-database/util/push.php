@@ -17,7 +17,39 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     header("Location: ../../login");
 }
 
+$additions = $redis->sMembers("map.additions");
+$removals = $redis->sMembers("map.removals");
 
+foreach ($removals as $removal) {
+    if ($sql = $mysqli->prepare("UPDATE maps SET parse_version = 'ARCHIVED' WHERE map_id = ? AND parse_version = 'LIVE'")) {
+        $sql->bind_param('s', $removal);
+        $sql->execute();    // Execute the prepared query.
+    }
+}
+
+foreach ($additions as $addition) {
+    if ($sql = $mysqli->prepare("SELECT count(*) FROM maps WHERE parse_version = 'LIVE' AND map_id = ?")) {
+        $sql->bind_param('s', $addition);
+        $results2 = $sql->get_result();
+        $results = $results2->fetch_array(MYSQLI_NUM);
+        $results2->free_result();
+        $sql->free_result();
+        $maps = $results[0];
+        if ($maps > 0) {
+            if ($sql2 = $mysqli->prepare("DELETE FROM maps WHERE parse_version = 'LIVE' AND map_id = ?")) {
+                $sql2->bind_param('s', $addition);
+                $sql->execute();
+            }
+        }
+    }
+    if ($sql = $mysqli->prepare("UPDATE maps SET parse_version = 'LIVE' WHERE map_id = ? AND parse_version = 'TEST'")) {
+        $sql->bind_param('s', $addition);
+        $sql->execute();    // Execute the prepared query.
+    }
+}
+
+$redis->rem("map.additions");
+$redis->rem("map.removals");
 
     $host = "db.block2block.me";
     $port = 35567;

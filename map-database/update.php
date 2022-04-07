@@ -225,6 +225,9 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                         </table>
                     </div>
                 </div>
+                <div class="row">
+                    <button type="button" class="btn btn-success" onclick="pushUpdate()" style="margin-left:50%;margin-right:50%;"><i class="fa-solid fa-upload"></i> Push Update</button>
+                </div>
             </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
