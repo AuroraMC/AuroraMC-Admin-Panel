@@ -48,7 +48,7 @@ function removeOldMap(id) {
 
 function pushUpdate() {
     $.ajax({
-        url:'/map-database/utils/push.php',
+        url:'/map-database/util/push.php',
         type: 'post',
         success: function(result) {
             alert(result);
