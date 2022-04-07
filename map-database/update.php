@@ -137,8 +137,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                             </thead>
                             <tbody id="table-values" style="color: white">
                             <?php
-                            $additions = $redis->sMembers("maps.additions");
-                            $removals = $redis->sMembers("maps.removals");
+                            $additions = $redis->sMembers("map.additions");
+                            $removals = $redis->sMembers("map.removals");
 
                             foreach ($additions as $addition) {
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'TEST'")) {
