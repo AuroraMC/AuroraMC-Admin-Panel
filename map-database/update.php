@@ -141,7 +141,6 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                             $removals = $redis->sMembers("map.removals");
 
                             foreach ($additions as $addition) {
-                                echo $addition;
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'TEST'")) {
                                     $sql->bind_params('s', $addition);
                                     $sql->execute();    // Execute the prepared query.
@@ -153,9 +152,6 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
 
                                     foreach ($results as $result) {
-                                        if ($redis->sIsMember("map.additions", $result['map_id'])) {
-                                            continue;
-                                        }
                                         if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
                                             $sql2->bind_param('i', $result['map_id']);
                                             $sql2->execute();    // Execute the prepared query.
@@ -184,7 +180,6 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                 }
                             }
                             foreach ($removals as $addition) {
-                                echo $addition;
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'LIVE'")) {
                                     $sql->bind_params('s', $addition);
                                     $sql->execute();    // Execute the prepared query.
@@ -196,9 +191,6 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
 
                                     foreach ($results as $result) {
-                                        if ($redis->sIsMember("map.additions", $result['map_id'])) {
-                                            continue;
-                                        }
                                         if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
                                             $sql2->bind_param('i', $result['map_id']);
                                             $sql2->execute();    // Execute the prepared query.
