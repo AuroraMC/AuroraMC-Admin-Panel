@@ -146,6 +146,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                     $sql->execute();    // Execute the prepared query.
                                     $result2 = $sql->get_result();
                                     $numRows = $result2->num_rows;
+                                    echo $numRows;
                                     $results = $result2->fetch_all(MYSQLI_ASSOC);
                                     $result2->free_result();
                                     $sql->free_result();
@@ -185,6 +186,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                     $sql->execute();    // Execute the prepared query.
                                     $result2 = $sql->get_result();
                                     $numRows = $result2->num_rows;
+                                    echo $numRows;
                                     $results = $result2->fetch_all(MYSQLI_ASSOC);
                                     $result2->free_result();
                                     $sql->free_result();
