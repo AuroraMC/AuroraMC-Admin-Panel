@@ -16,6 +16,8 @@ if (!$account_type) {
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV") {
     header("Location: ../../login");
 }
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 <!doctype html>
