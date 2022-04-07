@@ -41,6 +41,7 @@ foreach ($additions as $addition) {
         $sql->free_result();
         $maps = $results[0];
         if ($maps > 0) {
+            echo "Deleting map " . $addition;
             if ($sql2 = $mysqli->prepare("DELETE FROM maps WHERE parse_version = 'LIVE' AND map_id = ?")) {
                 $sql2->bind_param('s', $addition);
                 $sql->execute();
@@ -50,11 +51,12 @@ foreach ($additions as $addition) {
     if ($sql = $mysqli->prepare("UPDATE maps SET parse_version = 'LIVE' WHERE map_id = ? AND parse_version = 'TEST'")) {
         $sql->bind_param('s', $addition);
         $sql->execute();    // Execute the prepared query.
+        echo "Pushing map " . $addition;
     }
 }
 
-$redis->rem("map.additions");
-$redis->rem("map.removals");
+$redis->del("map.additions");
+$redis->del("map.removals");
 
     $host = "db.block2block.me";
     $port = 35567;
