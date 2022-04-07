@@ -117,6 +117,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             <div class="container">
                 <div class="row">
                     <h1 style="text-align: center;margin-right: auto;margin-left: auto">Live Maps</h1>
+                    <br>
                     <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtLive" width="100%">
                         <thead>
                         <tr>
