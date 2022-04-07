@@ -178,6 +178,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                             echo "There has been an error connecting to the database. Please try again. 2";
                                         }
                                     }
+                                } else {
+                                    echo "failed";
                                 }
                             }
                             foreach ($removals as $addition) {
@@ -218,6 +220,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                             echo "There has been an error connecting to the database. Please try again. 2";
                                         }
                                     }
+                                } else {
+                                    echo "failed";
                                 }
                             }
                             ?>
