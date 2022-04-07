@@ -141,6 +141,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                             $removals = $redis->sMembers("map.removals");
 
                             foreach ($additions as $addition) {
+                                echo $addition;
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'TEST'")) {
                                     $sql->bind_params('s', $addition);
                                     $sql->execute();    // Execute the prepared query.
@@ -183,6 +184,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                 }
                             }
                             foreach ($removals as $addition) {
+                                echo $addition;
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'LIVE'")) {
                                     $sql->bind_params('s', $addition);
                                     $sql->execute();    // Execute the prepared query.
