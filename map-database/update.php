@@ -142,7 +142,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
                             foreach ($additions as $addition) {
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'TEST'")) {
-                                    $sql->bind_params('s', $addition);
+                                    $sql->bind_params('i', intval($addition));
                                     $sql->execute();    // Execute the prepared query.
                                     $result2 = $sql->get_result();
                                     $numRows = $result2->num_rows;
@@ -181,7 +181,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                             }
                             foreach ($removals as $addition) {
                                 if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE map_id = ? AND parse_version = 'LIVE'")) {
-                                    $sql->bind_params('s', $addition);
+                                    $sql->bind_params('i', intval($addition));
                                     $sql->execute();    // Execute the prepared query.
                                     $result2 = $sql->get_result();
                                     $numRows = $result2->num_rows;
