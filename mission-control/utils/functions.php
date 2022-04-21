@@ -21,7 +21,7 @@ if (isset($_POST['stat'], $_POST['time'])) {
     $stat = filter_input(INPUT_POST, 'stat', FILTER_SANITIZE_STRING);
     $time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_STRING);
 
-    $games = ["CRYSTAL_QUEST"=>"Crystal Quest","LOBBY"=>"Lobby","BUILD"=>"Build Server", "EVENT"=>"Event Server", "STAFF"=>"Staff Server", "MIXED_ARCADE"=>"Mixed Arcade"];
+    $games = ["CRYSTAL_QUEST"=>"Crystal Quest","LOBBY"=>"Lobby","BUILD"=>"Build Server", "EVENT"=>"Event Server", "STAFF"=>"Staff Server", "RUN"=>"Run", "TAG"=>"Tag", "HOT_POTATO"=>"Hot Potato", "FFA"=>"FFA", "SPLEEF"=>"Spleef", "PAINTBALL"=>"Paintball", "BACKSTAB"=>"Backstab"];
     $xTitle = ["NETWORK_PLAYER_TOTALS"=>"Online Players", "NETWORK_PROXY_TOTALS"=>"Proxies", "UNIQUE_PLAYER_TOTALS"=> "Total Unique Players", "UNIQUE_PLAYER_JOINS"=>"New Players Joined"];
 
     $query = "";
