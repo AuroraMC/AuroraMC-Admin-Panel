@@ -164,6 +164,7 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, proxy) {
             document.getElementById("main-lobby").value = "";
             document.getElementById("main-engine").value = "";
             document.getElementById("main-game").value = "";
+            document.getElementById("main-duels").value = "";
             document.getElementById("main-build").value = "";
             document.getElementById("main-proxy").value = "";
             document.getElementById("main-event").value = "";
