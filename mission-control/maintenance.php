@@ -216,6 +216,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                                    class="form-control"/><br>
                                                             <input type='text' name='game' id='main-game' placeholder="Game Build"
                                                                    class="form-control"/><br>
+                                                            <input type='text' name='duels' id='main-duels' placeholder="Duels Build"
+                                                                   class="form-control"/><br>
                                                             <input type='text' name='build' id='main-build' placeholder="Build Core Build"
                                                                    class="form-control"/><br>
                                                             <input type='text' name='event' id='main-event' placeholder="Event Build"
@@ -232,7 +234,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                 </button>
                                                 <button type="button" class="btn btn-info"
                                                         form="update" id="update-button"
-                                                        onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
+                                                        onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.duels.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
                                             </div>
                                         </div>
                                     </div>
@@ -337,6 +339,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                                    class="form-control"/><br>
                                                             <input type='text' name='game' id='game' placeholder="Game Build Number"
                                                                    class="form-control"/><br>
+                                                            <input type='text' name='duels' id='duels' placeholder="Duels Build Number"
+                                                                   class="form-control"/><br>
                                                             <input type='text' name='build' id='build' placeholder="Build Core Build Number"
                                                                    class="form-control"/><br>
                                                             <input type='text' name='event' id='event' placeholder="Event Build Number"
@@ -354,7 +358,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                 <button type="button" class="btn btn-info"
                                                         form="update_alpha"
                                                         id="update-alpha-network"
-                                                        onclick="updateAlphaNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
+                                                        onclick="updateAlphaNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.duels.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
                                             </div>
                                         </div>
                                     </div>
@@ -390,6 +394,9 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                         </optgroup>
                                                         <optgroup label="Game Servers">
                                                             <option value="CRYSTAL_QUEST">Crystal Quest</option>
+                                                            <option value="PAINTBALL">Paintball</option>
+                                                            <option value="BACKSTAB">Backstab</option>
+                                                            <option value="DUELS">Duels</option>
                                                             <option value="ARCADE_MODE">Arcade Mode</option>
                                                         </optgroup>
                                                         <optgroup label="Misc Servers">
@@ -434,6 +441,9 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                         </optgroup>
                                                         <optgroup label="Game Servers">
                                                             <option value="CRYSTAL_QUEST">Crystal Quest</option>
+                                                            <option value="PAINTBALL">Paintball</option>
+                                                            <option value="BACKSTAB">Backstab</option>
+                                                            <option value="DUELS">Duels</option>
                                                             <option value="ARCADE_MODE">Arcade Mode</option>
                                                         </optgroup>
                                                         <optgroup label="Misc Servers">
@@ -478,6 +488,9 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                         </optgroup>
                                                         <optgroup label="Game Servers">
                                                             <option value="CRYSTAL_QUEST">Crystal Quest</option>
+                                                            <option value="PAINTBALL">Paintball</option>
+                                                            <option value="BACKSTAB">Backstab</option>
+                                                            <option value="DUELS">Duels</option>
                                                             <option value="ARCADE_MODE">Arcade Mode</option>
                                                         </optgroup>
                                                         <optgroup label="Misc Servers">

@@ -114,6 +114,9 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                 </optgroup>
                                                 <optgroup label="Game Servers">
                                                     <option value="CRYSTAL_QUEST">Crystal Quest</option>
+                                                    <option value="PAINTBALL">Paintball</option>
+                                                    <option value="BACKSTAB">Backstab</option>
+                                                    <option value="DUELS">Duels</option>
                                                     <option value="ARCADE_MODE">Arcade Mode</option>
                                                 </optgroup>
                                                 <optgroup label="Misc Servers">

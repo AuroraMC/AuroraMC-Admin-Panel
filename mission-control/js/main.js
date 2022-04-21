@@ -126,7 +126,7 @@ function disableNetwork(network) {
     });
 }
 
-function updateNetwork(core, lobby, engine, game, build, event, proxy) {
+function updateNetwork(core, lobby, engine, game, duels, build, event, proxy) {
     let modules = [];
     if (core !== "") {
         modules.push("core:" + core);
@@ -139,6 +139,9 @@ function updateNetwork(core, lobby, engine, game, build, event, proxy) {
     }
     if (game !== "") {
         modules.push("game:" + game);
+    }
+    if (duels !== "") {
+        modules.push("duels:" + duels);
     }
     if (build !== "") {
         modules.push("build:" + build);
@@ -194,7 +197,7 @@ function disableAlpha() {
     });
 }
 
-function updateAlphaNetwork(core, lobby, engine, game, build, event, proxy) {
+function updateAlphaNetwork(core, lobby, engine, game, duels, build, event, proxy) {
     let modules = [];
     if (core !== "") {
         modules.push("core;" + core);
@@ -206,7 +209,10 @@ function updateAlphaNetwork(core, lobby, engine, game, build, event, proxy) {
         modules.push("engine;" + engine);
     }
     if (game !== "") {
-        modules.push("game;" + game);
+        modules.push("game;" + game);U
+    }
+    if (duels !== "") {
+        modules.push("duels;" + duels);
     }
     if (build !== "") {
         modules.push("build;" + build);
