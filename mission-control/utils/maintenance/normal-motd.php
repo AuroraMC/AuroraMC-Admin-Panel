@@ -20,7 +20,7 @@ if (isset($_POST['network'], $_POST['motd'])) {
     $network = filter_input(INPUT_POST, 'network', FILTER_SANITIZE_STRING);
     $motd = filter_input(INPUT_POST, 'motd', FILTER_SANITIZE_STRING);
 
-    $host = "db.block2block.me";
+    $host = "mc.supersecretsettings.dev";
     $port = 35567;
     $data = "normalmotd;". $network . ";" . $motd . "\r\n";
 

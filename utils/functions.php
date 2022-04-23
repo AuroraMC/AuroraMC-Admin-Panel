@@ -184,7 +184,7 @@ function login_check($mysqli) {
 }
 
 function genCode($uuid, $name) {
-    $host = "db.block2block.me";
+    $host = "mc.supersecretsettings.dev";
     $port = 35567;
     $data = "gencode;". $uuid . ";" . $name ."\r\n";
 

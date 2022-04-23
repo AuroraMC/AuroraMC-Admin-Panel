@@ -27,7 +27,7 @@ if (isset($_POST['server'], $_POST['network'], $_POST['game'], $_POST['extradeta
         return;
     }
 
-    $host = "db.block2block.me";
+    $host = "mc.supersecretsettings.dev";
     $port = 35567;
     $data = "createserver;". $network . ";" . $game . ";" . $server . ";" . $extra_details ."\r\n";
 

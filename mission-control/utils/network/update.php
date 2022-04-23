@@ -21,7 +21,7 @@ if (isset($_POST['data'])) {
 
     $data = str_replace(";", " ", $data);
 
-    $host = "db.block2block.me";
+    $host = "mc.supersecretsettings.dev";
     $port = 35567;
     $data = "updatenetwork;". $data . "\r\n";
 

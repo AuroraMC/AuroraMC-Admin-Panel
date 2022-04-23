@@ -17,7 +17,7 @@ if ($account_type != "OWNER" && $account_type != "SR_DEV") {
     header("Location: ../../../login");
 }
 
-    $host = "db.block2block.me";
+    $host = "mc.supersecretsettings.dev";
     $port = 35567;
     $data = "enablealpha\r\n";
 

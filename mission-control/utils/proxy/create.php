@@ -25,7 +25,7 @@ if (isset($_POST['network'], $_POST['extradetails'])) {
         return;
     }
 
-    $host = "db.block2block.me";
+    $host = "mc.supersecretsettings.dev";
     $port = 35567;
     $data = "createproxy;". $network . ";" . $extra_details ."\r\n";
 

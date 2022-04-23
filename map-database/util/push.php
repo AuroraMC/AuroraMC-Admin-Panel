@@ -52,7 +52,7 @@ foreach ($additions as $addition) {
 $redis->del("map.additions");
 $redis->del("map.removals");
 
-    $host = "db.block2block.me";
+    $host = "mc.supersecretsettings.dev";
     $port = 35567;
     $data = "updatemaps\r\n";
 
