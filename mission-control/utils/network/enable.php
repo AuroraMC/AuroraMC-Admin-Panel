@@ -19,7 +19,7 @@ if ($account_type != "OWNER") {
 if (isset($_POST['network'])) {
     $network = filter_input(INPUT_POST, 'network', FILTER_SANITIZE_STRING);
 
-    $host = "db.block2block.me";
+    $host = "mc.supersecretsettings.dev";
     $port = 35567;
     $data = "enablenetwork;". $network . "\r\n";
 
