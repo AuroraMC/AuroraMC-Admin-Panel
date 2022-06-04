@@ -187,6 +187,34 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                         ?>
                     </div>
                 </div>
+                <br>
+                <div class="row">
+                    <div class="col-12">
+                        <legend style="font-family: 'Helvetica';">Current Live Build Numbers</legend>
+                        <hr>
+                        <p><strong style="font-weight: bold">AuroraMC-Core:</strong> <?php
+                            echo $redis->get("build.core");
+                            ?></p>
+                        <p><strong style="font-weight: bold">AuroraMC-Proxy:</strong> <?php
+                            echo $redis->get("build.proxy");
+                            ?></p>
+                        <p><strong style="font-weight: bold">AuroraMC-Lobby:</strong> <?php
+                            echo $redis->get("build.lobby");
+                            ?></p>
+                        <p><strong style="font-weight: bold">AuroraMC-Game-Engine:</strong> <?php
+                            echo $redis->get("build.engine");
+                            ?></p>
+                        <p><strong style="font-weight: bold">AuroraMC-Games:</strong> <?php
+                            echo $redis->get("build.game");
+                            ?></p>
+                        <p><strong style="font-weight: bold">AuroraMC-Build:</strong> <?php
+                            echo $redis->get("build.build");
+                            ?></p>
+                        <p><strong style="font-weight: bold">AuroraMC-Duels:</strong> <?php
+                            echo $redis->get("build.duels");
+                            ?></p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
