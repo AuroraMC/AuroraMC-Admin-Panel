@@ -117,6 +117,9 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             <p><strong style="font-weight: bold">Number of toxic replacements:</strong> <?php
                 echo count($redis->sMembers("filter.replacements"));
                 ?></p>
+            <br>
+            <br>
+            <button type='button' class='btn btn-secondary' onclick='updateRules()'><i class='fas fa-pencil-alt'></i> Push Filter Update</button>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>
