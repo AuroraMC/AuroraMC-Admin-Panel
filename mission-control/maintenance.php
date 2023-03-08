@@ -223,7 +223,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                             <input type='text' name='event' id='main-event' placeholder="Event Build"
                                                                    class="form-control"/><br>
                                                             <input type='text' name='proxy' id='main-proxy' placeholder="Proxy Build"
-                                                                   class="form-control"/>
+                                                                   class="form-control"/><br>
                                                             <input type='text' name='pathfinder' id='main-pathfinder' placeholder="Pathfinder Build"
                                                                    class="form-control"/>
                                                         </fieldset>
@@ -348,7 +348,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                             <input type='text' name='event' id='event' placeholder="Event Build Number"
                                                                    class="form-control"/><br>
                                                             <input type='text' name='proxy' id='proxy' placeholder="Proxy Build Number"
-                                                                   class="form-control"/>
+                                                                   class="form-control"/><br>
                                                             <input type='text' name='pathfinder' id='pathfinder' placeholder="Pathfinder Build Number"
                                                                    class="form-control"/>
                                                         </fieldset>
