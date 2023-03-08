@@ -126,7 +126,7 @@ function disableNetwork(network) {
     });
 }
 
-function updateNetwork(core, lobby, engine, game, duels, build, event, proxy) {
+function updateNetwork(core, lobby, engine, game, duels, build, event, proxy, pathfinder) {
     let modules = [];
     if (core !== "") {
         modules.push("core:" + core);
@@ -152,6 +152,9 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, proxy) {
     if (proxy !== "") {
         modules.push("proxy:" + proxy);
     }
+    if (pathfinder !== "") {
+        modules.push("pathfinder:" + pathfinder);
+    }
     document.getElementById("update-button").disabled = true;
     $.ajax({
         url:'/mission-control/utils/network/update.php',
@@ -168,6 +171,7 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, proxy) {
             document.getElementById("main-build").value = "";
             document.getElementById("main-proxy").value = "";
             document.getElementById("main-event").value = "";
+            document.getElementById("main-pathfinder").value = "";
 
             $('#updateModal').modal('hide');
         }
@@ -198,7 +202,7 @@ function disableAlpha() {
     });
 }
 
-function updateAlphaNetwork(core, lobby, engine, game, duels, build, event, proxy) {
+function updateAlphaNetwork(core, lobby, engine, game, duels, build, event, proxy, pathfinder) {
     let modules = [];
     if (core !== "") {
         modules.push("core;" + core);
@@ -210,7 +214,7 @@ function updateAlphaNetwork(core, lobby, engine, game, duels, build, event, prox
         modules.push("engine;" + engine);
     }
     if (game !== "") {
-        modules.push("game;" + game);U
+        modules.push("game;" + game);
     }
     if (duels !== "") {
         modules.push("duels;" + duels);
@@ -223,6 +227,9 @@ function updateAlphaNetwork(core, lobby, engine, game, duels, build, event, prox
     }
     if (proxy !== "") {
         modules.push("proxy;" + proxy);
+    }
+    if (proxy !== "") {
+        modules.push("pathfinder;" + pathfinder);
     }
     document.getElementById("update-alpha-button").disabled = true;
     $.ajax({

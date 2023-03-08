@@ -224,6 +224,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                                    class="form-control"/><br>
                                                             <input type='text' name='proxy' id='main-proxy' placeholder="Proxy Build"
                                                                    class="form-control"/>
+                                                            <input type='text' name='pathfinder' id='main-pathfinder' placeholder="Pathfinder Build"
+                                                                   class="form-control"/>
                                                         </fieldset>
                                                     </div>
                                                 </form>
@@ -234,7 +236,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                 </button>
                                                 <button type="button" class="btn btn-info"
                                                         form="update" id="update-button"
-                                                        onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.duels.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
+                                                        onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.duels.value, this.form.build.value, this.form.event.value, this.form.proxy.value, this.form.pathfinder.value);"><i class="fas fa-upload"></i> Update</button>
                                             </div>
                                         </div>
                                     </div>
@@ -347,6 +349,8 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                                    class="form-control"/><br>
                                                             <input type='text' name='proxy' id='proxy' placeholder="Proxy Build Number"
                                                                    class="form-control"/>
+                                                            <input type='text' name='pathfinder' id='pathfinder' placeholder="Pathfinder Build Number"
+                                                                   class="form-control"/>
                                                         </fieldset>
                                                     </div>
                                                 </form>
@@ -358,7 +362,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                 <button type="button" class="btn btn-info"
                                                         form="update_alpha"
                                                         id="update-alpha-network"
-                                                        onclick="updateAlphaNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.duels.value, this.form.build.value, this.form.event.value, this.form.proxy.value);"><i class="fas fa-upload"></i> Update</button>
+                                                        onclick="updateAlphaNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.duels.value, this.form.build.value, this.form.event.value, this.form.proxy.value, this.form.pathfinder.value);"><i class="fas fa-upload"></i> Update</button>
                                             </div>
                                         </div>
                                     </div>
