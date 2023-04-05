@@ -134,7 +134,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                             </thead>
                             <tbody id="table-values" style="color: white">
                             <?php
-                            if ($sql = $mysqli->prepare("SELECT * FROM maps WHERE parse_version = 'LIVE'")) {
+                            if ($sql = $mysqli->prepare("SELECT parse_id,map_id,map_name,map_author,parse_number,parse_version,last_modified FROM maps WHERE parse_version = 'LIVE'")) {
                                 $sql->execute();    // Execute the prepared query.
                                 $result2 = $sql->get_result();
                                 $numRows = $result2->num_rows;
