@@ -126,7 +126,7 @@ function disableNetwork(network) {
     });
 }
 
-function updateNetwork(core, lobby, engine, game, duels, build, event, proxy, pathfinder) {
+function updateNetwork(core, lobby, engine, game, duels, build, event, pathfinder) {
     let modules = [];
     if (core !== "") {
         modules.push("core:" + core);
@@ -149,9 +149,6 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, proxy, pa
     if (event !== "") {
         modules.push("event:" + event);
     }
-    if (proxy !== "") {
-        modules.push("proxy:" + proxy);
-    }
     if (pathfinder !== "") {
         modules.push("pathfinder:" + pathfinder);
     }
@@ -169,7 +166,6 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, proxy, pa
             document.getElementById("main-game").value = "";
             document.getElementById("main-duels").value = "";
             document.getElementById("main-build").value = "";
-            document.getElementById("main-proxy").value = "";
             document.getElementById("main-event").value = "";
             document.getElementById("main-pathfinder").value = "";
 
@@ -202,7 +198,7 @@ function disableAlpha() {
     });
 }
 
-function updateAlphaNetwork(core, lobby, engine, game, duels, build, event, proxy, pathfinder) {
+function updateAlphaNetwork(core, lobby, engine, game, duels, build, event, pathfinder) {
     let modules = [];
     if (core !== "") {
         modules.push("core;" + core);
@@ -225,10 +221,7 @@ function updateAlphaNetwork(core, lobby, engine, game, duels, build, event, prox
     if (event !== "") {
         modules.push("event;" + event);
     }
-    if (proxy !== "") {
-        modules.push("proxy;" + proxy);
-    }
-    if (proxy !== "") {
+    if (pathfinder !== "") {
         modules.push("pathfinder;" + pathfinder);
     }
     document.getElementById("update-alpha-button").disabled = true;

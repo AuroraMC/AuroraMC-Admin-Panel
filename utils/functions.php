@@ -63,11 +63,9 @@ function login($username, $password, $code, $mysqli, $redis) {
                     $dbCode = $redis->get("panel.code." . $uuid);
                     if ($dbCode) {
                         if ($code != $dbCode) {
-                            genCode($uuid, $username);
                             return false;
                         }
                     } else {
-                        genCode($uuid, $username);
                         return false;
                     }
 
@@ -180,26 +178,5 @@ function login_check($mysqli) {
     } else {
         // Not logged in
         return false;
-    }
-}
-
-function genCode($uuid, $name) {
-    $host = "mc.supersecretsettings.dev";
-    $port = 35567;
-    $data = "gencode;". $uuid . ";" . $name ."\r\n";
-
-    if (($socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) === FALSE) {
-        echo "Failed to initialise socket.";
-    } else {
-        if (($result = socket_connect($socket, $host, $port)) === false) {
-            echo "Failed to create connection.";
-        } else {
-            socket_write($socket, $data, strlen($data));
-
-            while (($out = socket_read($socket, 2048)) != "") {
-                echo $out;
-            }
-        }
-        socket_close($socket);
     }
 }

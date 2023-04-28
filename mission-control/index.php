@@ -195,9 +195,6 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                         <p><strong style="font-weight: bold">AuroraMC-Core:</strong> <?php
                             echo $redis->get("build.core");
                             ?></p>
-                        <p><strong style="font-weight: bold">AuroraMC-Proxy:</strong> <?php
-                            echo $redis->get("build.proxy");
-                            ?></p>
                         <p><strong style="font-weight: bold">AuroraMC-Lobby:</strong> <?php
                             echo $redis->get("build.lobby");
                             ?></p>
