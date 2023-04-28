@@ -152,6 +152,8 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, pathfinde
     if (pathfinder !== "") {
         modules.push("pathfinder:" + pathfinder);
     }
+
+    console.log(modules.join(";"));
     document.getElementById("update-button").disabled = true;
     $.ajax({
         url:'/mission-control/utils/network/update.php',
