@@ -122,7 +122,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                 <optgroup label="NuttersSMP">
                                                     <option value="SMP_OVERWORLD">Overworld</option>
                                                     <option value="SMP_NETHER">Nether</option>
-                                                    <option value="SMP_END">he End</option>
+                                                    <option value="SMP_END">The End</option>
                                                 </optgroup>
                                                 <optgroup label="Misc Servers">
                                                     <option value="BUILD">Build</option>
