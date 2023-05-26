@@ -99,7 +99,7 @@ if (!$account_type) {
                 <div>
                     <img src="img/map.png" alt="Map Database icon" class="img">
                     <p class="subtitle">Manage Our</p>
-                    <p class="title">Content Distribution<br>Network</p>
+                    <p class="title">CDN</p>
                 </div>
             </a>
         <?php endif; ?>
