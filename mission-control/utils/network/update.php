@@ -36,9 +36,11 @@ if (isset($_POST['data'])) {
             socket_write($socket, $data, strlen($data));
 
             while (($out = socket_read($socket, 2048)) != "") {
-                echo $out . " " .  $data;
+                echo $out;
             }
         }
         socket_close($socket);
     }
+
+    echo " " .  $data;
 }
