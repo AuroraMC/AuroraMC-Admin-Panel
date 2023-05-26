@@ -40,6 +40,4 @@ if (isset($_POST['data'])) {
         }
         socket_close($socket);
     }
-
-    echo " " .  $data;
 }
