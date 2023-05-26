@@ -20,6 +20,7 @@ if (isset($_POST['data'])) {
     $data = filter_input(INPUT_POST, 'data', FILTER_SANITIZE_STRING);
 
     $data = str_replace(";", " ", $data);
+    $data = str_replace("~", ";", $data);
 
     $host = "mc.supersecretsettings.dev";
     $port = 35567;

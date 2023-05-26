@@ -224,6 +224,10 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                                    class="form-control"/><br>
                                                             <input type='text' name='pathfinder' id='main-pathfinder' placeholder="Pathfinder Build"
                                                                    class="form-control"/>
+
+                                                            <br>
+                                                            <input type='text' name='arguments' id='main-arguments' placeholder="Arguments"
+                                                                   class="form-control"/>
                                                         </fieldset>
                                                     </div>
                                                 </form>
@@ -234,7 +238,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                 </button>
                                                 <button type="button" class="btn btn-info"
                                                         form="update" id="update-button"
-                                                        onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.duels.value, this.form.build.value, this.form.event.value, this.form.pathfinder.value);"><i class="fas fa-upload"></i> Update</button>
+                                                        onclick="updateNetwork(this.form.core.value, this.form.lobby.value, this.form.engine.value, this.form.game.value, this.form.duels.value, this.form.build.value, this.form.event.value, this.form.pathfinder.value, this.form.arguments.value);"><i class="fas fa-upload"></i> Update</button>
                                             </div>
                                         </div>
                                     </div>
