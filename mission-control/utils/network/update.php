@@ -18,13 +18,14 @@ if ($account_type != "OWNER") {
 }
 if (isset($_POST['data'])) {
     $data = filter_input(INPUT_POST, 'data', FILTER_SANITIZE_STRING);
+    $arguments = filter_input(INPUT_POST, 'arguments', FILTER_SANITIZE_STRING);
 
     $data = str_replace(";", " ", $data);
     $data = str_replace("~", ";", $data);
 
     $host = "mc.supersecretsettings.dev";
     $port = 35567;
-    $data = "updatenetwork;". $data . "\r\n";
+    $data = "updatenetwork;". $data . ";" . $arguments . "\r\n";
 
     if (($socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) === FALSE) {
         echo "Failed to initialise socket.";
