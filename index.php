@@ -98,8 +98,8 @@ if (!$account_type) {
             <a href="/cdn/" class="item">
                 <div>
                     <img src="img/map.png" alt="Map Database icon" class="img">
-                    <p class="subtitle">Manage Iur</p>
-                    <p class="title">Content Distribution Network</p>
+                    <p class="subtitle">Manage Our</p>
+                    <p class="title">Content Distribution<br>Network</p>
                 </div>
             </a>
         <?php endif; ?>
