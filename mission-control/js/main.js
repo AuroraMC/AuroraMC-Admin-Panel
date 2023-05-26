@@ -126,7 +126,7 @@ function disableNetwork(network) {
     });
 }
 
-function updateNetwork(core, lobby, engine, game, duels, build, event, pathfinder) {
+function updateNetwork(core, lobby, engine, game, duels, build, event, pathfinder, arguments) {
     let modules = [];
     if (core !== "") {
         modules.push("core:" + core);
@@ -153,12 +153,13 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, pathfinde
         modules.push("pathfinder:" + pathfinder);
     }
 
+
     console.log(modules.join(";"));
     document.getElementById("update-button").disabled = true;
     $.ajax({
         url:'/mission-control/utils/network/update.php',
         type: 'post',
-        data: "data=" + encodeURIComponent(modules.join(";")),
+        data: "data=" + encodeURIComponent(modules.join(";") + "~" + arguments),
         success: function(result) {
             alert(result);
             document.getElementById("update-button").disabled = false;
@@ -170,6 +171,7 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, pathfinde
             document.getElementById("main-build").value = "";
             document.getElementById("main-event").value = "";
             document.getElementById("main-pathfinder").value = "";
+            document.getElementById("main-arguments").value = "";
 
             $('#updateModal').modal('hide');
         }

@@ -71,6 +71,11 @@ if (!$account_type) {
             </div>
         </a>
         <?php endif; ?>
+
+        <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV") :?>
+    </div>
+    <div class="items">
+        <?php endif; ?>
         <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "DEV") :?>
         <a href="/mission-control/" class="item mission-control">
             <div>
@@ -86,6 +91,15 @@ if (!$account_type) {
                     <img src="img/map.png" alt="Map Database icon" class="img">
                     <p class="subtitle">Access</p>
                     <p class="title">Map Database</p>
+                </div>
+            </a>
+        <?php endif; ?>
+        <?php if ($account_type == "OWNER" ||  $account_type == "ADMIN" || $account_type == "SR_DEV") :?>
+            <a href="/cdn/" class="item">
+                <div>
+                    <img src="img/map.png" alt="Map Database icon" class="img">
+                    <p class="subtitle">Manage Iur</p>
+                    <p class="title">Content Distribution Network</p>
                 </div>
             </a>
         <?php endif; ?>
