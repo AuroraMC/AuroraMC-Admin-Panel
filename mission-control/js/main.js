@@ -159,7 +159,7 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, pathfinde
     $.ajax({
         url:'/mission-control/utils/network/update.php',
         type: 'post',
-        data: "data=" + encodeURIComponent(modules.join(";")) + "&" + arguments,
+        data: "data=" + encodeURIComponent(modules.join(";") + "&" + arguments),
         success: function(result) {
             alert(result);
             document.getElementById("update-button").disabled = false;
