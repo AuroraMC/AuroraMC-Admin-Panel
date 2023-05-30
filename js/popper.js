@@ -1,5 +1,7 @@
 /*
- * Copyright (c) 2016-2021 AuroraMC Ltd. All Rights Reserved.
+ * Copyright (c) 2016-2023 AuroraMC Ltd. All Rights Reserved.
+ *
+ * PRIVATE AND CONFIDENTIAL - Distribution and usage outside the scope of your job description is explicitly forbidden except in circumstances where a company director has expressly given written permission to do so.
  */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
