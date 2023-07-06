@@ -550,10 +550,10 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                                                     </select><br>
                                                     <select name="mode" id="mode" class="form-control">
                                                         <option value="DISABLED">Off</option>
+                                                        <option value="TEST">Test Mode</option>
                                                         <option value="STAFF_ONLY">Staff Only</option>
                                                         <option value="LEADERSHIP_ONLY">Leadership Only</option>
                                                         <option value="LOCKDOWN">Essential Staff Only</option>
-                                                        <option value="NOT_OPEN">Not Open</option>
                                                     </select>
                                                 </fieldset>
                                             </div>
