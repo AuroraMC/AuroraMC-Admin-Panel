@@ -46,6 +46,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
     <link rel="stylesheet" href="css/navbar.css">
+    <script type="text/JavaScript" src="js/forms.js"></script>
 
     <link rel="icon"
           type="image/png"
