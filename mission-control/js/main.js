@@ -155,7 +155,9 @@ function updateNetwork(core, lobby, engine, game, duels, build, event, pathfinde
         modules.push("pathfinder:" + pathfinder);
     }
 
-
+    if (!arguments || arguments === "") {
+        arguments = "NONE";
+    }
     console.log(modules.join(";") + "&arguments=" + arguments);
     document.getElementById("update-button").disabled = true;
     $.ajax({
