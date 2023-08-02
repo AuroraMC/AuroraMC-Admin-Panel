@@ -39,7 +39,6 @@ if (!$account_type) {
         <a href="/rules/" class="item rules">
             <div>
                 <img src="img/rules.png" alt="Rules icon" class="img">
-                <p class="subtitle">Manage the</p>
                 <p class="title">Rules</p>
             </div>
         </a>
@@ -48,7 +47,6 @@ if (!$account_type) {
         <a href="/punishments/" class="item punishments">
             <div>
                 <img src="img/punishments.png" alt="Punishments icon" class="img">
-                <p class="subtitle">View player</p>
                 <p class="title">Punishments</p>
             </div>
         </a>
@@ -57,8 +55,7 @@ if (!$account_type) {
         <a href="/blacklist/" class="item blacklist">
             <div>
                 <img src="img/blacklist.png" alt="Blacklist icon" class="img">
-                <p class="subtitle">View our</p>
-                <p class="title">Name Blacklist</p>
+                <p class="title">Blacklist</p>
             </div>
         </a>
         <?php endif; ?>
@@ -66,8 +63,7 @@ if (!$account_type) {
         <a href="/filter/" class="item filter">
             <div>
                 <img src="img/filter.png" alt="Filter icon" class="img">
-                <p class="subtitle">View our</p>
-                <p class="title">Chat Filter</p>
+                <p class="title">Filter</p>
             </div>
         </a>
         <?php endif; ?>
@@ -80,7 +76,6 @@ if (!$account_type) {
         <a href="/mission-control/" class="item mission-control">
             <div>
                 <img src="img/mission-control.png" alt="Mission Control icon" class="img">
-                <p class="subtitle">Access</p>
                 <p class="title">Mission Control</p>
             </div>
         </a>
@@ -89,17 +84,15 @@ if (!$account_type) {
             <a href="/map-database/" class="item">
                 <div>
                     <img src="img/map.png" alt="Map Database icon" class="img">
-                    <p class="subtitle">Access</p>
                     <p class="title">Map Database</p>
                 </div>
             </a>
         <?php endif; ?>
-        <?php if ($account_type == "OWNER" ||  $account_type == "ADMIN" || $account_type == "SR_DEV") :?>
-            <a href="/cdn/" class="item">
+        <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV"  || $account_type == "DEV" || $account_type == "QA") :?>
+            <a href="/big-brother/" class="item">
                 <div>
-                    <img src="img/map.png" alt="Map Database icon" class="img">
-                    <p class="subtitle">Manage Our</p>
-                    <p class="title">CDN</p>
+                    <img src="img/big-brother.png" alt="Big Brother icon" class="img">
+                    <p class="title">Big Brother</p>
                 </div>
             </a>
         <?php endif; ?>
