@@ -12,11 +12,13 @@ sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV") {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 ?>
@@ -24,7 +26,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Home | Map Database | The AuroraMC Network</title>
+    <title>Live Maps | Map Database | The AuroraMC Network</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -60,23 +62,12 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <link rel="icon"
           type="image/png"
           href="../img/logo.png">
-
-    <script>
-        // Basic example
-        $(document).ready(function () {
-            $('#dtLive').DataTable({
-                "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
-                "autoWidth": true,
-                "scrollY": "498px",
-                "scrollCollapse": true,
-                "ordering": false
-            });
-            $('.dataTables_length').addClass('bs-select');
-        });
-    </script>
 </head>
 
-<body style="background-color: #23272A;color:white">
+<body style="background-color: #23272A;color:white" onload="onLoadLive()">
+<div class="ring" id="ring"><img src="https://gamelogs.auroramc.net/img/logo.png" width=130px>
+    <span class="dot"></span>
+</div>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
@@ -117,7 +108,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             <h1><Strong>AuroraMC Network Map Database</Strong></h1>
             <br>
             <br>
-            <div class="container">
+            <div class="container" id="content" style="display: none">
                 <div class="row">
                     <h1 style="text-align: center;margin-right: auto;margin-left: auto">Live Maps</h1>
                 </div>
@@ -127,6 +118,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                             <thead>
                             <tr>
                                 <th class="th-sm">ID</th>
+                                <th class="th-sm">Version</th>
                                 <th class="th-sm">Name</th>
                                 <th class="th-sm">Author</th>
                                 <th class="th-sm">Game Type</th>
@@ -135,46 +127,6 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                             </tr>
                             </thead>
                             <tbody id="table-values" style="color: white">
-                            <?php
-                            if ($sql = $mysqli->prepare("SELECT parse_id,map_id,map_name,map_author,parse_number,parse_version,last_modified FROM maps WHERE parse_version = 'LIVE'")) {
-                                $sql->execute();    // Execute the prepared query.
-                                $result2 = $sql->get_result();
-                                $numRows = $result2->num_rows;
-                                $results = $result2->fetch_all(MYSQLI_ASSOC);
-                                $result2->free_result();
-                                $sql->free_result();
-
-
-                                foreach ($results as $result) {
-                                    if ($redis->sIsMember("map.removals", $result['map_id'])) {
-                                        continue;
-                                    }
-                                    if ($sql2 = $mysqli->prepare("SELECT world_name, gametype FROM build_server_maps WHERE id = ?")) {
-                                        $sql2->bind_param('i', $result['map_id']);
-                                        $sql2->execute();    // Execute the prepared query.
-
-                                        $world_name = null;
-                                        $game_type = null;
-
-                                        $sql2->bind_result($world_name, $game_type);
-                                        $sql2->fetch();
-                                        $sql2->store_result();
-                                        $sql2->free_result();
-
-                                        echo '
-                                                   <tr id="map-', $result['map_id'],'">
-                                                    <td>', $result['map_id'], '</td>
-                                                    <td>', $result['map_name'],'</td>
-                                                    <td>', $result['map_author'], '</td>
-                                                    <td>', $game_type, '</td>
-                                                    <td>', $world_name, '</td>
-                                                    <td><button type="button" class="btn btn-danger" onclick=\'removeOldMap(', $result['map_id'], ')\'><i class="fas fa-trash-alt"></i> Remove</button></td></tr>';
-                                    } else {
-                                        echo "There has been an error connecting to the database. Please try again. 2";
-                                    }
-                                }
-                            }
-                            ?>
                             </tbody>
                         </table>
                     </div>

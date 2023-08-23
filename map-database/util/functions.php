@@ -13,11 +13,13 @@ sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../../login");
+    header("Location: ../../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV") {
-    header("Location: ../../../login");
+    header("Location: ../../login");
+    return;
 }
 
 if(isset($_POST['addNew'])) {

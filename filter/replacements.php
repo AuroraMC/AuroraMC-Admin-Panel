@@ -13,10 +13,12 @@ sec_session_start();
 $account_type = login_check($mysqli);
 if (!$account_type) {
     header("Location: ../../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV" && $account_type != "RC" && $account_type != "QA") {
     header("Location: ../../login");
+    return;
 }
 
 ?>
@@ -59,7 +61,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
 
     <link rel="stylesheet" href="css/navbar.css">
-    <script type="text/JavaScript" src="js/forms.js"></script>
+    <script type="text/JavaScript" src="js/main.js"></script>
 
     <script src="https://kit.fontawesome.com/a06911b3f6.js" crossorigin="anonymous"></script>
 
@@ -96,23 +98,11 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             margin-bottom: 0;
         }
     </style>
-
-    <script>
-        // Basic example
-        $(document).ready(function () {
-            $('#dtHistory').DataTable({
-                "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
-                "autoWidth": true,
-                "scrollY": "498px",
-                "scrollCollapse": true,
-                "ordering": false
-            });
-            $('.dataTables_length').addClass('bs-select');
-        });
-    </script>
 </head>
-<body style="background-color: #23272A;color:white">
-
+<body style="background-color: #23272A;color:white" onload="onLoadWords('replacements')">
+<div class="ring" id="ring"><img src="https://gamelogs.auroramc.net/img/logo.png" width=130px>
+    <span class="dot"></span>
+</div>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
@@ -123,7 +113,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                 <a class="nav-link" href="phrases">Phrases</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Toxic Replacements</a>
+                <a class="nav-link" href="#">Replacements</a>
             </li>
         </ul>
     </div>
@@ -161,36 +151,25 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                 <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Add Toxic Replacement"
                        aria-label="Search" name="replacement" style="color: white;" id="replacement">
             </form>
-            <?php
-
-                            $results = $redis->sMembers("filter.replacements");
-
-                            echo '<div class="container">
-                                <div class="row">
-                                    <h1 style="text-align: center;margin-right: auto;margin-left: auto">Toxic Replacement Phrases</h1 >
-                                </div>
-                                <div class="row">
-                                <div class="col-12">
-                                     <table class="table table-dark table-hover table-sm table-striped white-text" cellspacing="0" style="color:white;display: table;text-align: center" id="dtHistory" width="100%">
-                                            <thead>
-                                                <tr>
-                                                <th class="th-sm">Phrase</th>
-                                                <th class="th-sm">Remove</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="table-values" style="color: white">';
-                            foreach ($results as $result) {
-
-                                        echo '
-                                                   <tr id="', $result, '">
-                                                    <td>', $result, '</td>
-                                                    <td><button type="button" class="btn btn-danger" onclick="removeWord(\'', $result, '\', \'replacement\')"><i class="fas fa-trash-alt"></i> Remove</button></td></tr>';
-                            }
-                            echo '</tbody>
-                                        </table>   
-                                        </div>
-                                    </div>
-                            </div>';?>
+            <div class="container" id="content" style="display: none">
+                <div class="row">
+                    <h1 style="text-align: center;margin-right: auto;margin-left: auto">Toxic Replacements</h1 >
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-dark table-hover table-sm table-striped white-text" cellspacing="0" style="color:white;display: table;text-align: center" id="dtHistory" width="100%">
+                            <thead>
+                            <tr>
+                                <th class="th-sm">Replacement</th>
+                                <th class="th-sm">Remove</th>
+                            </tr>
+                            </thead>
+                            <tbody id="table-values" style="color: white">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>

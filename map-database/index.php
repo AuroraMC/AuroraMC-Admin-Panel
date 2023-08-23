@@ -12,11 +12,13 @@ sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV") {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 ?>
@@ -46,13 +48,17 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
     <link rel="stylesheet" href="css/navbar.css">
+    <script src="js/main.js"></script>
 
     <link rel="icon"
           type="image/png"
           href="../img/logo.png">
 </head>
 
-<body style="background-color: #23272A;color:white">
+<body style="background-color: #23272A;color:white" onload="onLoad()">
+<div class="ring" id="ring"><img src="https://gamelogs.auroramc.net/img/logo.png" width=130px>
+    <span class="dot"></span>
+</div>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
@@ -89,39 +95,19 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <div class="row">
         <div class="col-sm-2"></div> <!-- Gap at left side of form -->
         <div class="col-sm-8 col-xs-12">
-            <br>
-            <h1><Strong>AuroraMC Network Map Database</Strong></h1>
-            <br>
-            <legend style="font-family: 'Helvetica';">Welcome!</legend>
-            <hr>
+            <div id="content" style="display: none">
+                <br>
+                <h1><Strong>AuroraMC Network Map Database</Strong></h1>
+                <br>
+                <legend style="font-family: 'Helvetica';">Welcome!</legend>
+                <hr>
 
-            <br>
-            <legend style="font-family: 'Helvetica';">Map Statistics</legend>
-            <hr>
-            <?php
-            if ($sql = $mysqli->prepare("SELECT count(*) FROM maps WHERE parse_version = 'LIVE'")) {
-                $sql->execute();
-                $results2 = $sql->get_result();
-                $results = $results2->fetch_array(MYSQLI_NUM);
-                $results2->free_result();
-                $sql->free_result();
-                $maps = $results[0];
-                echo '<p><strong style="font-weight: bold">Total Live Maps:</strong> ', $maps,'</p>';
-            } else {
-                echo 'An error occurred when trying to connect to the database. Please try again.';
-            }
-            if ($sql = $mysqli->prepare("SELECT count(*) FROM maps WHERE parse_version = 'TEST'")) {
-                $sql->execute();
-                $results2 = $sql->get_result();
-                $results = $results2->fetch_array(MYSQLI_NUM);
-                $results2->free_result();
-                $sql->free_result();
-                $maps = $results[0];
-                echo '<p><strong style="font-weight: bold">Total Parsed Maps:</strong> ', $maps,'</p>';
-            } else {
-                echo 'An error occurred when trying to connect to the database. Please try again.';
-            }
-            ?>
+                <br>
+                <legend style="font-family: 'Helvetica';">Map Statistics</legend>
+                <hr>
+                <p><strong style="font-weight: bold">Total Live Maps:</strong> <span id="live"></span></p>
+                <p><strong style="font-weight: bold">Total Parsed Maps:</strong> <span id="parsed"></span></p>
+            </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>

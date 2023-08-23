@@ -13,10 +13,12 @@ sec_session_start();
 $account_type = login_check($mysqli);
 if (!$account_type) {
     header("Location: ../../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV"  && $account_type != "DEV" && $account_type != "QA") {
     header("Location: ../../login");
+    return;
 }
 
 if ($sql = $mysqli->prepare("SELECT * FROM exceptions WHERE resolved = FALSE LIMIT 250")) {
@@ -42,5 +44,5 @@ if ($sql = $mysqli->prepare("SELECT * FROM exceptions WHERE resolved = FALSE LIM
     }
     echo json_encode($traces);
 } else {
-    echo 'ERROR';
+    echo '{"error":"An exception occurred when attempting to connect to the Database."}';
 }

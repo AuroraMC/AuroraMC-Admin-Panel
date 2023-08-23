@@ -13,10 +13,12 @@ sec_session_start();
 $account_type = login_check($mysqli);
 if (!$account_type) {
     header("Location: ../../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV") {
     header("Location: ../../login");
+    return;
 }
 
 $additions = $redis->sMembers("map.additions");
@@ -45,7 +47,7 @@ foreach ($additions as $addition) {
             }
         }
     }
-    if ($sql3 = $mysqli->prepare("UPDATE maps SET parse_version = 'LIVE' WHERE map_id = ? AND parse_version = 'TEST'")) {
+    if ($sql3 = $mysqli->prepare("INSERT INTO maps(map_id, map_name, map_author, parse_number, parse_version, zip) SELECT map_id, map_name, map_author, parse_number, 'LIVE', zip from maps WHERE map_id = ? AND parse_version = 'TEST'")) {
         $sql3->bind_param('s', $addition);
         $sql3->execute();    // Execute the prepared query.
     }

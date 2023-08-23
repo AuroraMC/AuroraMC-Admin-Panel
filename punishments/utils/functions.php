@@ -13,10 +13,12 @@ sec_session_start();
 $account_type = login_check($mysqli);
 if (!$account_type) {
     header("Location: ../../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC" && $account_type != "APPEALS" && $account_type != "STAFF" && $account_type != "QA") {
     header("Location: ../../login");
+    return;
 }
 
 if (isset($_POST['remove']) and isset($_POST['reason']) and isset($_POST['type']) and isset($_POST['uuid']) and isset($_POST['status'])) {
@@ -88,7 +90,7 @@ if (isset($_POST['remove']) and isset($_POST['reason']) and isset($_POST['type']
     }
 }
 
-if (isset($_POST['deny']) and isset($_POST['type']) and isset($_POST['uuid'])) {
+if (isset($_POST['deny']) and isset($_POST['type']) and isset($_POST['uuid']) and ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "RC" || $account_type == "STAFF")) {
     $id = filter_input(INPUT_POST, 'deny', FILTER_SANITIZE_STRING);
     $uuid = filter_input(INPUT_POST, 'uuid', FILTER_SANITIZE_STRING);
     $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT);
@@ -160,7 +162,7 @@ if (isset($_POST['deny']) and isset($_POST['type']) and isset($_POST['uuid'])) {
     }
 }
 
-if (isset($_POST['approve']) and isset($_POST['type']) and isset($_POST['uuid'])) {
+if (isset($_POST['approve']) and isset($_POST['type']) and isset($_POST['uuid']) and ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "RC" || $account_type == "STAFF")) {
     $id = filter_input(INPUT_POST, 'approve', FILTER_SANITIZE_STRING);
     $uuid = filter_input(INPUT_POST, 'uuid', FILTER_SANITIZE_STRING);
     $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT);

@@ -12,11 +12,13 @@ sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV" && $account_type != "RC" && $account_type != "QA") {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 ?>
@@ -46,14 +48,17 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
     <link rel="stylesheet" href="css/navbar.css">
-    <script type="text/JavaScript" src="js/forms.js"></script>
+    <script type="text/JavaScript" src="js/main.js"></script>
 
     <link rel="icon"
           type="image/png"
           href="../img/logo.png">
 </head>
 
-<body style="background-color: #23272A;color:white">
+<body style="background-color: #23272A;color:white" onload="onLoad()">
+<div class="ring" id="ring"><img src="https://gamelogs.auroramc.net/img/logo.png" width=130px>
+    <span class="dot"></span>
+</div>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
@@ -64,7 +69,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                 <a class="nav-link" href="phrases">Phrases</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="replacements">Toxic Replacements</a>
+                <a class="nav-link" href="replacements">Replacements</a>
             </li>
         </ul>
     </div>
@@ -96,33 +101,25 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <div class="row">
         <div class="col-sm-2"></div> <!-- Gap at left side of form -->
         <div class="col-sm-8 col-xs-12">
-            <br>
-            <h1><Strong>AuroraMC Network Chat Filter Admin Panel</Strong></h1>
-            <br>
-            <legend style="font-family: 'Helvetica';">Welcome!</legend>
-            <hr>
-            <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Chat Filter Admin Panel! Here, you can see and manage core words, toxic replacements, whitelisted and blacklisted words, and banned phrases.</p>
-            <br>
-            <legend style="font-family: 'Helvetica';">Filter Statistics</legend>
-            <hr>
-            <p><strong style="font-weight: bold">Number of core words:</strong> <?php
-                echo count($redis->sMembers("filter.core"));
-                ?></p>
-            <p><strong style="font-weight: bold">Number of blacklisted words:</strong> <?php
-                echo count($redis->sMembers("filter.blacklist"));
-                ?></p>
-            <p><strong style="font-weight: bold">Number of whitelisted words:</strong> <?php
-                echo count($redis->sMembers("filter.whitelist"));
-                ?></p>
-            <p><strong style="font-weight: bold">Number of banned phrases:</strong> <?php
-                echo count($redis->sMembers("filter.phrases"));
-                ?></p>
-            <p><strong style="font-weight: bold">Number of toxic replacements:</strong> <?php
-                echo count($redis->sMembers("filter.replacements"));
-                ?></p>
-            <br>
-            <br>
-            <button type='button' class='btn btn-secondary' onclick='updateRules()'><i class='fas fa-pencil-alt'></i> Push Filter Update</button>
+            <div id="content" style="display:none;">
+                <br>
+                <h1><Strong>AuroraMC Network Chat Filter Admin Panel</Strong></h1>
+                <br>
+                <legend style="font-family: 'Helvetica';">Welcome!</legend>
+                <hr>
+                <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Chat Filter Admin Panel! Here, you can see and manage core words, toxic replacements, whitelisted and blacklisted words, and banned phrases.</p>
+                <br>
+                <legend style="font-family: 'Helvetica';">Filter Statistics</legend>
+                <hr>
+                <p><strong style="font-weight: bold">Number of core words:</strong> <span id="core"></span></p>
+                <p><strong style="font-weight: bold">Number of blacklisted words:</strong> <span id="blacklist"></span></p>
+                <p><strong style="font-weight: bold">Number of whitelisted words:</strong> <span id="whitelist"></span></p>
+                <p><strong style="font-weight: bold">Number of banned phrases:</strong> <span id="phrases"></span></p>
+                <p><strong style="font-weight: bold">Number of toxic replacements:</strong> <span id="replacements"></span></p>
+                <br>
+                <br>
+                <button type='button' class='btn btn-secondary' onclick='updateRules()'><i class='fas fa-pencil-alt'></i> Push Filter Update</button>
+            </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>
