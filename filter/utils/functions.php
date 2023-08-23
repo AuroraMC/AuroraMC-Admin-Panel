@@ -12,11 +12,13 @@ sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../../login");
+    header("Location: ../../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV" && $account_type != "RC" && $account_type != "QA") {
-    header("Location: ../../../login");
+    header("Location: ../../login");
+    return;
 }
 
 
@@ -59,21 +61,21 @@ if (isset($_POST['addblacklist'])) {
     }
 }
 
-if (isset($_POST['removephrase'])) {
-    $name = filter_input(INPUT_POST, 'removephrase', FILTER_SANITIZE_STRING);
+if (isset($_POST['removephrases'])) {
+    $name = filter_input(INPUT_POST, 'removephrases', FILTER_SANITIZE_STRING);
     if ($redis->sIsMember("filter.phrases", strtolower($name))) {
         $redis->sRem("filter.phrases", strtolower($name));
     }
 }
-if (isset($_POST['addphrase'])) {
-    $name = filter_input(INPUT_POST, 'addphrase', FILTER_SANITIZE_STRING);
+if (isset($_POST['addphrases'])) {
+    $name = filter_input(INPUT_POST, 'addphrases', FILTER_SANITIZE_STRING);
     if (!$redis->sIsMember("filter.phrases", strtolower($name))) {
         $redis->sAdd("filter.phrases", strtolower($name));
     }
 }
 
-if (isset($_POST['removereplacement'])) {
-    $name = filter_input(INPUT_POST, 'removereplacement', FILTER_SANITIZE_STRING);
+if (isset($_POST['removereplacements'])) {
+    $name = filter_input(INPUT_POST, 'removereplacements', FILTER_SANITIZE_STRING);
     if ($redis->sIsMember("filter.replacements", utf8_decode($name))) {
         $redis->sRem("filter.replacements", utf8_decode($name));
     }

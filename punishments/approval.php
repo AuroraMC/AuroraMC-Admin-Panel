@@ -12,11 +12,13 @@ sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC" && $account_type != "APPEALS" && $account_type != "STAFF" && $account_type != "QA") {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 ?>
 
@@ -59,7 +61,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
 
     <link rel="stylesheet" href="css/navbar.css">
-    <script type="text/JavaScript" src="js/forms.js"></script>
+    <script type="text/JavaScript" src="js/main.js"></script>
 
     <script src="https://kit.fontawesome.com/a06911b3f6.js" crossorigin="anonymous"></script>
 
@@ -96,23 +98,11 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
             margin-bottom: 0px;
         }
     </style>
-
-    <script>
-        // Basic example
-        $(document).ready(function () {
-            $('#dtHistory').DataTable({
-                "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
-                "autoWidth": true,
-                "scrollY": "498px",
-                "scrollCollapse": true,
-                "ordering": false
-            });
-            $('.dataTables_length').addClass('bs-select');
-        });
-    </script>
 </head>
-<body style="background-color: #23272A;color:white">
-
+<body style="background-color: #23272A;color:white" onload="onLoadApproved(<?php echo ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "RC" || $account_type == "STAFF")?>)">
+<div class="ring" id="ring"><img src="https://gamelogs.auroramc.net/img/logo.png" width=130px>
+    <span class="dot"></span>
+</div>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
@@ -148,109 +138,32 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <div class="row">
         <div class="col-sm-2"></div> <!-- Gap at left side of form -->
         <div class="col-sm-8 col-xs-12 ">
-            <?php
-            if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV" || $account_type == "RC" || $account_type == "STAFF") {
-                $weights = array("<Strong style='color:#00AA00;font-weight: bold'>Light</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Medium</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Heavy</Strong>", "<Strong style='font-weight: bold;color:#FFAA00'>Severe</Strong>", "<Strong style='font-weight: bold;color:#AA0000'>Extreme</Strong>");
-                $types = array("<Strong style='color:#00AA00;font-weight: bold'>Chat</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Game</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Misc</Strong>");
-                if ($sql = $mysqli->prepare("SELECT punishments.punishment_id,punishments.amc_id,punishments.rule_id,punishments.notes,punishments.punisher,punishments.issued,punishments.expire,punishments.status,punishments.evidence,punishments.suffix,punishments.removal_reason,punishments.remover,punishments.removal_timestamp,auroramc_players.name,auroramc_players.uuid FROM punishments INNER JOIN auroramc_players ON auroramc_players.id=punishments.amc_id WHERE status = 2 ORDER BY issued DESC")) {
-                    $sql->execute();    // Execute the prepared query.
-                    $result2 = $sql->get_result();
-                    $numRows = $result2->num_rows;
-                    $results = $result2->fetch_all(MYSQLI_ASSOC);
-                    $result2->free_result();
-                    $sql->free_result();
-                    if ($numRows > 0) {
-                        echo '<div class="container">
-                                <div class="row">
-                                    <h1 style="text-align: center;margin-right: auto;margin-left: auto">Unprocessed Pending Punishments</h1>
-                                     <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtHistory" width="100%">
-                                            <thead>
-                                                <tr>
-                                                <th class="th-sm">Code</th>
-                                                <th class="th-sm">Punished User</th>
-                                                <th class="th-sm">Type</th>
-                                                <th class="th-sm">Reason</th>
-                                                <th class="th-sm">Weight</th>
-                                                <th class="th-sm">Issued At</th>
-                                                <th class="th-sm">Length</th>
-                                                <th class="th-sm">Issued By</th>
-                                                <th class="th-sm">Removal Reason</th>
-                                                <th class="th-sm">Removed At</th>
-                                                <th class="th-sm">Removed By</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="table-values" style="color: white">';
-                        foreach ($results as $result) {
-                            if ($sql2 = $mysqli->prepare("SELECT * FROM rules WHERE rule_id = ?")) {
-                                $sql2->bind_param('i', $result['rule_id']);
-                                $sql2->execute();    // Execute the prepared query.
-
-                                $rule_name = null;
-                                $description = null;
-                                $weight = null;
-                                $rule_type = null;
-                                $requires_warning = null;
-                                $active = null;
-
-                                $sql2->bind_result($rule_id, $rule_name, $description, $weight, $requires_warning, $type, $active);
-                                $sql2->fetch();
-                                $sql2->store_result();
-                                $sql2->free_result();
-                                if ($sql3 = $mysqli->prepare("SELECT name,uuid FROM auroramc_players WHERE id = ?")) {
-                                    $sql3->bind_param('i', $result['punisher']);
-                                    $sql3->execute();    // Execute the prepared query.
-
-                                    $punisher_name = null;
-                                    $punisher_uuid = null;
-
-                                    $sql3->bind_result($punisher_name, $punisher_uuid);
-                                    $sql3->fetch();
-                                    $sql3->store_result();
-                                    $sql3->free_result();
-                                    echo '
-                                                   <tr>
-                                                    <td><a href="/punishments/search?code=', $result['punishment_id'],'" style="color:white;">', $result['punishment_id'], ' ', (($result['status'] == 1 or $result['status'] == 2 or $result['status'] == 3) ? "<span class='badge badge-success'>ACTIVE</span>" : (($result['status'] == 4) ? "<span class='badge badge-danger'>SM DENIED</span>" : (($result['removal_reason'] != null) ? "<span class='badge badge-secondary'>REMOVED</span>" : "<span class='badge badge-secondary'>EXPIRED</span>"))) . (($result['status'] == 2) ? "<span class='badge badge-secondary'>PENDING APPROVAL</span>" : (($result['status'] == 3 or $result['status'] == 6) ? "<span class='badge badge-success'>SM APPROVED</span>" : "")),'</a></td>
-                                                    <td>', $result['name'], '<img style="height:50px" src="https://crafatar.com/renders/head/', $result['uuid'], '?helm=true"></td>
-                                                    <td>', (($result['status'] == 7) ? 'Warning' : (($type == 1) ? 'Mute' : 'Ban')) . ' (' . $types[$type - 1] . ')', '</td>
-                                                    <td>', $rule_name, ' - ', $result['notes'], '</td>
-                                                    <td>', $weights[$weight - 1], '</td>
-                                                    <td>', date('l jS F Y G:i:s T', intval($result['issued']) / 1000), '</td>
-                                                    <td>', (($result['expire'] == -1) ? 'Permanent' : (((intval($result['expire']) - intval($result['issued'])) / 3600000 >= 24) ? ((intval($result['expire']) - intval($result['issued'])) / 86400000) . ' days' : ((intval($result['expire']) - intval($result['issued'])) / 3600000) . ' hours')), '</td>
-                                                    <td>', $punisher_name, '<img style="height:50px" src="https://crafatar.com/renders/head/', $punisher_uuid, '?helm=true"></td>';
-                                    if ($result['removal_reason'] != null) {
-                                        echo '<td>', $result['removal_reason'], '</td>
-                                                      <td>', date('l jS F Y G:i:s T', intval($result['removal_timestamp']) / 1000), '</td>
-                                                      <td>', $result['remover'], '</td></tr>';
-                                    } else {
-                                        echo '<td>N/A</td>
-                                                      <td>N/A</td>
-                                                      <td>N/A</td></tr>';
-                                    }
-                                } else {
-                                    echo '<p style="text-align: center;padding-top: 20px;font:inherit">That punishment ID was not found.</p>';
-                                }
-                            } else {
-                                echo "There has been an error connecting to the database. Please try again.";
-                            }
-                        }
-                        echo '</tbody>
-                                        </table>   
-                                        
-                                        
-                                    </div>
-                            </div>';
-                    } else {
-                        echo "<p style=\"text-align: center;padding-top: 20px;font:inherit\">There are currently no pending punishments.</p>";
-                    }
-
-                } else {
-                    echo "There has been an error connecting to the database. Please try again.";
-                }
-            } else {
-                echo "<p style=\"text-align: center;padding-top: 20px;font:inherit\">You do not have permission to access this page.</p>";
-            }
-                ?>
-
+            <div id="content" style="display: none;">
+                <div class="container">
+                    <div class="row">
+                        <h1 style="text-align: center;margin-right: auto;margin-left: auto">Unprocessed Pending Punishments</h1>
+                        <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtHistory" width="100%">
+                            <thead>
+                            <tr>
+                                <th class="th-sm">Code</th>
+                                <th class="th-sm">Punished User</th>
+                                <th class="th-sm">Type</th>
+                                <th class="th-sm">Reason</th>
+                                <th class="th-sm">Weight</th>
+                                <th class="th-sm">Issued At</th>
+                                <th class="th-sm">Length</th>
+                                <th class="th-sm">Issued By</th>
+                                <th class="th-sm">Removal Reason</th>
+                                <th class="th-sm">Removed At</th>
+                                <th class="th-sm">Removed By</th>
+                            </tr>
+                            </thead>
+                            <tbody id="table-values" style="color: white">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-sm-2"></div> <!-- Gap at right side of form -->
     </div>

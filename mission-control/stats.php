@@ -12,11 +12,13 @@ sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV") {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 ?>
 <!doctype html>
@@ -50,11 +52,17 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 
     <link rel="stylesheet" href="css/navbar.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
     <link rel="icon"
           type="image/png"
           href="../img/logo.png">
 </head>
-<body style="background-color: #23272A;color:white">
+<body style="background-color: #23272A;color:white" onload="loadGraphs()">
+<div class="ring" id="ring"><img src="https://gamelogs.auroramc.net/img/logo.png" width=130px>
+    <span class="dot"></span>
+</div>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
@@ -90,147 +98,173 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <div class="row">
         <div class="col-sm-1"></div> <!-- Gap at left side of form -->
         <div class="col-sm-10 col-xs-12">
-            <br>
-            <h1><Strong><u>Daily Metrics</u></Strong></h1>
-            <br>
-            <br>
-            <div class="container-flex">
-                <div class="row">
-                    <div class="col-6">
-                        <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/daily.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/daily.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Games Started</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/games-started/daily.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/daily.php"></iframe>
-                    </div>
-                    <div class="col-6">
-                        <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/daily.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/daily.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/daily.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/daily.php"></iframe>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <h1><Strong><u>Weekly Metrics</u></Strong></h1>
-            <br>
-            <br>
-            <div class="container-flex">
-                <div class="row">
-                    <div class="col-6">
-                        <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/weekly.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/weekly.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Games Started</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/games-started/weekly.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/weekly.php"></iframe>
-                    </div>
-                    <div class="col-6">
-                        <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/weekly.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/weekly.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/weekly.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/weekly.php"></iframe>
+            <div id="content" style="display: none;">
+                <br>
+                <h1><Strong><u>Daily Metrics</u></Strong></h1>
+                <br>
+                <br>
+                <div class="container-flex">
+                    <div class="row">
+                        <div class="col-6">
+                            <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
+                            <hr>
+                            <div id="DAILY-NETWORK_PLAYER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
+                            <hr>
+                            <div id="DAILY-GAME_PLAYER_TOTAL" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Games Started</legend>
+                            <hr>
+                            <div id="DAILY-GAMES_STARTED" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
+                            <hr>
+                            <div id="DAILY-UNIQUE_PLAYER_JOINS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
+                            <hr>
+                            <div id="DAILY-NETWORK_SERVER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
+                            <hr>
+                            <div id="DAILY-NETWORK_PROXY_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
+                            <hr>
+                            <div id="DAILY-PLAYERS_PER_GAME" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
+                            <hr>
+                            <div id="DAILY-UNIQUE_PLAYER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <h1><Strong><u>All-Time Statistics</u></Strong></h1>
-            <br>
-            <br>
-            <div class="container-flex">
-                <div class="row">
-                    <div class="col-6">
-                        <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-player-totals/alltime.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-game-player-totals/alltime.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Games Started</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/games-started/alltime.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-joins/alltime.php"></iframe>
+                <br>
+                <h1><Strong><u>Weekly Metrics</u></Strong></h1>
+                <br>
+                <br>
+                <div class="container-flex">
+                    <div class="row">
+                        <div class="col-6">
+                            <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
+                            <hr>
+                            <div id="WEEKLY-NETWORK_PLAYER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
+                            <hr>
+                            <div id="WEEKLY-GAME_PLAYER_TOTAL" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Games Started</legend>
+                            <hr>
+                            <div id="WEEKLY-GAMES_STARTED" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
+                            <hr>
+                            <div id="WEEKLY-UNIQUE_PLAYER_JOINS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
+                            <hr>
+                            <div id="WEEKLY-NETWORK_SERVER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
+                            <hr>
+                            <div id="WEEKLY-NETWORK_PROXY_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
+                            <hr>
+                            <div id="WEEKLY-PLAYERS_PER_GAME" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
+                            <hr>
+                            <div id="WEEKLY-UNIQUE_PLAYER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-server-totals/alltime.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/network-proxy-totals/alltime.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/players-per-game/alltime.php"></iframe>
-                        <br>
-                        <br>
-                        <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
-                        <hr>
-                        <iframe width="600px" height="300px" scrolling="no" frameborder="0" src="utils/graphs/unique-player-totals/alltime.php"></iframe>
+                </div>
+                <br>
+                <h1><Strong><u>All-Time Statistics</u></Strong></h1>
+                <br>
+                <br>
+                <div class="container-flex">
+                    <div class="row">
+                        <div class="col-6">
+                            <legend style="font-family: 'Helvetica';">Network Player Totals</legend>
+                            <hr>
+                            <div id="ALLTIME-NETWORK_PLAYER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Game Player Totals</legend>
+                            <hr>
+                            <div id="ALLTIME-GAME_PLAYER_TOTAL" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Games Started</legend>
+                            <hr>
+                            <div id="ALLTIME-GAMES_STARTED" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Unique Player Joins</legend>
+                            <hr>
+                            <div id="ALLTIME-UNIQUE_PLAYER_JOINS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <legend style="font-family: 'Helvetica';">Network Server Totals</legend>
+                            <hr>
+                            <div id="ALLTIME-NETWORK_SERVER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Network Proxy Totals</legend>
+                            <hr>
+                            <div id="ALLTIME-NETWORK_PROXY_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Avg. Players Per Game</legend>
+                            <hr>
+                            <div id="ALLTIME-PLAYERS_PER_GAME" style="max-height: 300px;max-width: 600px">
+                            </div>
+                            <br>
+                            <br>
+                            <legend style="font-family: 'Helvetica';">Unique Player Totals</legend>
+                            <hr>
+                            <div id="ALLTIME-UNIQUE_PLAYER_TOTALS" style="max-height: 300px;max-width: 600px">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

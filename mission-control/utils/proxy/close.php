@@ -13,10 +13,12 @@ sec_session_start();
 $account_type = login_check($mysqli);
 if (!$account_type) {
     header("Location: ../../../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV") {
     header("Location: ../../../login");
+    return;
 }
 if (isset($_POST['proxy'], $_POST['network'])) {
     $server = filter_input(INPUT_POST, 'proxy', FILTER_SANITIZE_STRING);

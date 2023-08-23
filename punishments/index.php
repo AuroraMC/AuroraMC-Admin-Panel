@@ -12,11 +12,13 @@ sec_session_start();
 
 $account_type = login_check($mysqli);
 if (!$account_type) {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "RC" && $account_type != "APPEALS" && $account_type != "STAFF" && $account_type != "QA") {
-    header("Location: ../../login");
+    header("Location: ../login");
+    return;
 }
 ?>
 
@@ -50,12 +52,16 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/navbar.css">
+    <script type="text/JavaScript" src="js/main.js"></script>
 
     <link rel="icon"
           type="image/png"
           href="../img/logo.png">
 </head>
-<body style="background-color: #23272A;color:white">
+<body style="background-color: #23272A;color:white" onload="onLoad()">
+<div class="ring" id="ring"><img src="https://gamelogs.auroramc.net/img/logo.png" width=130px>
+    <span class="dot"></span>
+</div>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
@@ -91,222 +97,44 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <div class="row">
         <div class="col-sm-2"></div> <!-- Gap at left side of form -->
         <div class="col-sm-8 col-xs-12">
-            <br>
-            <h1><Strong>AuroraMC Network Punishment Database</Strong></h1>
-            <br>
-            <legend style="font-family: 'Helvetica';">Welcome!</legend>
-            <hr>
-            <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Punishment Database! Here, you can see all metrics, view active and expired punishments, and use the Approval System!</p>
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-4">
-                        <legend style="font-family: 'Helvetica';">All-Time Punishment Statistics</legend>
-                        <hr>
-                        <?php
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments")) {
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Total Punishments Issued:</strong> ', $punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE status = 2")) {
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $unprocessed_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Unprocessed Pending Punishments:</strong> ', $unprocessed_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE status = 4")) {
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $sm_denied_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Total Punishments SM Denied:</strong> ', $sm_denied_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE status = 3 OR status = 6")) {
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $sm_approved_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Total Punishments SM Approved:</strong> ', $sm_approved_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE suffix = 1")) {
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $forum_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Total Forum Report Punishments:</strong> ', $forum_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE suffix = 2")) {
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $honk_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Total HONK Punishments:</strong> ', $honk_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        ?>
-                    </div>
-                    <div class="col-4">
-                        <legend style="font-family: 'Helvetica';">30 Day Punishment Statistics</legend>
-                        <hr>
-                        <?php
-                        $timestamp = round(microtime(true) * 1000) - 2592000000;
-
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Monthly Punishments Issued:</strong> ', $punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE status = 4 AND  CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $sm_denied_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Monthly Punishments SM Denied:</strong> ', $sm_denied_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE status = 3 OR status = 6 AND CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $sm_approved_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Monthly Punishments SM Approved:</strong> ', $sm_approved_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE suffix = 1 AND CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $forum_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Monthly Forum Report Punishments:</strong> ', $forum_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE suffix = 2 AND CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $honk_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Monthly HONK Punishments:</strong> ', $honk_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        ?>
-                    </div>
-                    <div class="col-4">
-                        <legend style="font-family: 'Helvetica';">24 Hour Punishment Statistics</legend>
-                        <hr>
-                        <?php
-                        $timestamp = round(microtime(true) * 1000) - 86400000;
-
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Daily Punishments Issued:</strong> ', $punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE status = 4 AND  CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $sm_denied_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Daily Punishments SM Denied:</strong> ', $sm_denied_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE status = 3 OR status = 6 AND CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $sm_approved_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Daily Punishments SM Approved:</strong> ', $sm_approved_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE suffix = 1 AND CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $forum_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Daily Forum Report Punishments:</strong> ', $forum_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        if ($sql = $mysqli->prepare("SELECT count(*) FROM punishments WHERE suffix = 2 AND CONVERT(issued, UNSIGNED INTEGER) > ?")) {
-                            $sql->bind_param('i', $timestamp);
-                            $sql->execute();
-                            $results2 = $sql->get_result();
-                            $results = $results2->fetch_array(MYSQLI_NUM);
-                            $results2->free_result();
-                            $sql->free_result();
-                            $honk_punishments = $results[0];
-                            echo '<p><strong style="font-weight: bold">Daily HONK Punishments:</strong> ', $honk_punishments,'</p>';
-                        } else {
-                            echo 'An error occurred when trying to connect to the database. Please try again.';
-                        }
-                        ?>
+            <div id="content" style="display: none">
+                <br>
+                <h1><Strong>AuroraMC Network Punishment Database</Strong></h1>
+                <br>
+                <legend style="font-family: 'Helvetica';">Welcome!</legend>
+                <hr>
+                <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to the AuroraMC Network's Punishment Database! Here, you can see all metrics, view active and expired punishments, and use the Approval System!</p>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <legend style="font-family: 'Helvetica';">All-Time Punishment Statistics</legend>
+                            <hr>
+                            <p><strong style="font-weight: bold">Total Punishments Issued:</strong> <span id="alltime-issued"></span></p>
+                            <p><strong style="font-weight: bold">Unprocessed Pending Punishments:</strong> <span id="alltime-pending"></span></p>
+                            <p><strong style="font-weight: bold">Total Punishments SM Denied:</strong> <span id="alltime-denied"></span></p>
+                            <p><strong style="font-weight: bold">Total Punishments SM Approved:</strong> <span id="alltime-approved"></span></p>
+                            <p><strong style="font-weight: bold">Total Forum Report Punishments:</strong> <span id="alltime-forums"></span></p>
+                            <p><strong style="font-weight: bold">Total Nova Punishments:</strong> <span id="alltime-nova"></span></p>
+                        </div>
+                        <div class="col-4">
+                            <legend style="font-family: 'Helvetica';">30 Day Punishment Statistics</legend>
+                            <hr>
+                            <p><strong style="font-weight: bold">Monthly Punishments Issued:</strong> <span id="monthly-issued"></span></p>
+                            <p><strong style="font-weight: bold">Monthly Punishments SM Denied:</strong> <span id="monthly-denied"></span></p>
+                            <p><strong style="font-weight: bold">Monthly Punishments SM Approved:</strong> <span id="monthly-approved"></span></p>
+                            <p><strong style="font-weight: bold">Monthly Forum Report Punishments:</strong> <span id="monthly-forums"></span></p>
+                            <p><strong style="font-weight: bold">Monthly Nova Punishments:</strong> <span id="monthly-nova"></span></p>
+                        </div>
+                        <div class="col-4">
+                            <legend style="font-family: 'Helvetica';">24 Hour Punishment Statistics</legend>
+                            <hr>
+                            <p><strong style="font-weight: bold">Daily Punishments Issued:</strong> <span id="daily-issued"></span></p>
+                            <p><strong style="font-weight: bold">Daily Punishments SM Denied:</strong> <span id="daily-denied"></span></p>
+                            <p><strong style="font-weight: bold">Daily Punishments SM Approved:</strong> <span id="daily-approved"></span></p>
+                            <p><strong style="font-weight: bold">Daily Forum Report Punishments:</strong> <span id="daily-forums"></span></p>
+                            <p><strong style="font-weight: bold">Daily Nova Punishments:</strong> <span id="daily-nova"></span></p>
+                        </div>
                     </div>
                 </div>
             </div>

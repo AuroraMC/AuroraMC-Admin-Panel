@@ -65,18 +65,16 @@ function onLoadExceptions(code) {
                         "<td><button type='button' class='btn btn-secondary' onclick='window.location=\x22" + "exceptions?uuid=" +  exception["uuid"] + "\x22'><i class=\"fas fa-eye\"></i> View</button></td>"
                 })
 
-                $(document).ready(function () {
-                    $('#dtHistory').DataTable({
-                        "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
-                        "autoWidth": true,
-                        "scrollY": "498px",
-                        "scrollCollapse": true,
-                        "ordering": false
-                    });
-                    $('.dataTables_length').addClass('bs-select');
-                });
-
                 document.getElementById("content").style.display = null;
+                $('#dtHistory').DataTable({
+                    "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
+                    "autoWidth": true,
+                    "scrollY": "498px",
+                    "scrollCollapse": true,
+                    "ordering": false
+                });
+                $('.dataTables_length').addClass('bs-select');
+
                 document.getElementById("ring").style.display = "none";
             }
         });

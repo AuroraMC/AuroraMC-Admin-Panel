@@ -13,17 +13,19 @@ sec_session_start();
 $account_type = login_check($mysqli);
 if (!$account_type) {
     header("Location: ../../login");
+    return;
 }
 
 if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR_DEV" && $account_type != "DEV") {
     header("Location: ../../login");
+    return;
 }
 
 if (isset($_POST['stat'], $_POST['time'])) {
     $stat = filter_input(INPUT_POST, 'stat', FILTER_SANITIZE_STRING);
     $time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_STRING);
 
-    $games = ["CRYSTAL_QUEST"=>"Crystal Quest","LOBBY"=>"Lobby","BUILD"=>"Build Server", "EVENT"=>"Event Server", "STAFF"=>"Staff Server", "RUN"=>"Run", "TAG"=>"Tag", "HOT_POTATO"=>"Hot Potato", "FFA"=>"FFA", "SPLEEF"=>"Spleef", "PAINTBALL"=>"Paintball", "BACKSTAB"=>"Backstab", "DUELS"=>"Duels", "ARCADE_MODE"=>"Arcade Mode"];
+    $games = ["CRYSTAL_QUEST"=>"Crystal Quest","LOBBY"=>"Lobby","BUILD"=>"Build Server", "EVENT"=>"Event Server", "STAFF"=>"Staff Server", "RUN"=>"Run", "TAG"=>"Tag", "HOT_POTATO"=>"Hot Potato", "FFA"=>"FFA", "SPLEEF"=>"Spleef", "PAINTBALL"=>"Paintball", "BACKSTAB"=>"Backstab", "DUELS"=>"Duels", "ARCADE_MODE"=>"Arcade Mode", "PATHFINDER"=>"Pathfinder", "SMP_END"=>"SMP End", "SMP_OVERWORLD"=>"SMP Overworld", "SMP_NETHER"=>"SMP Nether"];
     $xTitle = ["NETWORK_PLAYER_TOTALS"=>"Online Players", "NETWORK_PROXY_TOTALS"=>"Proxies", "UNIQUE_PLAYER_TOTALS"=> "Total Unique Players", "UNIQUE_PLAYER_JOINS"=>"New Players Joined"];
 
     $query = "";
@@ -89,7 +91,7 @@ if (isset($_POST['stat'], $_POST['time'])) {
     if ($splitIntoGames) {
         $statsParsed = array();
         foreach ($statParsed as $game=>$stat2) {
-            $statsParsed[] = "{\"name\": \"" . $games[$game] . "\",\"data\": [" . join(",", $stat2) . "]}";
+            $statsParsed[] = "{\"name\": \"" . ((array_key_exists($game, $games))?$games[$game]:$game) . "\",\"data\": [" . join(",", $stat2) . "]}";
         }
         echo "[" . join(",",$statsParsed) . "]";
     } else {

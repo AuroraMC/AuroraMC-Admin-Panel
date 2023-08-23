@@ -322,3 +322,113 @@ function normalMotd(network, motd) {
         }
     });
 }
+
+function onLoad() {
+    $.ajax({
+        url:'/mission-control/utils/get-totals.php',
+        type: 'get',
+        success: function(result) {
+            result = JSON.parse(result);
+            document.getElementById("servers-main").innerHTML = result["main"]["servers"];
+            document.getElementById("proxies-main").innerHTML = result["main"]["proxies"];
+            document.getElementById("players-main").innerHTML = result["main"]["players"];
+
+            document.getElementById("servers-alpha").innerHTML = result["alpha"]["servers"];
+            document.getElementById("proxies-alpha").innerHTML = result["alpha"]["proxies"];
+            document.getElementById("players-alpha").innerHTML = result["alpha"]["players"];
+
+            document.getElementById("servers-test").innerHTML = result["test"]["servers"];
+            document.getElementById("proxies-test").innerHTML = result["test"]["proxies"];
+            document.getElementById("players-test").innerHTML = result["test"]["players"];
+
+            document.getElementById("core").innerHTML = result["builds"]["core"];
+            document.getElementById("engine").innerHTML = result["builds"]["engine"];
+            document.getElementById("game").innerHTML = result["builds"]["game"];
+            document.getElementById("lobby").innerHTML = result["builds"]["lobby"];
+            document.getElementById("duels").innerHTML = result["builds"]["duels"];
+            document.getElementById("build").innerHTML = result["builds"]["build"];
+
+            document.getElementById("content").style.display = null;
+            document.getElementById("ring").style.display = "none";
+        }
+    });
+}
+
+function loadGraphs() {
+    const x = ["NETWORK_PLAYER_TOTALS","NETWORK_PROXY_TOTALS","UNIQUE_PLAYER_TOTALS","UNIQUE_PLAYER_JOINS","NETWORK_SERVER_TOTALS","GAMES_STARTED","GAME_PLAYER_TOTAL","PLAYERS_PER_GAME"];
+    const z =
+        {"NETWORK_PLAYER_TOTALS": "Players",
+            "NETWORK_PROXY_TOTALS": "Proxies",
+            "UNIQUE_PLAYER_TOTALS": "Unique Players",
+            "UNIQUE_PLAYER_JOINS": "Unique Joins",
+            "NETWORK_SERVER_TOTALS": "Servers",
+            "GAMES_STARTED": "Games Started",
+            "GAME_PLAYER_TOTAL": "Players In Game",
+            "PLAYERS_PER_GAME": "Players Per Game"};
+    const y = ["DAILY", "WEEKLY", "ALLTIME"];
+    x.forEach(function (metric) {
+       y.forEach(function (time) {
+            $.ajax({
+                url: "/mission-control/utils/functions.php",
+                type: "post",
+                data: "stat=" + metric + "&time=" + time,
+                success: function (result) {
+                    let json = JSON.parse(result);let orderedJSON = [];
+                    for (let x of json) {
+                        orderedJSON.push({name: x.name, data: x.data.sort((a,b) => ((a.x > b.x)?1:((a.x < b.x)?-1:0)))});
+                    }
+                    orderedJSON.sort((a,b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+                    let options = {
+                        chart: {
+                            type: 'line',
+                            zoom: {
+                                enabled: true
+                            },
+                            height: '300px',
+                            width: '600px',
+                            background: '#32373A'
+                        },
+                        series: orderedJSON,
+                        theme: {
+                            mode: 'dark',
+                            palette: 'palette1'
+                        },
+                        xaxis: {
+                            type: 'datetime',
+                            title: {
+                                text:'Time'
+                            }
+                        },
+                        yaxis: {
+                            title: {
+                                text: z[metric]
+                            }
+                        },
+                        tooltip: {
+                            x: {
+                                format: 'hh:mm:ss TT'
+                            }
+                        }
+                    }
+                    let element = document.getElementById(time + "-" + metric);
+                    let chart = new ApexCharts(element, options);
+
+                    chart.render();
+                    graphFinish();
+                }
+            })
+        });
+
+
+    });
+}
+
+let total = 0;
+
+function graphFinish() {
+    total++;
+    if (total >= 24) {
+        document.getElementById("content").style.display = null;
+        document.getElementById("ring").style.display = "none";
+    }
+}
