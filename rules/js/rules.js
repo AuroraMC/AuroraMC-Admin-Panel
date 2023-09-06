@@ -202,6 +202,84 @@ function saveNew(type) {
     });
 }
 
+let weights = ["<Strong style='color:#00AA00;font-weight: bold'>Light</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Medium</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Heavy</Strong>", "<Strong style='font-weight: bold;color:#FFAA00'>Severe</Strong>", "<Strong style='font-weight: bold;color:#AA0000'>Extreme</Strong>"];
+let types = ["<Strong style='color:#00AA00;font-weight: bold'>Chat</Strong>", "<Strong style='color:#55FF55;font-weight: bold'>Game</Strong>", "<Strong style='font-weight: bold;color:#FFFF55'>Misc</Strong>"];
+let requires_warnings = ["<Strong style='font-weight: bold'>No</Strong>","<Strong style='font-weight: bold'>Yes</Strong>"];
+function loadRules(type) {
+    $.ajax({
+        url:'/rules/utils/get-rules.php',
+        data: 'type=' + type,
+        type: 'get',
+        success: function(result) {
+            result = JSON.parse(result);
+
+            let table = document.getElementById("table-values");
+            result.forEach(function (rule) {
+                let elem = document.createElement("tr");
+                table.appendChild(elem);
+
+                let html = '"<tr id="' + rule["id"] +  '" style=\'color:white\'>' +
+                    '<td id="' + rule["id"] +  '-id">' + rule["id"] + '</td>' +
+                    '<td id="' + rule["id"] +  '-name">' + rule["name"] + '</td>' +
+                    '<td id="' + rule["id"] +  '-description">' + rule["description"] + '</td>' +
+                    '<td id="' + rule["id"] +  '-weight">' + weights[rule["weight"]] + '</td>' +
+                    '<td id="' + rule["id"] +  '-warning">' + requires_warnings[rule["warning"]] + '</td>' +
+                    '<td><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-edit-name" onclick=\'startNameEdit(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Edit Name</button><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-edit-desc" onclick=\'startDescEdit(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Edit Description</button><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-toggle-warning" onclick=\'toggleWarning(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Toggle Warning</button><button type=\'button\' class=\'btn btn-danger\' id="' + rule["id"] +  '-archive" onclick=\'archive(' + rule["id"] +  ')\'><i class=\'fas fa-trash-alt\'></i> Archive</button></td></tr>"';
+                elem.innerHTML = html;
+            });
+
+            document.getElementById("content").style.display = null;
+            $('#dtHistory').DataTable({
+                "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
+                "autoWidth": true,
+                "scrollY": "498px",
+                "scrollCollapse": true,
+                "ordering": false
+            });
+            $('.dataTables_length').addClass('bs-select');
+
+            document.getElementById("ring").style.display = "none";
+        }
+    });
+}
+
+function loadArchive() {
+    $.ajax({
+        url:'/rules/utils/get-archive.php',
+        type: 'get',
+        success: function(result) {
+            result = JSON.parse(result);
+
+            let table = document.getElementById("table-values");
+            result.forEach(function (rule) {
+                let elem = document.createElement("tr");
+                table.appendChild(elem);
+
+                let html = '"<tr id="' + rule["id"] +  '" style=\'color:white\'>' +
+                    '<td id="' + rule["id"] +  '-id">' + rule["id"] + '</td>' +
+                    '<td id="' + rule["id"] +  '-name">' + rule["name"] + '</td>' +
+                    '<td id="' + rule["id"] +  '-description">' + rule["description"] + '</td>' +
+                    '<td id="' + rule["id"] +  '-type">' + types[rule["type"]] + '</td>' +
+                    '<td id="' + rule["id"] +  '-weight">' + weights[rule["weight"]] + '</td>' +
+                    '<td id="' + rule["id"] +  '-warning">' + requires_warnings[rule["warning"]] + '</td></tr>"';
+                elem.innerHTML = html;
+            });
+
+            document.getElementById("content").style.display = null;
+            $('#dtHistory').DataTable({
+                "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
+                "autoWidth": true,
+                "scrollY": "498px",
+                "scrollCollapse": true,
+                "ordering": false
+            });
+            $('.dataTables_length').addClass('bs-select');
+
+            document.getElementById("ring").style.display = "none";
+        }
+    });
+}
+
 function toggleWarning(id) {
     $.ajax({
         url:"/rules/utils/functions.php", //the page containing php script
