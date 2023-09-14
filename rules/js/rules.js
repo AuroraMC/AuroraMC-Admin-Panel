@@ -224,7 +224,7 @@ function loadRules(type) {
                     '<td id="' + rule["id"] +  '-description">' + rule["description"] + '</td>' +
                     '<td id="' + rule["id"] +  '-weight">' + weights[rule["weight"]] + '</td>' +
                     '<td id="' + rule["id"] +  '-warning">' + requires_warnings[rule["requires_warning"]] + '</td>' +
-                    '<td><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-edit-name" onclick=\'startNameEdit(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Edit Name</button><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-edit-desc" onclick=\'startDescEdit(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Edit Description</button><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-toggle-warning" onclick=\'toggleWarning(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Toggle Warning</button><button type=\'button\' class=\'btn btn-danger\' id="' + rule["id"] +  '-archive" onclick=\'archive(' + rule["id"] +  ')\'><i class=\'fas fa-trash-alt\'></i> Archive</button></td></tr>"';
+                    '<td><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-edit-name" onclick=\'startNameEdit(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Edit Name</button><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-edit-desc" onclick=\'startDescEdit(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Edit Description</button><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-toggle-warning" onclick=\'toggleWarning(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Toggle Warning</button><button type=\'button\' class=\'btn btn-danger\' id="' + rule["id"] +  '-archive" onclick=\'archive(' + rule["id"] +  ')\'><i class=\'fas fa-trash-alt\'></i> Archive</button></td></tr>';
                 elem.innerHTML = html;
             });
 
@@ -261,7 +261,7 @@ function loadArchive() {
                     '<td id="' + rule["id"] +  '-description">' + rule["description"] + '</td>' +
                     '<td id="' + rule["id"] +  '-type">' + types[rule["type"]] + '</td>' +
                     '<td id="' + rule["id"] +  '-weight">' + weights[rule["weight"]] + '</td>' +
-                    '<td id="' + rule["id"] +  '-warning">' + requires_warnings[rule["requires_warning"]] + '</td></tr>"';
+                    '<td id="' + rule["id"] +  '-warning">' + requires_warnings[rule["requires_warning"]] + '</td></tr>';
                 elem.innerHTML = html;
             });
 
