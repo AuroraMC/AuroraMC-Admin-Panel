@@ -107,7 +107,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                 <br>
                 <legend style="font-family: 'Helvetica';">Currently Active Misc Rules</legend>
                 <br>
-                <table class="table table-hover" style="color:white">
+                <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtHistory" width="100%">
                     <thead>
                     <tr>
                         <th>ID</th>
