@@ -46,10 +46,6 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
-    <!-- MDBootstrap Datatables  -->
-    <link href="../css/addons/datatables.min.css" rel="stylesheet">
-    <!-- MDBootstrap Datatables  -->
-    <script type="text/javascript" src="../js/addons/datatables.min.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <script src="js/rules.js"></script>
@@ -106,15 +102,23 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                 <br>
                 <legend style="font-family: 'Helvetica';">Currently Active Game Rules</legend>
                 <br>
-                <table class="table table-dark table-hover table-sm table-striped white-text"  cellspacing="0" style="color:white" id="dtHistory" width="100%">
+            </div>
+        </div>
+        <div class="col-sm-2"></div> <!-- Gap at right side of form -->
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div> <!-- Gap at left side of form -->
+        <div class="col-sm-10 col-xs-12">
+            <div id="content2" style="display: none;">
+                <table class="table table-dark table-striped white-text"  cellspacing="0" style="color:white" id="dtHistory" width="100%">
                     <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Description</th>
-                        <th>Weight</th>
-                        <th>Requires Warning</th>
-                        <th></th>
+                        <th class="th-sm">Weight</th>
+                        <th class="th-sm">Requires Warning</th>
+                        <th style="min-width: 27rem">Actions</th>
                     </tr>
                     </thead>
                     <tbody id="table-values">
@@ -128,7 +132,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                 <br>
             </div>
         </div>
-        <div class="col-sm-2"></div> <!-- Gap at right side of form -->
+        <div class="col-sm-1"></div> <!-- Gap at right side of form -->
     </div>
 </div>
 </body>
