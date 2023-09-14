@@ -222,21 +222,23 @@ function loadRules(type) {
                     '<td id="' + rule["id"] +  '-id">' + rule["id"] + '</td>' +
                     '<td id="' + rule["id"] +  '-name">' + rule["name"] + '</td>' +
                     '<td id="' + rule["id"] +  '-description">' + rule["description"] + '</td>' +
-                    '<td id="' + rule["id"] +  '-weight">' + weights[rule["weight"]] + '</td>' +
+                    '<td id="' + rule["id"] +  '-weight">' + weights[rule["weight"]-1] + '</td>' +
                     '<td id="' + rule["id"] +  '-warning">' + requires_warnings[rule["requires_warning"]] + '</td>' +
                     '<td><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-edit-name" onclick=\'startNameEdit(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Edit Name</button><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-edit-desc" onclick=\'startDescEdit(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Edit Description</button><button type=\'button\' class=\'btn btn-secondary\' id="' + rule["id"] +  '-toggle-warning" onclick=\'toggleWarning(' + rule["id"] +  ')\'><i class=\'fas fa-pencil-alt\'></i> Toggle Warning</button><button type=\'button\' class=\'btn btn-danger\' id="' + rule["id"] +  '-archive" onclick=\'archive(' + rule["id"] +  ')\'><i class=\'fas fa-trash-alt\'></i> Archive</button></td></tr>';
                 elem.innerHTML = html;
             });
 
             document.getElementById("content").style.display = null;
-            $('#dtHistory').DataTable({
+            document.getElementById("content2").style.display = null;
+            /*let tbl = $('#dtHistory').DataTable({
                 "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
                 "autoWidth": true,
-                "scrollY": "498px",
+                "scrollY": "500px",
                 "scrollCollapse": true,
                 "ordering": false
             });
-            $('.dataTables_length').addClass('bs-select');
+            $('.dataTables_length').addClass('bs-select');*/
+
 
             document.getElementById("ring").style.display = "none";
         }
@@ -259,21 +261,14 @@ function loadArchive() {
                     '<td id="' + rule["id"] +  '-id">' + rule["id"] + '</td>' +
                     '<td id="' + rule["id"] +  '-name">' + rule["name"] + '</td>' +
                     '<td id="' + rule["id"] +  '-description">' + rule["description"] + '</td>' +
-                    '<td id="' + rule["id"] +  '-type">' + types[rule["type"]] + '</td>' +
-                    '<td id="' + rule["id"] +  '-weight">' + weights[rule["weight"]] + '</td>' +
+                    '<td id="' + rule["id"] +  '-type">' + types[rule["type"]-1] + '</td>' +
+                    '<td id="' + rule["id"] +  '-weight">' + weights[rule["weight"]-1] + '</td>' +
                     '<td id="' + rule["id"] +  '-warning">' + requires_warnings[rule["requires_warning"]] + '</td></tr>';
                 elem.innerHTML = html;
             });
 
             document.getElementById("content").style.display = null;
-            $('#dtHistory').DataTable({
-                "pagingType": "full_numbers", // "simple" option for 'Previous' and 'Next' buttons only
-                "autoWidth": true,
-                "scrollY": "498px",
-                "scrollCollapse": true,
-                "ordering": false
-            });
-            $('.dataTables_length').addClass('bs-select');
+            document.getElementById("content2").style.display = null;
 
             document.getElementById("ring").style.display = "none";
         }
