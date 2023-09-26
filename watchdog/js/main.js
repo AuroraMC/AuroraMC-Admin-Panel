@@ -118,7 +118,7 @@ function onLoadExceptions(code) {
                 document.getElementById("location").innerHTML = data["server"];
                 document.getElementById("network").innerHTML = serverData["network"];
                 document.getElementById("player").innerHTML = data["player_name"];
-                document.getElementById("occurred").innerHTML = data["occurred"];
+                document.getElementById("occurred").innerHTML = data["other_occurrences"];
                 document.getElementById("command").innerHTML = data["command"];
                 if (data["issue"] !== "NONE") {
                     document.getElementById("issue").innerHTML = "<a href='https://auroramc1617983547.atlassian.net/browse/" + data["issue"] + "' style='color: white'>" + data["issue"] + "</a>";
