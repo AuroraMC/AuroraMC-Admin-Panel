@@ -39,7 +39,7 @@ if ($sql = $mysqli->prepare("SELECT * FROM exceptions WHERE resolved = FALSE LIM
             "player_name" => (($result["player_name"] === null)?"N/A":$result["player_name"]),
             "player_uuid" => (($result["player"] === null)?"N/A":$result["player"]),
             "command" => (($result["command"] === null)?"N/A":$result["command"]),
-            "other_occurrences" => count(json_decode($result["other_occurrences"]))
+            "other_occurrences" => (($result["other_occurrences"] === null)?0:count(json_decode($result["other_occurrences"], true)))
         );
         $traces[] = json_encode($trace);
     }
