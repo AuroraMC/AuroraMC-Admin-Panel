@@ -61,7 +61,7 @@ if (isset($_POST["uuid"])) {
                 "server_data" => $server_data,
                 "resolved" => $resolved,
                 "issue" => (($issue == null)?"NONE":$issue),
-                "other_occurrences" => count(json_decode($other_occurrences))
+                "other_occurrences" => $other_occurrences === null?0:count(json_decode($other_occurrences))
             );
 
             echo json_encode($response);
