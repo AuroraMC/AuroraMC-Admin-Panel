@@ -89,10 +89,10 @@ if (!$account_type) {
             </a>
         <?php endif; ?>
         <?php if ($account_type == "OWNER" || $account_type == "ADMIN" || $account_type == "SR_DEV"  || $account_type == "DEV" || $account_type == "QA") :?>
-            <a href="/big-brother/" class="item">
+            <a href="/watchdog/" class="item">
                 <div>
                     <img src="img/big-brother.png" alt="Big Brother icon" class="img">
-                    <p class="title">Big Brother</p>
+                    <p class="title">Watchdog</p>
                 </div>
             </a>
         <?php endif; ?>

@@ -6,12 +6,12 @@
 
 function onLoad() {
     $.ajax({
-        url:'/big-brother/utils/unresolved-total.php',
+        url:'/watchdog/utils/unresolved-total.php',
         type: 'get',
         success: function(result) {
             document.getElementById("exceptions").innerHTML = result;
             $.ajax({
-                url:'/big-brother/utils/total.php',
+                url:'/watchdog/utils/total.php',
                 type: 'get',
                 success: function(result) {
                     document.getElementById("exceptions-total").innerHTML = result;
@@ -27,13 +27,13 @@ function onLoad() {
 function onLoadExceptions(code) {
     if (!code) {
         $.ajax({
-            url:'/big-brother/utils/unresolved.php',
+            url:'/watchdog/utils/unresolved.php',
             type: 'get',
             success: function(result) {
                 let data = JSON.parse(result);
                 if ("error" in data) {
                     console.log(data["error"])
-                    document.title = "Exception Not Found | Big Brother | The AuroraMC Network"
+                    document.title = "Exception Not Found | Watchdog | The AuroraMC Network"
                     document.getElementById("content").innerHTML = "<div id='not-found' style='display: none;'>" +
                         "<br>" +
                         "<h2> " + data["error"] + "</h2>" +
@@ -80,14 +80,14 @@ function onLoadExceptions(code) {
         });
     } else {
         $.ajax({
-            url:'/big-brother/utils/unresolved-trace.php',
+            url:'/watchdog/utils/unresolved-trace.php',
             type: 'post',
             data: "uuid=" + encodeURIComponent(code),
             success: function(result) {
                 let data = JSON.parse(result);
                 if ("error" in data) {
                     console.log(data["error"])
-                    document.title = "Exception Not Found | Big Brother | The AuroraMC Network"
+                    document.title = "Exception Not Found | Watchdog | The AuroraMC Network"
                     document.getElementById("content").innerHTML = "<div id='not-found' style='display: none;'>" +
                         "<br>" +
                         "<h2> " + data["error"] + "</h2>" +
@@ -118,6 +118,7 @@ function onLoadExceptions(code) {
                 document.getElementById("location").innerHTML = data["server"];
                 document.getElementById("network").innerHTML = serverData["network"];
                 document.getElementById("player").innerHTML = data["player_name"];
+                document.getElementById("occurred").innerHTML = data["occurred"];
                 document.getElementById("command").innerHTML = data["command"];
                 if (data["issue"] !== "NONE") {
                     document.getElementById("issue").innerHTML = "<a href='https://auroramc1617983547.atlassian.net/browse/" + data["issue"] + "' style='color: white'>" + data["issue"] + "</a>";
@@ -185,7 +186,7 @@ function attachIssue(issue, uuid) {
     }
 
     $.ajax({
-        url:'/big-brother/utils/attach-issue.php',
+        url:'/watchdog/utils/attach-issue.php',
         type: 'post',
         data: "uuid=" + encodeURIComponent(uuid) + "&issue=" + encodeURIComponent(issue),
         success: function(result) {
@@ -202,13 +203,13 @@ function resolve(uuid) {
         return;
     }
     $.ajax({
-        url:'/big-brother/utils/resolve.php',
+        url:'/watchdog/utils/resolve.php',
         type: 'post',
         data: "uuid=" + encodeURIComponent(uuid),
         success: function(result) {
             document.getElementById("mark-resolved").remove();
             alert("Exception resolved!");
-            window.location = "/big-brother/exceptions"
+            window.location = "../exceptions"
         }
     });
 }

@@ -26,7 +26,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Home | Big Brother | The AuroraMC Network</title>
+    <title>Home | Watchdog | The AuroraMC Network</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -93,7 +93,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
         <div class="col-sm-8 col-xs-12">
             <div id="content" style="display:none;">
                 <br>
-                <h1><Strong>AuroraMC Network Big Brother</Strong></h1>
+                <h1><Strong>AuroraMC Network Watchdog</Strong></h1>
                 <br>
                 <legend style="font-family: 'Helvetica';">Welcome!</legend>
                 <hr>

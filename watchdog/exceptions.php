@@ -32,7 +32,7 @@ if (isset($_GET['uuid'])){
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Home | Big Brother | The AuroraMC Network</title>
+    <title>Home | Watchdog | The AuroraMC Network</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -134,12 +134,12 @@ if (isset($_GET['uuid'])){
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item">
-            <a class="nav-link" href="/big-brother/">Home</a>
+            <a class="nav-link" href="/watchdog/">Home</a>
             </li>
         </ul>
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-        <a class="mx-auto" href="/big-brother/">
+        <a class="mx-auto" href="/watchdog/">
             <img src="../img/logo.png" height="100px" width="100px"
                  style="margin-top:60px">
         </a>
@@ -150,7 +150,7 @@ if (isset($_GET['uuid'])){
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
         <ul class="navbar-nav mr-auto text-center">
             <li class="nav-item active">
-                <a class="nav-link" href="/big-brother/exceptions">View Exceptions</a>
+                <a class="nav-link" href="/watchdog/exceptions">View Exceptions</a>
             </li>
         </ul>
     </div>
@@ -192,6 +192,7 @@ if (isset($_GET['uuid'])){
                                 <tr><td><strong style="font-weight: bold">Player:</strong> <span id="player"></span></td></tr>
                                 <tr><td><strong style="font-weight: bold">Command Executed:</strong> <span id="command"></span></td></tr>
                                 <tr><td><strong style="font-weight: bold">Attached Issue:</strong> <span id="issue"></span></td></tr>
+                                <tr><td><strong style="font-weight: bold">Times Occurred:</strong> <span id="occurred"></span></td></tr>
                                 <tr><td><strong style="font-weight: bold;">Server Data:</strong> <br><span id="server-data"></span></td></tr>
                                 </tbody>
                             </table>
