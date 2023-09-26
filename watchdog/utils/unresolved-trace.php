@@ -39,8 +39,9 @@ if (isset($_POST["uuid"])) {
         $server_data = null;
         $resolved = null;
         $issue = null;
+        $other_occurrences = null;
 
-        $sql->bind_result($uuid, $timestamp, $exception_name, $trace, $server, $proxy, $player_uuid, $player_name, $command, $server_data, $resolved, $issue);
+        $sql->bind_result($uuid, $timestamp, $exception_name, $trace, $server, $proxy, $player_uuid, $player_name, $command, $server_data, $resolved, $issue, $other_occurrences);
 
         if ($sql->fetch()) {
             $sql->store_result();
@@ -59,7 +60,8 @@ if (isset($_POST["uuid"])) {
                 "command" => (($command == null)?"N/A":$command),
                 "server_data" => $server_data,
                 "resolved" => $resolved,
-                "issue" => (($issue == null)?"NONE":$issue)
+                "issue" => (($issue == null)?"NONE":$issue),
+                "other_occurrences" => count(json_decode($other_occurrences))
             );
 
             echo json_encode($response);
