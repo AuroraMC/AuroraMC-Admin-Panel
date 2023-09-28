@@ -53,7 +53,7 @@ function onLoadExceptions(code) {
                 let table = document.getElementById("table-values");
                 data.forEach(function (exceptionRaw) {
                     let exception = JSON.parse(exceptionRaw);
-                    let serverData = exception["server_data"];
+                    let serverData = JSON.parse(exception["server_data"]);
                     let elem = document.createElement("tr");
                     table.appendChild(elem)
 
