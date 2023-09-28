@@ -97,7 +97,7 @@ if ($account_type != "OWNER" && $account_type != "ADMIN" && $account_type != "SR
                 <br>
                 <legend style="font-family: 'Helvetica';">Welcome!</legend>
                 <hr>
-                <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to Big Brother, AuroraMC's Exceptions Manager! Here, you can see and resolve exceptions that have occurred on the network.</p>
+                <p style="font-size: 17px; font-family: 'Helvetica'">Welcome to Watchdog, AuroraMC's Exceptions Manager! Here, you can see and resolve exceptions that have occurred on the network.</p>
                 <br>
                 <legend style="font-family: 'Helvetica';">Exception Statistics</legend>
                 <hr>
