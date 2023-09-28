@@ -53,13 +53,14 @@ function onLoadExceptions(code) {
                 let table = document.getElementById("table-values");
                 data.forEach(function (exceptionRaw) {
                     let exception = JSON.parse(exceptionRaw);
+                    let serverData = exception["server_data"];
                     let elem = document.createElement("tr");
                     table.appendChild(elem)
 
                     elem.innerHTML = "<td>" + exception["uuid"] + "</td>" +
                         "<td>" + new Date(parseInt(exception["timestamp"])).toLocaleString() + "</td>" +
                         "<td>" + exception["exception"] + "</td>" +
-                        "<td>" + exception["location"] + "</td>" +
+                        "<td>" + exception["location"] + "-" + serverData["network"] + "</td>" +
                         (("player_name" in exception)?"<td>" + exception["player_name"] + "</td>":"<td>N/A</td>") +
                         "<td>" + exception["command"] + "</td>" +
                         "<td><button type='button' class='btn btn-secondary' onclick='window.location=\x22" + "exceptions?uuid=" +  exception["uuid"] + "\x22'><i class=\"fas fa-eye\"></i> View</button></td>"
@@ -209,7 +210,7 @@ function resolve(uuid) {
         success: function(result) {
             document.getElementById("mark-resolved").remove();
             alert("Exception resolved!");
-            window.location = "../exceptions"
+            window.location = "exceptions"
         }
     });
 }
