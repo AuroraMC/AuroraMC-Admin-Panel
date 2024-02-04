@@ -1,4 +1,8 @@
 <?php
+/*
+ * Copyright (c) 2024 Ethan P-B. All Rights Reserved.
+ */
+
 include_once '../../database/db-connect.php';
 include_once "../../utils/functions.php";
 
